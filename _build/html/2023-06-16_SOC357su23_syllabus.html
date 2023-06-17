@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Course parameters &#8212; SOC357</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2023-06-16_SOC357su23_syllabus';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/SOC357_website_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/SOC357_website_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Course parameters</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2023-06-16_SOC357su23_syllabus.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/2023-06-16_SOC357su23_syllabus.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Course parameters</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Course parameters</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#course-overview">Course overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philosophy-of-the-course">Philosophy of the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-schedule">Weekly Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technology-in-this-course">Technology in this course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zoom">Zoom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canvas">Canvas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-excel-google-sheets-r-python-etc">Stata / Excel / Google Sheets / R / Python / etc.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualtrics-google-forms">Qualtrics /Google Forms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-docs">Google Docs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser">Web browser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adobe-reader">Adobe Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-office">Microsoft Office</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-help-with-technology">Need help with technology?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-assignments">Evaluation/assignments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection-and-analysis-projects-50-percent">Data Collection and Analysis Projects (50 percent):</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-project-25-percent">Survey project (25 percent).</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-research-evaluation-project-25-percent">Qualitative research evaluation project (25 percent).</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-quizzes-15-percent">Weekly Quizzes (15 percent)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-board-posts-15-percent">Discussion board posts (15 percent)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-ethics-certification-five-percent">Online Ethics Certification (five percent)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-participation-15-percent">Lab participation (15 percent)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#late-penalties">Late penalties</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#grades-summarized">Grades summarized</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#general-course-etiquette">General course etiquette</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility-accommodations">Accessibility &amp; accommodations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diversity-and-inclusion">Diversity and inclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mental-health">Mental health</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-integrity">Academic Integrity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-non-academic-support">Academic &amp; Non-Academic Support</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutoring">Tutoring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#international-student-services">International Student Services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daca-undocumented-student-support">DACA &amp; Undocumented Student Support</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1 style="text-align: center;">SOC357/C&ESOC357</h1>
+<section class="tex2jax_ignore mathjax_ignore" id="course-parameters">
+<h1>Course parameters<a class="headerlink" href="#course-parameters" title="Permalink to this heading">#</a></h1>
+<p>Course meetings (official): MTuWTh 10:20-11:35 AM</p>
+<p>Course meetings (actual): TuTh, 10:20-11:35 AM</p>
+<p><a class="reference external" href="https://uwmadison.zoom.us/j/92039636163?pwd=MytNaFlXaVEyV05lcmpEbzZ1bDlTdz09">Zoom link</a></p>
+<p>Instructor: Griffin McCarthy Bur</p>
+<p>E-mail: gjmbteaching&#64;gmail.com [do <em><strong>not</strong></em> use my official UW e-mail; Outlook is an almost unengagably-bad e-mail client]</p>
+<p>Office hours: Tuesday 12pm - 2pm or by appointment; virtual link <a class="reference external" href="https://uwmadison.zoom.us/j/94360950866?pwd=SzVVYU51SjlXdXRSblJsODRmVjlhZz09">here</a></p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="course-overview">
+<h1>Course overview<a class="headerlink" href="#course-overview" title="Permalink to this heading">#</a></h1>
+<section id="philosophy-of-the-course">
+<h2>Philosophy of the course<a class="headerlink" href="#philosophy-of-the-course" title="Permalink to this heading">#</a></h2>
+<p>The course provides a rigorous overview of the ways that social scientists collect and evaluate information about social phenomena. You will learn 1) the general principles of quantitative and qualitative research methods, 2) to evaluate their correct application in the research of others, and 3) their proper use for your own projects.</p>
+<p>The course assumes no background in research methods or statistics. Over the course of the semester, you will be introduced to basic statistical concepts and techniques of data analysis.</p>
+<p>Lectures for the course will generally be asynchronous, but a couple of times a week, we will have laboratory-style meetings. I have found that synchronous virtual lectures do not seem to have much advantage over asynchronous virtual lectures (my personal preference is in-person synchronous lectures). Lab meetings will take place on Tuesday and Thursday generally.
+Required readings</p>
+<p>There is no required textbook for this course. Instead, the readings are a mix of other textbooks, my detailed lecture notes, and various handouts I’ve produced. You should read these documents carefully; I evaluate and grade you on the quality of your discussion board posts, which will serve as limbering-up exercises for our full-class discussions.</p>
+<p>Generally speaking, quantitative methods have a steeper learning curve, meaning that without some basic grounding in discrete mathematics, your ability to understand social scientific research will be very limited. So, this course puts slightly more emphasis on “quantitative research”<a class="footnote-reference brackets" href="#fn" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and since this material takes a good deal of practice (but can easily be done from just about anywhere in the world), our research project will be a primarily quantitative one.</p>
+<p>Conversely, qualitative methods are generally easier to understand at first, but hard to get right in practice. They are also substantially harder to make use of virtually, and since our course modality is remote, I cannot assume that any of you are residing in places with adequate firsthand research opportunities. So, our second “project” will emphasize your ability to understand and critique published qualitative research.</p>
+</section>
+<section id="weekly-schedule">
+<h2>Weekly Schedule<a class="headerlink" href="#weekly-schedule" title="Permalink to this heading">#</a></h2>
+<p>NOTE: I am keeping this as a live link because the schedule may change. I will notify you if something does change; all announcements regarding schedule changes will be emailed to you, posted on Canvas, and/or announced in lecture. You are responsible for keeping up-to-date on these changes. {TODO: link}</p>
+</section>
+<section id="technology-in-this-course">
+<h2>Technology in this course<a class="headerlink" href="#technology-in-this-course" title="Permalink to this heading">#</a></h2>
+<section id="zoom">
+<h3>Zoom<a class="headerlink" href="#zoom" title="Permalink to this heading">#</a></h3>
+<p>We will use Zoom to conduct our regular lecture meetings. Office hours will be held via Zoom as well. The links and dial-in numbers are provided on the first page. Please make sure to have the latest version installed on your computer.</p>
+</section>
+<section id="canvas">
+<h3>Canvas<a class="headerlink" href="#canvas" title="Permalink to this heading">#</a></h3>
+<p>Canvas is the learning management system (LMS) for this course. We’ll use Canvas to access course materials and submit your assignments.</p>
+</section>
+<section id="stata-excel-google-sheets-r-python-etc">
+<h3>Stata / Excel / Google Sheets / R / Python / etc.<a class="headerlink" href="#stata-excel-google-sheets-r-python-etc" title="Permalink to this heading">#</a></h3>
+<p>One purpose of this course is to introduce you to the use of statistical software. I am a strong proponent of the idea that social science undergraduates should learn the basics of coding, as this is a highyl-useful hard skill; I have served as the lecturer of our department’s most programming-intensive course in the past.</p>
+<p>Nevertheless, a repeated piece of student feedback about this course is that it introduces Stata, the statistical software that most researchers in our department use, too quickly and subsequently drops it. I think these are reasonable criticisms, especially for a remote and accelerated course.</p>
+<p>So, for this course, you will simply need access to software which can do the very minimal tasks which we will need for this course. You are welcome to try your hand at learning Stata. I have produced a comprehensive video guide to its use for SOC360, and you are welcome to watch these videos. If you already use Stata, R or Python, I happen to be conversant in all three languages and can provide technical support. That said, despite my general dislike of Excel—it is simply not fit-for-purpose for serious statistical work and its use requires little that what we would call “coding”—it suffices for our course, in which the basic precepts of statistics are more important than those of Stata.</p>
+<p>Your first major assignment will require only that your statistical software be able to compute quantities such as Pearson’s correlation coefficient, the mean and standard deviation of a set of variables, and the two-sided <strong>P</strong>-values associated with <em>t</em>- and <em>F</em>-statistics. If you already understand the very basics of Excel/Google Sheets, learning to calculate things will be very easy (the harder part is understanding them).</p>
+</section>
+<section id="qualtrics-google-forms">
+<h3>Qualtrics /Google Forms<a class="headerlink" href="#qualtrics-google-forms" title="Permalink to this heading">#</a></h3>
+<p>Qualtrics is an online tool that you will use to create and distribute a survey questionnaire. It is free for UW-Madison students. Visit www.survey.wisc.edu and login with your Net ID.</p>
+<p>A similar rule obtains here: Qualtrics is the more-serious software, but Google Forms is simpler and suffices for our purposes. Again, if you are familiar with Google’s cloud products, which I assume that most people are, this is not hard to learn; it is simply limited beyond a certain point that we will approach but not reach.</p>
+</section>
+<section id="google-docs">
+<h3>Google Docs<a class="headerlink" href="#google-docs" title="Permalink to this heading">#</a></h3>
+<p>We will occasionally use Google Docs to facilitate group-based learning activities. Google Docs is free with a Google account. You also have access to it via your UW Google account. If you sign in to UW–Madison G Suite with your university email (e.g., bbadger&#64;wisc.edu), then your activities will be privacy-protected.</p>
+</section>
+<section id="web-browser">
+<h3>Web browser<a class="headerlink" href="#web-browser" title="Permalink to this heading">#</a></h3>
+<p>Chrome is the recommended web browser for Canvas. We recommend that you have the latest version installed in order to avoid technical problems.
+Regardless of the web browser you use, make sure to:
+o Enable JavaScript: in multiple web browsers.
+o Enable cookies: in Firefox, Chrome, and Safari.</p>
+</section>
+<section id="adobe-reader">
+<h3>Adobe Reader<a class="headerlink" href="#adobe-reader" title="Permalink to this heading">#</a></h3>
+<p>Download the latest version of Adobe Reader to view PDF files. Note: Do not select the optional offer for McAfee Security Scan Plus.</p>
+</section>
+<section id="microsoft-office">
+<h3>Microsoft Office<a class="headerlink" href="#microsoft-office" title="Permalink to this heading">#</a></h3>
+<p>Microsoft Office is free for UW–Madison students through the Office 365 portal.</p>
+</section>
+<section id="need-help-with-technology">
+<h3>Need help with technology?<a class="headerlink" href="#need-help-with-technology" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ask me or contact the <a class="reference external" href="https://kb.wisc.edu/helpdesk/">DoIT Help Desk</a> via chat, email, phone, or in person</p></li>
+<li><p>Search the UW KnowledgeBase for technical information and help documents</p></li>
+<li><p>Check DoIT’s log of reported outages on campus</p></li>
+<li><p>Get help with bandwidth and internet connections</p></li>
+<li><p>Check out laptops and other equipment</p></li>
+<li><p>Download software available to UW-Madison affiliates</p></li>
+<li><p>See tips for working remotely</p></li>
+</ul>
+</section>
+</section>
+<section id="evaluation-assignments">
+<h2>Evaluation/assignments<a class="headerlink" href="#evaluation-assignments" title="Permalink to this heading">#</a></h2>
+<section id="data-collection-and-analysis-projects-50-percent">
+<h3>Data Collection and Analysis Projects (50 percent):<a class="headerlink" href="#data-collection-and-analysis-projects-50-percent" title="Permalink to this heading">#</a></h3>
+<p>You will work in teams to conduct two data collection and analysis projects. The teams will be created through random selection before each project.</p>
+<section id="survey-project-25-percent">
+<h4>Survey project (25 percent).<a class="headerlink" href="#survey-project-25-percent" title="Permalink to this heading">#</a></h4>
+<p>Your team will formulate a research question and hypothesis, develop an online survey questionnaire, distribute it electronically, analyze the data, and present your findings in class. You will also write a short report summarizing the research process and findings. All but the final step (i.e., writing the report) will be done as a team.</p>
+<ul class="simple">
+<li><p>Research proposal and its revision (five percent): As a team you will write a research proposal in which you a) formulate a sociological research question, b) explain why you think this question is worth studying, c) identify your key variables, d) specify which population you want to study (ideally), e) explain to whom and how you will distribute your survey, and f) state what you expect to find (your hypothesis) and why. Word count: 200-400 words.</p></li>
+<li><p>Survey questionnaire and its revision (five percent): As a team you will develop a short survey questionnaire to measure the key concepts and other variables you may need for your analyses. At least one of your key concepts should be a complex/multi-dimensional one that is measured using multiple questions (more about this later in class). You will use Qualtrics or Google Forms to create and distribute your survey. While there is no fixed number of respondents you need, I recommend that you sample at least 15 respondents per team member. You will analyze the survey responses using whatever software you like (see above). Finally, the survey should ask a couple of free-response questions that you can later use for qualitative analysis.</p></li>
+<li><p>Team presentation (five percent): You and your partners will present your findings in class and respond to questions and comments from your classmates.</p></li>
+<li><p>Peer evaluation (five percent): For the steps listed above, your team members will evaluate your contributions to the project. This is to ensure that no one free-rides. The evaluations will be anonymous.</p></li>
+<li><p>Written report (10 percent): You will write a short report (no more than 1,200 words) which analyzes your findings. Each team member will write this report individually.</p></li>
+</ul>
+</section>
+<section id="qualitative-research-evaluation-project-25-percent">
+<h4>Qualitative research evaluation project (25 percent).<a class="headerlink" href="#qualitative-research-evaluation-project-25-percent" title="Permalink to this heading">#</a></h4>
+<p>This is an individual assignment. I have found in the past that conducting qualitative research remotely and in an asynchronous course proves difficult. There is also, in my view, generally not enough emphasis in social science courses on actually reading, critically and actively, the research literature that exists. In this project, you will read and critically evaluate two qualitative papers that pertain somehow to your first paper: basically, you should find research that examines firsthand, with interview, ethnographic, or textual evidence, those topics which you explored quantitatively. You will also do a small amount of “qualitative coding” using qualitative data from your first project.</p>
+<ul class="simple">
+<li><p>Literature search (five percent): using methods discussed in class, locate 10 papers that speak to your particular research question. Read the abstracts and skim them to determine which two are most useful to you. Write two sentences about the content of each abstract.</p></li>
+<li><p>Exemplar evalution (15 percent): produce a clear, rigorous analysis of the two papers you choose. These are meant to be <em>extremely</em> short (one page each). However, you need to make what you <em>do</em> write count. You need to identify the paper’s contributions to the literature—what puzzles it solves (and describe how this is related to your first paper), identify the qualitative method they used, very briefly comment on your overall related to your first paper’s questions)—and then give a rigorous, short analysis of the limitations.</p></li>
+<li><p>Qualitative analysis: you will also need to qualitatively code some excerpts from your surveys and relate these to the findings of your two selected papers (this should take one additional page).</p></li>
+</ul>
+</section>
+</section>
+<section id="weekly-quizzes-15-percent">
+<h3>Weekly Quizzes (15 percent)<a class="headerlink" href="#weekly-quizzes-15-percent" title="Permalink to this heading">#</a></h3>
+<p>At the end of each week, you will complete one or more quizzes based on the assigned readings and lectures of that week. The quizzes are administered through Canvas and consist of 10 questions each. Quizzes are open note!</p>
+<ul class="simple">
+<li><p>You have 20 minutes to complete each quiz. If you have done the readings and attended the lectures, the quizzes should take around 5 minutes to complete.You have two attempts on each quiz, and Canvas will retain the higher of the two scores. If you do not submit your quiz within 20 minutes of starting it, you will get zero for that attempt.</p></li>
+<li><p>The quizzes will be opened no later than Thursday afternoon. You will have until Sunday midnight (11:59pm) to complete the quizzes. It is your responsibility to submit them during the open window. If you forget to complete a quiz, it will not be re-opened for you after the deadline. We can, however, negotiate the deadline if you contact me earlier. Reasons that I am generally sympathetic to include university-related travel, religious observations, illnesses, and rescheduled work shifts.</p></li>
+<li><p>Your lowest quiz score will be dropped from the final quiz grade.</p></li>
+<li><p>Note that these are pretty low stakes. The point is just to give you <em>some</em> incentive to keep up with the readings in a way that is stricter than the discussion posts.</p></li>
+</ul>
+</section>
+<section id="discussion-board-posts-15-percent">
+<h3>Discussion board posts (15 percent)<a class="headerlink" href="#discussion-board-posts-15-percent" title="Permalink to this heading">#</a></h3>
+<p>Before each laboratory meeting, you must respond to <em>all</em> of the handful of prompts I post to our discussion board on Canvas. I generally expect later-repliers to make more of an effort to engage the comments which are already written by your colleagues.</p>
+<p>I am a fanatical proponent of quality over quantity in these matters. Posts should not exceed 500 words, but they must also incisive and rigorous. I will provide credit for pure effort the first week of discussion board posts, but beyond that, you are repsonsible for leaving it all on the field with these posts: do your best for full credit.</p>
+<p>I understand that many class discussion boards are frustrating to engage with because there is often a lack of structure, or perhaps on occasion, other members of class do not bring the same effort which you bring, etc. Rest assured, I will ask clear, stimulating questions to the class which have something like a “right answer”: you can say whatever you like while engaging my question, but you must engage that question, about which our course materials will provide ample food for thought.</p>
+</section>
+<section id="online-ethics-certification-five-percent">
+<h3>Online Ethics Certification (five percent)<a class="headerlink" href="#online-ethics-certification-five-percent" title="Permalink to this heading">#</a></h3>
+<p>You need to complete an online ethics certification before the last day of class. More information is available in the Assignments section of Canvas.</p>
+</section>
+<section id="lab-participation-15-percent">
+<h3>Lab participation (15 percent)<a class="headerlink" href="#lab-participation-15-percent" title="Permalink to this heading">#</a></h3>
+<p>Lab participation is graded on a three point scale: 0 for absences, cameras off, or lack of commentary; 1 for camera on and mediocre verbal participation and/or exclusively chatbox participation; two for camera on and well-prepared verbal participation. <em>You need to demonstrate active involvement throughout the semester to get full credit for participation.</em></p>
+<p>Meaningful contributions include but are not limited to:</p>
+<ul class="simple">
+<li><p>Offering ideas or asking questions about the course material in a way that demonstrates good preparation</p></li>
+<li><p>Questioning other students’ points in a constructive manner</p></li>
+<li><p>Suggesting alternative ways of approaching the course material</p></li>
+<li><p>Providing feedback on how the lectures can be improved</p></li>
+<li><p>Attending virtual office hours</p></li>
+<li><p>You can make contributions either verbally or through the chat box in Zoom.</p></li>
+</ul>
+<p>Two no-questions-asked absences are allowed all semester; to activate these, please just write to me to tell me that you want to take them. Please generally do <strong>not</strong> tell me why you are missing lab. Here is why:</p>
+<ul class="simple">
+<li><p>First, I believe that we all deserve a certain amount of leniency and induldence in life. I do not believe that each of us needs to involve his or herself in judging the validity of these hall passes.</p></li>
+<li><p>Second, I do not want you to be under the impression that if you give me a reason why you are missing that I will not deduct it from your two “freebies”; I only rarely grant a third excused absence. I reserve the right to evaluate these on a case-by-case basis, but typical situations include deaths of a family member, illness for which you visited urgent care, etc. If you tell me that you’d like to take an NQA and you have the sniffles/forgot you had work/etc., I may gently remind you that I am still counting this against your freebies.</p></li>
+</ul>
+</section>
+</section>
+<section id="late-penalties">
+<h2>Late penalties<a class="headerlink" href="#late-penalties" title="Permalink to this heading">#</a></h2>
+<p>My philosophy with late policies is informed by my past experience of being too lenient: I have found that, while the cushions provided can help highly-motivated, highly-busy students succeed, it allows students who are struggling and would likely be best served by a drop to slip through the cracks. The consequences for failing a course are considerably larger than for dropping one, and hard deadlines provide me and you some preliminary data to determine whether you are likely able to succeed in the course. Please contact me if you encounter extenuating circumstances — I am far from insensitive to such situations — but if you find yourself unable to meet deadlines routinely, we should talk.</p>
+<p>All submissions to Canvas are time-stamped and must be submitted before the deadline to receive full credit. I subtract five percent per day for late work, and this is amortized to the hour (so, for example, submitting 45 minutes late results in a 0.05/24 ≈ 0.0021, or 0.21 percent, penalty); there is also a floor of 50 percent, meaning that you cannot lose more than 50 percent for late work. This late penalty is mild, and I hope that, in most cases, it suffices to cover minor misfortunes (feeling unmotivated one day, would rather hang out with friends another).</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="grades-summarized">
+<h1>Grades summarized<a class="headerlink" href="#grades-summarized" title="Permalink to this heading">#</a></h1>
+<p>Summary of components of your grade:
+• Data collection and analysis projects (30 percent + 30 percent = 60 percent)
+• Weekly quizzes (20 percent)
+• Perusall participation (10 percent)
+• Online ethics certification (5 percent)
+• Lecture participation (5 percent)
+Numeric grades are converted into alphabetic grades as follows (if your grade falls into a gap, I round to the nearest integer):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{array}{|c|c|}
+        \hline
+            \textbf{numeric} &amp; \textbf{letter} \\
+        \hline
+            \text{93-100} &amp; \text{A} \\
+        \hline
+            \text{86-92} &amp; \text{AB} \\
+        \hline
+            \text{80-85} &amp; \text{B} \\
+        \hline
+            \text{74-79} &amp; \text{BC} \\
+        \hline
+            \text{66-74} &amp; \text{C} \\
+        \hline
+            \text{55-65} &amp; \text{D} \\
+        \hline
+            \text{&lt;55} &amp; \text{F} \\
+        \hline
+    \end{array}
+    \end{split}\]</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="general-course-etiquette">
+<h1>General course etiquette<a class="headerlink" href="#general-course-etiquette" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Keep up with the weekly readings and assignments.</p></li>
+<li><p>Communicate clearly and considerately, whether in a private venue (e.g., the Canvas Inbox) or a public one (e.g., Zoom).</p></li>
+<li><p>Keep your camera on during the online lectures.</p></li>
+<li><p>Mute yourself when not speaking.</p></li>
+<li><p>If using video or audio chat, please do so in a reasonably quiet and private environment. While we welcome your family, pets, or roommates, following these tips may minimize distractions for others.</p></li>
+<li><p>Respect the ideas, feelings, and experiences of your classmates.</p></li>
+<li><p>Learn the preferred names (and pronunciations) of your colleagues.</p></li>
+<li><p>Proceed with humility when providing feedback and considering others’ feedback.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="accessibility-accommodations">
+<h1>Accessibility &amp; accommodations<a class="headerlink" href="#accessibility-accommodations" title="Permalink to this heading">#</a></h1>
+<p>Your success in this course is important to me. Please contact me if there is a way in which I can help improve your ability to access course content or assignment materials.</p>
+<p>The McBurney Center is a resource that can help students navigate formal, disability-related accommodations. If you utilize McBurney services, please notify me as soon as possible so that we can discuss how to tailor this course to best support your learning.</p>
+<p>If you wish to request a scheduling accommodation for religious observances or athletic events, send me an email by the end of the first week of class, stating the specific date(s) for which you request accommodation.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="diversity-and-inclusion">
+<h1>Diversity and inclusion<a class="headerlink" href="#diversity-and-inclusion" title="Permalink to this heading">#</a></h1>
+<p>Creating an inclusive classroom environment is a responsibility that we all share. An inclusive classroom is one where all participants are welcome and encouraged to participate. I thus ask that you respect and consider your peers’ experiences. As our campus diversity statement says, “Diversity is a source of strength, creativity, and innovation for UW-Madison. We value the contributions of each person and respect the profound ways their identity, culture, background, experience, status, abilities, and opinion enrich the university community.”</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mental-health">
+<h1>Mental health<a class="headerlink" href="#mental-health" title="Permalink to this heading">#</a></h1>
+<p>These are hard times for many people. Dealing with the anxieties associated with the massive social disruption of the past several years while also balancing our roles as students, workers, teachers, friends, and family members can be challenging.</p>
+<p>University Health Services continue to support the mental health needs of our students, with some minor changes to services. The most up to date information about accessing mental health services on campus is available here. Most mental health services are now available remotely—over the phone or video—ith some additional services available in person with appointments.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="academic-integrity">
+<h1>Academic Integrity<a class="headerlink" href="#academic-integrity" title="Permalink to this heading">#</a></h1>
+<p>As with all courses at the University of Wisconsin, you are expected to follow the University’s rules and regulations pertaining to academic honesty and integrity.
+For a complete description of behaviors that violate the University’s standards, as well the disciplinary penalties and procedures for academic misconduct, please see the Office of Student Conduct and Community Standards website.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="academic-non-academic-support">
+<h1>Academic &amp; Non-Academic Support<a class="headerlink" href="#academic-non-academic-support" title="Permalink to this heading">#</a></h1>
+<section id="tutoring">
+<h2>Tutoring<a class="headerlink" href="#tutoring" title="Permalink to this heading">#</a></h2>
+<p>There is a wide variety of tutoring and other course-specific programs for undergraduate students across campus. To learn more about the options available, go to UW–Madison’s Academic Support page.</p>
+</section>
+<section id="international-student-services">
+<h2>International Student Services<a class="headerlink" href="#international-student-services" title="Permalink to this heading">#</a></h2>
+<p>The global lockdown has made international travel and study, as well as immigration, more complicated. International Student Services is the best source of information for students on F and J visas.</p>
+</section>
+<section id="daca-undocumented-student-support">
+<h2>DACA &amp; Undocumented Student Support<a class="headerlink" href="#daca-undocumented-student-support" title="Permalink to this heading">#</a></h2>
+<p>Please review information from the Multicultural Student Center.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="learning-objectives">
+<h1>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this heading">#</a></h1>
+<p>This course is designed to achieve the following instructional objectives designated priorities by the Department of Sociology:</p>
+<ul class="simple">
+<li><p>Conducting Research and Analyzing Data. You will have the opportunity to design your own research projects and learn how to collect and analyze data.</p></li>
+<li><p>Critically Evaluating Published Research. You will read peer-reviewed journal articles that use the methods covered in this class. Together, we will think about why social scientists use different methods to answer different questions, while also examining the strengths and weaknesses of those methods. Thus, you will gain a research vocabulary that will help you think, write, and speak more critically about social science research.</p></li>
+<li><p>Communicating Skillfully. All course assignments are designed to improve your oral and written communication skills. Most importantly, you will have the chance to present your research findings in class and respond to audience questions and comments.</p></li>
+<li><p>Working Effectively in Groups. The in-class exercises as well as the data collection and analysis projects are intended to develop your teamwork skills. A portion of your grade for these projects will be based on how your teammates evaluate your contributions.</p></li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="fn" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>As you will see, I dislike the ubiquitous distinction between quantitative and qualiative research, but it is too ensconced in the literature to dismiss. We will learn which components of this distinction are meaningful and which are fables.</p>
+</aside>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Course parameters</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#course-overview">Course overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#philosophy-of-the-course">Philosophy of the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-schedule">Weekly Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#technology-in-this-course">Technology in this course</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zoom">Zoom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#canvas">Canvas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stata-excel-google-sheets-r-python-etc">Stata / Excel / Google Sheets / R / Python / etc.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#qualtrics-google-forms">Qualtrics /Google Forms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#google-docs">Google Docs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-browser">Web browser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adobe-reader">Adobe Reader</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-office">Microsoft Office</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-help-with-technology">Need help with technology?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-assignments">Evaluation/assignments</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-collection-and-analysis-projects-50-percent">Data Collection and Analysis Projects (50 percent):</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#survey-project-25-percent">Survey project (25 percent).</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-research-evaluation-project-25-percent">Qualitative research evaluation project (25 percent).</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-quizzes-15-percent">Weekly Quizzes (15 percent)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-board-posts-15-percent">Discussion board posts (15 percent)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-ethics-certification-five-percent">Online Ethics Certification (five percent)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-participation-15-percent">Lab participation (15 percent)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#late-penalties">Late penalties</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#grades-summarized">Grades summarized</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#general-course-etiquette">General course etiquette</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#accessibility-accommodations">Accessibility &amp; accommodations</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#diversity-and-inclusion">Diversity and inclusion</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mental-health">Mental health</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-integrity">Academic Integrity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#academic-non-academic-support">Academic &amp; Non-Academic Support</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutoring">Tutoring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#international-student-services">International Student Services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daca-undocumented-student-support">DACA &amp; Undocumented Student Support</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning Objectives</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By gjmb
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
