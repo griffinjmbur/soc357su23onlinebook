@@ -5,4 +5,4 @@ format: jb-book
 root: intro
 chapters:
 - file: 2023-06-16_SOC357su23_syllabus.ipynb
-title: My alternate page title
+title: Syllabus
