@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>title: Some advanced arithmetic useful for the social sciences author: McCarthy Bur, G date: 2023-06-04 &#8212; SOC357</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'test_align';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/SOC357_website_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/SOC357_website_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SOC357
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-06-16_SOC357su23_syllabus.html">Course parameters</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftest_align.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/test_align.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>title: Some advanced arithmetic useful for the social sciences
+author: McCarthy Bur, G
+date: 2023-06-04</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">title: Some advanced arithmetic useful for the social sciences
+author: McCarthy Bur, G
+date: 2023-06-04</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem-clt">The Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-and-probability-distributions">Histograms and probability distributions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-variance-anova">Analysis of variance (ANOVA)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <hr class="docutils" />
+<section id="title-some-advanced-arithmetic-useful-for-the-social-sciences-author-mccarthy-bur-g-date-2023-06-04">
+<h1>title: Some advanced arithmetic useful for the social sciences
+author: McCarthy Bur, G
+date: 2023-06-04<a class="headerlink" href="#title-some-advanced-arithmetic-useful-for-the-social-sciences-author-mccarthy-bur-g-date-2023-06-04" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="some-basic-operators">
+<h1>Some basic operators<a class="headerlink" href="#some-basic-operators" title="Permalink to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>The summation operator tells us to sum from the observation denoted at the bottom of the capital greek letter <span class="math notranslate nohighlight">\(\Sigma\)</span> (“sigma”, which makes the “s” sound, as in <strong>s</strong>um) and go up until the observation denoted on top of the <span class="math notranslate nohighlight">\(\Sigma\)</span>. For us, the bottom item will almost always be individual (denoted <em>i</em>) equal to one, going up until individual equal to <em>n</em>, where <em>n</em> is the sample size. Examine this simple example data-set:</p>
+<p><span class="math notranslate nohighlight">\(\begin{array}{|c|c|}
+ \hline
+ i &amp; y  \\ \hline
+ 1 &amp; 3  \\ \hline
+ 2 &amp; 10  \\ \hline
+ 3 &amp; 2  \\ \hline
+ 4 &amp; 4.5  \\ \hline
+ \end{array}\)</span></p>
+<p>Now, try to carry out the arithmetic operation indicated by the following notation: <span class="math notranslate nohighlight">\(\sum_{i=1}^n y_i\)</span>.</p>
+<p>The numbering of individuals is, for our purposes, basically always arbitrary, and summation is
+commutative anyways (the order of the items summed, or the <em>summands</em>, does not matter), so sometimes you
+will see the sub- and superscripts omitted.</p>
+<p>Let’s suppose that we are interested in someone’s highest year of education achieved and we have
+observations on <em>n</em> = 10 individuals. Let their scores on the education variable be represented by the
+vector <span class="math notranslate nohighlight">\(\vec{y} = [10, 12, 16, 12, 18, 10, 20, 18, 9, 10]^t\)</span>. All that the little “t” represents here is
+that this is the transpose of the actual vector, which would be a column in the standard way of
+representing data in matrices (rows are individuals, columns are variables). As you can see above, it
+would waste a lot of space to represent column vectors the correct way in text documents, you will see
+this convention very often. The idea is that we are making clear that this is a list of different
+individuals and <em>not</em> the scores for one individual on ten different variables (if we wanted that, we’d
+just omit the “t”).</p>
+<p>Now, try to sum up these individuals’ scores. The order here is arbitrary, but you might as well
+conceptualize those scores above as being a specific case of the following
+vector: <span class="math notranslate nohighlight">\(\vec{y} = [y_1, y_2, ... y_n]^t\)</span>. The last piece of notation is that we we will represent random
+variables in their most
+abstract form with capital Roman letters; their sample equivalents have lowercase Roman letters. Unlike
+in most statistics books, I will consistently use Greek letters without hats to denote true population
+parameters (most books usually, but not always, do this) and Greek letters with carets or “hats”. Greek
+letters will be used in the conventional way: the sound they make indicates the parameter. Here, <span class="math notranslate nohighlight">\(\tau\)</span>
+(“tau”) stands in for the total. Note that the notation means that to find the sample estimate of the
+total of the random variable <em>Y</em>, we sum up the observed values in the sample, <span class="math notranslate nohighlight">\(y_i\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \widehat{\tau}_Y &amp;= \sum_{i=1}^n y_i
+    \end{align*}\]</div>
+</li>
+<li><p>The mean is a measure of central tendency—something like the “characteristic value of a distribution”, which the mean, median and mode all get at. <strong>“Mean” is simply the formal term for the arithmetic average.</strong> We’ll focus on the simple case where possible outcomes are discrete, meaning that they are finite in number or <strong>countably</strong> infinite; most real-world data-sets involve discrete outcomes (but sometimes it is theoretically important to consider infinite outcomes; more on this later).</p>
+<p>For example, if we record someone’s income to the cent, while they could in theory tell us that they have
+any number up to infinity, this is <em>countably</em> infinite; setting aside the formal definition, this means
+basically that we’ll never need to use a number whose distance to another number in the set of outcomes is
+&lt;0.01.</p>
+<p><strong>The mean is sometimes referred to as the expected value or expectation.</strong> When we write the mean as an
+expected value or expectation, we conceptualize it as a population level property; it is the weighted sum
+of all possible values of the variable. So, we are summing over the possible outcomes of the variable when
+we write the mean as an expectation—we are <strong>not</strong> summing over any observed individuals.
+Many textbooks and internet sources do not change their notation here, which confuses new students, so I
+will now re-index the sum. Let <em>o</em> index an outcome of the random variable <em>Y</em> (i.e., “<em>o</em>=5” would mean
+the fifth possible outcome, where order again typically does not matter) and let <em>O</em> indicate the number
+of possible outcomes. Then, for a discrete random variable:</p>
+<p>\begin{aligned}
+\mathbb{E}[Y] &amp;= \sum_{o=1}^O y_o * \mathbb{P}(Y=y_o)
+\end{aligned}</p>
+<p>This says that we look at each possible outcome <em>o</em>, starting with <em>o</em> = 1, and multiple the value of that
+outcome <span class="math notranslate nohighlight">\(y_o\)</span> by its probability of occurring, <span class="math notranslate nohighlight">\(\mathbb{P}(Y=y_o)\)</span>.</p>
+<p>The exception for our notation is that I will consistently use <span class="math notranslate nohighlight">\(\widehat{\mu}_Y\)</span> to indicate the sample
+estimate of the population mean. Most textbooks use the notation <span class="math notranslate nohighlight">\(\bar{y}\)</span>. The problem with this notation
+is that it breaks the general rule about Greek and Roman letters mentioned above and requires you to
+memorize a new relationship. Just remember that <span class="math notranslate nohighlight">\(\widehat{\mu}_Y\)</span> and <span class="math notranslate nohighlight">\(\bar{y}\)</span> both indicate the sample
+estimate of the mean (my notation here is increasingly common in data science and machine learning
+contexts, e.g. Shalizi 2020, but it is still uncommon in social science).</p>
+</li>
+<li><p>The variance is a measure of spread or dispersion. You can think about it as the expected difference between a randomly-selected observation and the mean. We define it formally as the expectation of the difference between the random variable <em>Y</em> and its mean <span class="math notranslate nohighlight">\(\mu_Y: \mathbb{V}[Y] = \mathbb{E}[(Y - \mu)^2]\)</span>. You may wonder why we square the difference. There is a very good reason for this that leads us to the proof of a useful fact about the mean, which is that it is the value for a given set about which all deviations are not just minimized but also zero!</p>
+<p>\begin{aligned}
+&amp;1. \mathbb{E}[Y - \mu_Y] = \mathbb{E}[Y] - \mathbb{E}[\mu_Y]
+&amp;&amp; \text{expectation operator is linear} \cr
+&amp;2. \mathbb{E}[Y] = \mu_Y &amp;&amp; \text{by definition} \cr
+&amp;3. \mathbb{E}[\mu_Y] = \mu_Y &amp;&amp; \text{expectation of a constant is just that constant} \cr
+&amp;4. \mathbb{E}[Y - \mu_Y] = \mu_Y - \mu_Y = 0  &amp;&amp; \text{arithmetic}
+\end{aligned}</p>
+<p>An extremely useful trick is to rewrite the variance as follows:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+            &amp;1. \mathbb{V}[Y] = \mathbb{E}[(Y - \mu_Y)^2] &amp;&amp; \text{definition} \cr
+            &amp;2. = \mathbb{E}[Y^2 - 2*\mu_Y*Y + \mu_Y^2] &amp;&amp; \text{binomial expansion AKA &quot;FOILing&quot;} \cr
+            &amp;3. = \mathbb{E}[Y^2] - \mathbb{E}[2*\mu_Y*Y] + \mathbb{E}[\mu_Y^2] 
+                &amp;&amp; \text{expectation operator is linear} \cr
+            &amp;4. = \mathbb{E}[Y^2] - 2*\mu_Y*\mathbb{E}[Y] + \mathbb{E}[\mu_Y^2]
+                &amp;&amp; \text{constants can be factored out} \cr
+            &amp;5. = \mathbb{E}[Y^2] - 2*\mu_Y*\mu_Y + \mathbb{E}[\mu_Y^2]
+                &amp;&amp; \text{definition of expectation} \cr
+            &amp;6. = \mathbb{E}[Y^2] - 2*\mu_Y^2 + \mu_Y^2
+                &amp;&amp; \text{expectation of a constant is just that constant, definition of square} \cr
+            &amp;7. = \mathbb{E}[Y^2] - \mu_Y^2
+                &amp;&amp; \text{arithmetic} \cr
+            &amp;8. \mathbb{V}[Y] = \mathbb{E}[Y^2] - \mathbb{E}[Y]^2
+                &amp;&amp; \text{definition of expectation} \cr
+        \end{align*}\]</div>
+</li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bivariate-analysis-tests-for-a-difference-in-means">
+<h1>Bivariate analysis: tests for a difference in means<a class="headerlink" href="#bivariate-analysis-tests-for-a-difference-in-means" title="Permalink to this heading">#</a></h1>
+<p>Suppose that we are interested in determining whether two groups differ on some key outcome variable, such as their level of education or income. Let’s be clear and formalistic about what we are after: we want to know whether or not, say, <span class="math notranslate nohighlight">\(\mu_{income | white}  = \mu_{income | black}\)</span> or <span class="math notranslate nohighlight">\(\mu_{education | male}  = \mu_{education | female}\)</span>, where, to avoid the confusion caused by double subscripts, I’ve used the standard notation of a vertical bar to indicate “given that one is…”.</p>
+<p>An obvious move here is just to replace these with their sample equivalents. So, using the older (if more confusing) notation for a sample mean, we might check whether <span class="math notranslate nohighlight">\(\overline{educ}_{male} = \overline{educ}_{female}\)</span>. And, in fact, this is exactly the right idea. The question now, however, is whether or not this difference is liable to have arisen by chance.</p>
+<p>You should stop and really consider this for a moment because this is the entire idea behind <em>inferential</em> statistics, as opposed to simply descriptive statistics (recall: descriptive statistics are just ways of summarizing the data we have, whether these are population-level or sample-level, without reference to whether these represent some other group). Why can’t I trust, say, an observed difference of a year between a group of men and women?</p>
+<p>One intuitive reason not to trust this, and this is what you’ll almost always hear in internet arguments about this sort of thing from people who are a little learnèd (if not too learnèd), is that the sample size might be too small. It turns out that this is a little too conservative: we need to <em>adjust</em> for small sample sizes, but if we have a truly random sample, any data are better than no data, and we can just adjust for the small sample size.</p>
+<p>Another reason not to trust this is that we don’t have access to the whole population. This is really just the same objection as above: the sample size is too small. But, there’s a subtle difference here: in this case, the gripe cuts to the heart of the matter. We don’t just have a “small” sample size, whatever that might mean. We have a <em>sample</em>, period: some group of people smaller than the population we care about. And samples are noisy processes; that’s what makes them great, in fact—they differ from the population only by random error (“noise”). But, we do need to take account of the error. So, how do we do that?</p>
+<p>Let’s actually start with an easier, if slightly less-interesting, question: how would we do this for just one group’s mean? It turns out that to calculate the sampling noise, we need a little bit of theory.</p>
+<section id="the-central-limit-theorem-clt">
+<h2>The Central Limit Theorem (CLT)<a class="headerlink" href="#the-central-limit-theorem-clt" title="Permalink to this heading">#</a></h2>
+<p>To make a judgment call about whether or not a sample mean <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represents a population mean <span class="math notranslate nohighlight">\(\mu_Y\)</span>, we need to have some sense for how the sample mean behaves across many samples. In other words, we need to know the probability distribution (technically: the probability density function, or PDF) of sample means.</p>
+<section id="histograms-and-probability-distributions">
+<h3>Histograms and probability distributions<a class="headerlink" href="#histograms-and-probability-distributions" title="Permalink to this heading">#</a></h3>
+<p>I will presume here that you are at least loosely familiar generally with histograms, from which we’ll build an intuition for the Normal PDF; in the class for which these notes are being prepared, I’ll have slides that walk you through how those work. Histograms are basically sample approximations of PDFs. On the X-axis, we have the possible-outcomes<a class="footnote-reference brackets" href="#fn" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> for a variable; on the Y-axis, we have some kind of indication of the frequency of observations. So, any individual bar tells us the frequency of observations taking on a certain possible-value. For example, in the histogram for education below, about five percent of observations took on the value 11, meaning that five percent of the sample had 11 years of education.</p>
+<p><img alt="Simple histogram for education" src="figures/hist_educ.png" /></p>
+<p>PDFs are just the equivalent of a histogram when 1) we know about the true population distribution and 2) we have a continuous random variable. Recall that all actual sample data are discrete: we stop measuring the digits at a certain point (e.g., we measure height only to the tenth of an inch in some data-sets). But, in principle, height could be measured infinitely more-precisely with better and better microscopes, so it is a continuous random variable. But, it is rare to really know the PDF of a real-world variable; height happens to be approximately Normal, which is why I picked it as an example, but this is still only an approximation.</p>
+<p><img alt="Simple histogram for height" src="figures/hist_height.png" /></p>
+<p>However, it turns out, quite impressively, that sample means are Normally-distributed across many samples: this is the Central Limit Theorem (CLT). In other words, if you had a population from which you could take an infinite number of samples (with replacement), the histogram of sample means would basically be indistinguishable from a smooth, Normal curve. We’ll learn two useful techniques that use this fact in due time.</p>
+<p>If the population is sufficiently large relative to the the size of the sample, each individual observation can be treated as independent of the others and taken from the same distribution (so long as they are drawn at random): they are “independent, identically-distributed” (IID) random variables.</p>
+<p>It is important to note that each observation of the sample, before they are actually observed, is a random variable: when some researcher plans to sample 500 people and ask them their income, and she has not actually selected any individuals for inclusion, the income of the <em>i</em>th person, <span class="math notranslate nohighlight">\(Y_i\)</span> is still a random variable. So, when we talk abstractly about the variance of a sample mean across many samples, we need to treat these sample means themselves as random variables. This is a major source of confusion early on, so remain <em>en garde</em> here: each actual observation in the sample is the <em>realization</em> of a random variable. It is often helpful to consider the analogy to an experiment in which we flip coins: the concept of “the outcome of the 10th coin I flip” is more-obviously a random variable for most people because it hasn’t yet happened. While the person whose income I ultimately observe in the sample has already <em>obtained</em> that income, there is a point at which I don’t know <em>which</em> person I’ll observe, and thus that “person’s” income is rather like the outcome of the as-yet-unflipped coin.</p>
+<p>So, we are after the variance of a sum of IID random variables (divided by the constant <em>n</em>).  While the extremely useful general formula for the variance of a sum of random variables is slightly complex (see appendix), it is not just extremely useful but extremely simple for independent random variables: it is just the sum of their variances. Let <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represent the sample mean of a random variable comprised of <em>n</em> IID random variables <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_n\)</span>; each variable comes from a population distribution with standard deviation <span class="math notranslate nohighlight">\(\sigma_Y\)</span>, which we’ll simply refer to using <span class="math notranslate nohighlight">\(\sigma\)</span> for simplicity.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathbb{V}[\overline{Y}] = \sigma^2_{\overline{Y}} &amp;= \sum_{i=1}^n \mathbb{V}[\frac{Y_i}{n}] \cr
+    &amp;= \sum_{i=1}^n \frac{1}{n^2} \mathbb{V}[Y_i] \cr
+    &amp;= \frac{1}{n^2} (\sigma^2_1 + \sigma^2_2 + ... + \sigma^2_n) \cr
+    &amp;= \frac{1}{n^2} n*\sigma^2 \cr
+    &amp;= \frac{\sigma^2}{n} \cr
+    \sigma_{\overline{Y}} &amp;= \frac{\sigma}{\sqrt{n}}
+    \end{align*}\]</div>
+</section>
+</section>
+<section id="the-standard-error-sampling-noise-for-a-difference-in-means">
+<h2>The standard error (sampling noise) for a difference in means<a class="headerlink" href="#the-standard-error-sampling-noise-for-a-difference-in-means" title="Permalink to this heading">#</a></h2>
+<p>It turns out that the difference in means, which we tend to conceive naturally as two things combined, can be thought of as simply the mean of a single “difference” variable. This variable turns out to have a slightly different <em>t</em> distribution, and the exact calculation of degrees of freedom becomes somewhat involved (in fact, degrees of freedom no longer have to be integers, which is quite an interesting fact), but these are details that aren’t really essential to an understanding of the basic point: we have a nearly-Normal sampling distribution for this difference in means.</p>
+<p>Fortunately, we have already learned the key rule for the standard error for a difference in means; if two random variables are independent, the variance of the variables’ sum <em>or</em> difference is just the sum of the variances. So, the sampling variance here is simply <span class="math notranslate nohighlight">\(\sigma^2_{\overline{Y}_F} + \sigma^2_{\overline{Y}_M}\)</span>, and the standard error is the root thereof.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="analysis-of-variance-anova">
+<h1>Analysis of variance (ANOVA)<a class="headerlink" href="#analysis-of-variance-anova" title="Permalink to this heading">#</a></h1>
+<p>Earlier, we discussed one horn of inferential statistics, that of checking whether an observed difference between two groups is statistically significant. But we can also ask other interesting questions that will be useful to us later, such as how well group-identification <em>explains</em> outcomes: how good is a model that says that <span class="math notranslate nohighlight">\(\textbf{education} = \beta_0 + \beta_1*\textbf{gender} + \boldsymbol{\epsilon}\)</span>.</p>
+<p>Fundamentally, regression is a means of explaining variance, which is simply a deflated sum of squares.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;\text{total sum of squares = TSS = } \sum_{i=1}^n (y_i - \bar{y})^2 \cr
+&amp;\text{sample variance = TSS/degrees of freedom =} \frac{\text{TSS}}{n - 1} = 
+    \frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1}
+\end{align*}\]</div>
+<p>For example, the analysis of variance (ANOVA) decomposition asserts the following,
+where <em>a</em> is the number of levels of a qualitative predictor of interest <em>A</em>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp; \text{TSS} = \sum_{j=1}^a \sum_{i=1}^n (y_{ij} - \bar{y})^2 \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^n (y_{ij} - (\mathbf{\bar{y}_j} - \mathbf{\bar{y}_j}) - \bar{y})^2 \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^n (y_{ij} - \mathbf{\bar{y}_j} + \mathbf{\bar{y}_j} - \bar{y})^2 \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^n (\text{within-group deviation} + \text{between-group deviation})^2 \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^n (\text{within deviation})^2 + 
+    \sum_{j=1}^a \sum_{i=1}^n (\text{between deviation})^2 + 
+    2*\sum_{j=1}^a \sum_{i=1}^n (\text{between deviation} * \text{within deviation}) \cr
+&amp; \text{Note that the sum of a set of individual deviations from a mean is necessarily zero. Then...} \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^n (y_{ij} - \bar{y}_j)^2 + (\bar{y}_j - \bar{y})^2 \cr
+&amp;= \underbrace{\sum_{j=1}^a \sum_{i=1}^n (y_{ij} - \bar{y}_j)^2}_\text{within-groups variation}  + 
+    \underbrace{\sum_{j=1}^a \sum_{i=1}^n  (\bar{y}_j - \bar{y})^2 }_\text{between-groups variation} \cr
+\end{align*}\]</div>
+<p>If we translate this into a regression context, we have the familiar result that the model sum of squares plus
+the residual sum of squares is equal to the total sum of squares since the group mean value <span class="math notranslate nohighlight">\(\bar{y}\)</span> is also the predicted value <span class="math notranslate nohighlight">\(\widehat{y}\)</span>.</p>
+<section id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
+<section id="the-general-formula-for-the-variance-of-a-sum-of-random-variables">
+<h3>The general formula for the variance of a sum of random variables.<a class="headerlink" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables" title="Permalink to this heading">#</a></h3>
+<p>Let <em>Y</em> be the sum of random variables <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_k\)</span>. Assume centered variables for the sake of step 5, where we will want to replace each variable’s deviation from its mean with a single symbol to make the multinomial expansion easier. This can be, in principle, any symbol; it seems most natural to just use the variable itself, and we often assume centered variables anyways. Note that there is absolutely no difference if I had used, say, <span class="math notranslate nohighlight">\(\Delta_{Y_j}\)</span> to represent the deviation of the <em>j</em>th variable from its mean.</p>
+<p>To get an intuition for the correct algorithm for multinomial expansion, draw a picture of rectangle with both unique side lengths partitioned into <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_k\)</span>. Then, find the area of the rectangle, which is logically equal, of course, to finding <span class="math notranslate nohighlight">\((Y_1 + Y_2 + ... Y_k)^2\)</span>. The rectangle is now comprised of smaller rectangles with areas <span class="math notranslate nohighlight">\((Y_1*Y_1), (Y_2*Y_1) ... (Y_k*Y_1)\)</span> going down the first column, <span class="math notranslate nohighlight">\((Y_1*Y_2), (Y_2*Y_2) ... (Y_k*Y_2)\)</span> going down the second, etc. We can thus visualize this as operation as follows: write out <span class="math notranslate nohighlight">\((Y_1 + Y_2 + ... Y_k)^2\)</span> as <span class="math notranslate nohighlight">\((Y_1 + Y_2 + ... Y_k)*(Y_1 + Y_2 + ... Y_k)\)</span>. Starting with the first (or second; it doesn’t matter) set of parentheses, take each term, multiply it by every term in the second set of parentheses, then add them up, and then do this for each term in the first set. Then, add up all the summed terms. This corresponds to summing up all of the items in the variance-covariance matrix. It was too time-consuming for me to draw a picture of all of this in Markdown, but DeVellis (2003) is a good, unintimidating visual representation of this sort of proof (which is really useful in general in the context of statistics).</p>
+<p>By the way, it may be useful to note that to sum all entries in a matrix, we can write it as a quadratic form. If we have centered variables, our covariance matrix <span class="math notranslate nohighlight">\(\boldsymbol{\Sigma}\)</span> is simply <span class="math notranslate nohighlight">\(\frac{1}{n-1}\textbf{X}^t\textbf{X}\)</span>, where <span class="math notranslate nohighlight">\(\textbf{X}\)</span> is the data matrix. Then, to sum all elements in that matrix, we write. <span class="math notranslate nohighlight">\(\vec{1}^t\boldsymbol{\Sigma}\vec{1}\)</span>. This proof won’t use matrix properties, though.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+            &amp;1. \mathbb{V}[Y] = \mathbb{E}[(Y - \mu_Y)^2] &amp;&amp; \text{definition of variance} \cr
+            &amp;2. = \mathbb{E}[([Y_1 + Y_2 + ... Y_k] - \mu_Y)^2] &amp;&amp; \text{definition of variable Y} \cr
+            &amp;3. = \mathbb{E}[([Y_1 + Y_2 + ... Y_k] - [\mu_{Y_1} + \mu_{Y_2} + ... \mu_{Y_k}])^2] \
+                &amp;&amp; \text{expectation operator is linear} \cr
+            &amp;4. = \mathbb{E}[(Y_1 - \mu_{Y_1} + Y_2 - \mu_{Y_2} + ... Y_k - \mu_{Y_k})^2]
+                &amp;&amp; \text{commutativity of addition} \cr
+            &amp;5. = \mathbb{E}[(Y_1 + Y_2 + ... Y_k)^2]
+                &amp;&amp; \text{definition of centered variables} \cr
+            &amp;6. = \mathbb{E}[Y_1^2 + (Y_2 * Y_1) + ... (Y_k * Y_1) + (Y_1 * Y_2) + Y_2^2 + (Y_3 * Y_2) ... ]
+                &amp;&amp; \text{picture the rectangle as mentioned above} \cr
+            &amp;7. = \mathbb{E}[\sum_{j=1}^k\sum_{i=1}^k Y_i * Y_j]
+                &amp;&amp; \text{generalizing the pattern} \cr
+            &amp;8. = \sum_{j=1}^k\sum_{i=1}^k \sigma^2_{Y_i, Y_j}
+                &amp;&amp; \text{definition of(co)variances} \cr
+            &amp;9. = \sum_{j=1}^k \sigma^2_{Y_j} + 2\sum_{i&gt;j}^k\sum_{j=1}^k \sigma^2_{Y_i, Y_j}
+                &amp;&amp; \text{covariance matrix is symmetric}
+        \end{align*}\]</div>
+<p>Of course, we often work with variables—such as the sample means of women’s education and that of men, <span class="math notranslate nohighlight">\(\overline{Y}_F\)</span> and <span class="math notranslate nohighlight">\(\overline{Y}_{M}\)</span>—whose population covariance <span class="math notranslate nohighlight">\(\sigma_{\overline{Y}_F, \overline{Y}_M}\)</span> is equal to zero. Then, only the first term of line 9 above is relevant to the calculation of the variance of a random variable which is itself the summation or addition of other random variables.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="fn" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>There is, unfortunately, no single-word term for “possible outcomes”, which is a strange oversight.</p>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">title: Some advanced arithmetic useful for the social sciences
+author: McCarthy Bur, G
+date: 2023-06-04</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem-clt">The Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-and-probability-distributions">Histograms and probability distributions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-variance-anova">Analysis of variance (ANOVA)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By gjmb
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
