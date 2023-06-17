@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Some basic operators &#8212; SOC357</title>
+    <title>BMSS 1: Advanced arithmetic &#8212; SOC357</title>
   
   
   
@@ -168,10 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Some basic operators</a></li>
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">BMSS 1: Advanced arithmetic</a></li>
 
 </ul>
 
@@ -356,7 +353,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Some basic operators</h1>
+    <h1>BMSS 1: Advanced arithmetic</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -366,19 +363,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Some basic operators</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">BMSS 1: Advanced arithmetic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem-clt">The Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-and-probability-distributions">Histograms and probability distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">Using the distribution of sample statistics across many samples: tests and confidence intervals</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-variance-anova">Analysis of variance (ANOVA)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-and-regression">Correlation and regression</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-theory">Measurement theory</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-variance-anova">Analysis of variance (ANOVA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-and-regression">Correlation and regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-theory">Measurement theory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-proof-that-cronbach-s-alpha-is-an-average-of-all-possible-flanagan-rulon-split-half-reliabilities">The proof that Cronbach’s <span class="math notranslate nohighlight">\(\alpha\)</span> is an average of all possible Flanagan-Rulon split-half reliabilities</a></li>
@@ -398,8 +396,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="some-basic-operators">
-<h1>Some basic operators<a class="headerlink" href="#some-basic-operators" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="bmss-1-advanced-arithmetic">
+<h1>BMSS 1: Advanced arithmetic<a class="headerlink" href="#bmss-1-advanced-arithmetic" title="Permalink to this heading">#</a></h1>
+<section id="some-basic-operators">
+<h2>Some basic operators<a class="headerlink" href="#some-basic-operators" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>The summation operator tells us to sum from the observation denoted at the bottom of the capital greek letter <span class="math notranslate nohighlight">\(\Sigma\)</span> (“sigma”, which makes the “s” sound, as in <strong>s</strong>um) and go up until the observation denoted on top of the <span class="math notranslate nohighlight">\(\Sigma\)</span>. For us, the bottom item will almost always be individual (denoted <em>i</em>) equal to one, going up until individual equal to <em>n</em>, where <em>n</em> is the sample size. Please note carefully that we’re using small Latin letters here in two different ways: <em>i</em> is an index, which varies across individuals; <em>n</em> is a constant and a property of the data-set as a whole. Examine this simple example data-set:</p>
 <div class="math notranslate nohighlight">
@@ -508,6 +508,7 @@ contexts, e.g. Shalizi 2020, but it is still uncommon in social science).</p>
 </li>
 </ol>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="bivariate-analysis-tests-for-a-difference-in-means">
 <h1>Bivariate analysis: tests for a difference in means<a class="headerlink" href="#bivariate-analysis-tests-for-a-difference-in-means" title="Permalink to this heading">#</a></h1>
 <p>Suppose that we are interested in determining whether two groups differ on some key outcome variable, such as their level of education or income. Let’s be clear and formalistic about what we are after: we want to know whether or not, say, <span class="math notranslate nohighlight">\(\mu_{income | white}  = \mu_{income | black}\)</span> or <span class="math notranslate nohighlight">\(\mu_{education | male}  = \mu_{education | female}\)</span>, where, to avoid the confusion caused by double subscripts, I’ve used the standard notation of a vertical bar to indicate “given that one is…”.</p>
@@ -539,12 +540,12 @@ contexts, e.g. Shalizi 2020, but it is still uncommon in social science).</p>
     \sigma_{\overline{Y}} &amp;= \frac{\sigma}{\sqrt{n}}
     \end{align*}\]</div>
 </section>
-</section>
 <section id="the-standard-error-sampling-noise-for-a-difference-in-means">
-<h2>The standard error (sampling noise) for a difference in means<a class="headerlink" href="#the-standard-error-sampling-noise-for-a-difference-in-means" title="Permalink to this heading">#</a></h2>
+<h3>The standard error (sampling noise) for a difference in means<a class="headerlink" href="#the-standard-error-sampling-noise-for-a-difference-in-means" title="Permalink to this heading">#</a></h3>
 <p>It turns out that the difference in means, which we tend to conceive naturally as two things combined, can be thought of as simply the mean of a single “difference” variable. This variable turns out to have a slightly different <em>t</em> distribution, and the exact calculation of degrees of freedom becomes somewhat involved (in fact, degrees of freedom no longer have to be integers, which is quite an interesting fact), but these are details that aren’t really essential to an understanding of the basic point: we have a nearly-Normal sampling distribution for this difference in means.</p>
 <p>Fortunately, we have also already learned the key rule for the standard error for a difference in means; if two random variables are independent, the variance of the variables’ sum <em>or</em> difference is just the sum of the variances. So, the sampling variance here is simply <span class="math notranslate nohighlight">\(\sigma^2_{\overline{Y}_F} + \sigma^2_{\overline{Y}_M}\)</span>, and the standard error is the root thereof.</p>
 <p>So, we can simply standardize the difference between two sample means</p>
+</section>
 </section>
 <section id="using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">
 <h2>Using the distribution of sample statistics across many samples: tests and confidence intervals<a class="headerlink" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals" title="Permalink to this heading">#</a></h2>
@@ -559,9 +560,8 @@ contexts, e.g. Shalizi 2020, but it is still uncommon in social science).</p>
 <li></li>
 </ol>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="analysis-of-variance-anova">
-<h1>Analysis of variance (ANOVA)<a class="headerlink" href="#analysis-of-variance-anova" title="Permalink to this heading">#</a></h1>
+<section id="analysis-of-variance-anova">
+<h2>Analysis of variance (ANOVA)<a class="headerlink" href="#analysis-of-variance-anova" title="Permalink to this heading">#</a></h2>
 <p>Earlier, we discussed one horn of inferential statistics, that of checking whether an observed difference between two groups is statistically significant. But we can also ask other interesting questions that will be useful to us later, such as how well group-identification <em>explains</em> outcomes: how good is a model that says that <span class="math notranslate nohighlight">\(\textbf{education} = \beta_0 + \beta_1*\textbf{gender} + \boldsymbol{\epsilon}\)</span>.</p>
 <p>Fundamentally, regression is a means of explaining variance, which is simply a deflated sum of squares.</p>
 <div class="amsmath math notranslate nohighlight">
@@ -614,15 +614,15 @@ the residual sum of squares is equal to the total sum of squares since the group
 Note that for all unique pairs of <em>j</em> and <em>k</em>, the sum over <em>i</em> is a sum of the deviations of individuals in some specific factor  (say, for example, white women, if we have a race/gender design) from their mean times a fixed deviation of one of the groups from the overall mean. This latter quantity is a constant on <em>i</em>, so it can be factored out; then, we’re simply summing the deviations of white women’s, say, income from the mean income for white women. This is necessarily zero.</p>
 <p>Secondly, with equal sub-sample sizes, these crossed-terms are basically covariances between variables in the model, and when the group sizes are equal, there is no relationship between them, so these sums of squares are independent. Usually, however, variables in a regression model are related. This makes things slightly messier, but it is the normal course of things.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="correlation-and-regression">
-<h1>Correlation and regression<a class="headerlink" href="#correlation-and-regression" title="Permalink to this heading">#</a></h1>
+<section id="correlation-and-regression">
+<h2>Correlation and regression<a class="headerlink" href="#correlation-and-regression" title="Permalink to this heading">#</a></h2>
 <p>Now, let’s extend the analysis from before to a case where we have a quantitative predictor and a quantitative outcome. The equivalent technique is known as <em>linear regression</em>. First, however, we need to derive a simpler, more abstract measure known as the correlation coefficient, which you’ve probably heard of.</p>
 <p>There are several ways to motivate the correlation coefficient. The most elegant and convincing requires us to think about space in a slightly different way than we normally do. How <em>do</em> we normally do so? Consider the case of a scatterplot. What do the axes (or, more formally, dimensions/subspaces) represent? On a scatterplot, they represent <em>variables</em>, so we call this variable space. You could actually think about all of the points on a scatterplot as <em>vectors</em>, although this would be very messy. Essentially, we are using space to show a bunch of two-dimensional objects: the score on X and Y for persons 1, 2, … <em>n</em>.</p>
 <p>What if we think about space in a different way? We</p>
 <p>So, let’s suppose that . There are many proofs of the law of cosines on the internet; some of them are less intuitive than others. My general suggestion—contact me if you have trouble—</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="measurement-theory">
-<h1>Measurement theory<a class="headerlink" href="#measurement-theory" title="Permalink to this heading">#</a></h1>
+<section id="measurement-theory">
+<h2>Measurement theory<a class="headerlink" href="#measurement-theory" title="Permalink to this heading">#</a></h2>
 <p>In this course, we spend some time discussing the measurement of variables. Although we often refer to “variables in the data-set”, you should keep in mind that these are in fact <em>realizations</em> of random variables, not the variable itself, which is the abstract notion of a property that varies across individuals. So, there is a difference between any such property and specific observations of it.</p>
 <p>Sometimes, this difference is not hugely important. For example, someone’s money income is a well-defined concept; if we could assume away the problem of obtaining honest answers from respondents, the actual way to <em>record</em> observations of this variable for a given year is simple (dealing with inflation is harder). Less sociologically, correctly measuring someone’s height is also simple, as would be something like the measurement of the position of stars. While there is measurement error here—in fact, the astronomical example is the one that motivated Gauss’ early development of statistics—we have learned that taking a large enough sample, estimating the sampling variance with the sample variance (recall: <span class="math notranslate nohighlight">\(\sigma^2_{\overline{Y}} = \frac{\sigma^2_Y}{n}\)</span>) and constructing a confidence interval allows us to deal with random measurement error.<a class="footnote-reference brackets" href="#fn" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
 <p>Other times, we have the task of trying to measure some construct that we believe to be latent. For example, we might know that some variable really exists. Take, for example, someone’s fitness; most of us would say that this exists, but there are many reasons that we might distrust someone’s self-report of this quality—social desirability response bias means that we likely shouldn’t simply ask someone to evluate their own fitness, but it is not clear what single question we should ask them in order to measure it. Or, we might not even know for sure whether some underlying property exists; for example, the Meyers-Briggs personality tests classify people as introverts or extroverts, but it is unclear whether this classification is meaningful (some people, such as the author of this document, score differently at different times using the best available instruments, which suggests that this might not be a meaningful construct).</p>
@@ -658,6 +658,7 @@ Note that for all unique pairs of <em>j</em> and <em>k</em>, the sum over <em>i<
     \frac{2 \sum^p_{j&gt;k} \sum^p_{k=1} \sigma^2_{X_j, X_k}}{\sigma^2_Z} \cr
 &amp;= \frac{k}{k-1} \frac{\text{total covariance of the variables}}{\text{total variance}}
 \end{align*}\]</div>
+</section>
 <section id="appendix">
 <h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
 <section id="the-general-formula-for-the-variance-of-a-sum-of-random-variables">
@@ -782,19 +783,20 @@ Note that for all unique pairs of <em>j</em> and <em>k</em>, the sum over <em>i<
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Some basic operators</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">BMSS 1: Advanced arithmetic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem-clt">The Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-and-probability-distributions">Histograms and probability distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">Using the distribution of sample statistics across many samples: tests and confidence intervals</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-variance-anova">Analysis of variance (ANOVA)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-and-regression">Correlation and regression</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-theory">Measurement theory</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-variance-anova">Analysis of variance (ANOVA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-and-regression">Correlation and regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-theory">Measurement theory</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-proof-that-cronbach-s-alpha-is-an-average-of-all-possible-flanagan-rulon-split-half-reliabilities">The proof that Cronbach’s <span class="math notranslate nohighlight">\(\alpha\)</span> is an average of all possible Flanagan-Rulon split-half reliabilities</a></li>
