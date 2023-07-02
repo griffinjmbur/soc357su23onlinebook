@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>BMSS 1: Advanced arithmetic &#8212; SOC357</title>
+    <title>basic math for social sciences I: basic descriptive and inferential statistics &#8212; SOC357</title>
   
   
   
@@ -168,8 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">BMSS 1: Advanced arithmetic</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">basic math for social sciences I: basic descriptive and inferential statistics</a></li>
 
 </ul>
 
@@ -354,7 +353,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>BMSS 1: Advanced arithmetic</h1>
+    <h1>basic math for social sciences I: basic descriptive and inferential statistics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -364,7 +363,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">BMSS 1: Advanced arithmetic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">basic math for social sciences I: basic descriptive and inferential statistics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
 </ul>
 </li>
@@ -372,15 +371,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-distributions-probability-density-functions">Continuous distributions: probability density functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-inference">Basics of inference</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem-clt">The Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-and-probability-distributions">Histograms and probability distributions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">Using the distribution of sample statistics across many samples: tests and confidence intervals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extremely-useful-alternative-expression-for-the-variance">An extremely useful alternative expression for the variance.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
@@ -400,8 +390,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="bmss-1-advanced-arithmetic">
-<h1>BMSS 1: Advanced arithmetic<a class="headerlink" href="#bmss-1-advanced-arithmetic" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-math-for-social-sciences-i-basic-descriptive-and-inferential-statistics">
+<h1>basic math for social sciences I: basic descriptive and inferential statistics<a class="headerlink" href="#basic-math-for-social-sciences-i-basic-descriptive-and-inferential-statistics" title="Permalink to this heading">#</a></h1>
 <section id="some-basic-operators">
 <h2>Some basic operators<a class="headerlink" href="#some-basic-operators" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
@@ -590,58 +580,6 @@ probabilities of inclusion.</p>
 <p><img alt="The logic of a statistical test" src="_images/ztest_demo.png" /></p>
 <p>Finally, there is just one more complication to be aware of. In practice, we do not know <span class="math notranslate nohighlight">\(\sigma\)</span>, so we estimate it with <em>s</em>. This causes additional uncertainty in our estimate, and it is now taken from a distribution that is close to Normal but is farther from Normal the smaller the sample size. Many statistical textbooks get very excited about this; I think that this is, for the non-mathematician, a boring technical detail. I will simply say that this means that your should look up your test statistic in a <em>t</em>-table, not a <em>z</em>-table, but the basic meaning of a CI or <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value is the same.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="bivariate-analysis-tests-for-a-difference-in-means">
-<h1>Bivariate analysis: tests for a difference in means<a class="headerlink" href="#bivariate-analysis-tests-for-a-difference-in-means" title="Permalink to this heading">#</a></h1>
-<p>Suppose that we are interested in determining whether two groups differ on some key outcome variable, such as their level of education or income. Let’s be clear and formalistic about what we are after: we want to know whether or not, say, <span class="math notranslate nohighlight">\(\mu_{income | white}  = \mu_{income | black}\)</span> or <span class="math notranslate nohighlight">\(\mu_{education | male}  = \mu_{education | female}\)</span>, where, to avoid the confusion caused by double subscripts, I’ve used the standard notation of a vertical bar to indicate “given that one is…”.</p>
-<p>An obvious move here is just to replace these with their sample equivalents. So, using the older (if more confusing) notation for a sample mean, we might check whether <span class="math notranslate nohighlight">\(\overline{educ}_{male} = \overline{educ}_{female}\)</span>. And, in fact, this is exactly the right idea. The question now, however, is whether or not this difference is liable to have arisen by chance.</p>
-<p>You should stop and really consider this for a moment because this is the entire idea behind <em>inferential</em> statistics, as opposed to simply descriptive statistics (recall: descriptive statistics are just ways of summarizing the data we have, whether these are population-level or sample-level, without reference to whether these represent some other group). Why can’t I trust, say, an observed difference of a year between a group of men and women?</p>
-<p>One intuitive reason not to trust this, and this is what you’ll almost always hear in internet arguments about this sort of thing from people who are a little learnèd (if not too learnèd), is that the sample size might be too small. It turns out that this is a little too conservative: we need to <em>adjust</em> for small sample sizes, but if we have a truly random sample, any data are better than no data, and we can just adjust for the small sample size.</p>
-<p>Another reason not to trust this is that we don’t have access to the whole population. This is really just the same objection as above: the sample size is too small. But, there’s a subtle difference here: in this case, the gripe cuts to the heart of the matter. We don’t just have a “small” sample size, whatever that might mean. We have a <em>sample</em>, period: some group of people smaller than the population we care about. And samples are noisy processes; that’s what makes them great, in fact—they differ from the population only by random error (“noise”). But, we do need to take account of the error. So, how do we do that?</p>
-<p>Let’s actually start with an easier, if slightly less-interesting, question: how would we do this for just one group’s mean? It turns out that to calculate the sampling noise, we need a little bit of theory.</p>
-<section id="the-central-limit-theorem-clt">
-<h2>The Central Limit Theorem (CLT)<a class="headerlink" href="#the-central-limit-theorem-clt" title="Permalink to this heading">#</a></h2>
-<p>To make a judgment call about whether or not a sample mean <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represents a population mean <span class="math notranslate nohighlight">\(\mu_Y\)</span>, we need to have some sense for how the sample mean behaves across many samples. In other words, we need to know the probability distribution (technically: the probability density function, or PDF) of sample means.</p>
-<section id="histograms-and-probability-distributions">
-<h3>Histograms and probability distributions<a class="headerlink" href="#histograms-and-probability-distributions" title="Permalink to this heading">#</a></h3>
-<p>I will presume here that you are at least loosely familiar generally with histograms, from which we’ll build an intuition for the Normal PDF; in the class for which these notes are being prepared, I’ll have slides that walk you through how those work. Histograms are basically sample approximations of PDFs. On the X-axis, we have the possible-outcomes<a class="footnote-reference brackets" href="#fn" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> for a variable; on the Y-axis, we have some kind of indication of the frequency of observations. So, any individual bar tells us the frequency of observations taking on a certain possible-value. For example, in the histogram for education below, about five percent of observations took on the value 11, meaning that five percent of the sample had 11 years of education.</p>
-<p><img alt="Simple histogram for education" src="_images/hist_educ.png" /></p>
-<p>PDFs are just the equivalent of a histogram when 1) we know about the true population distribution and 2) we have a continuous random variable. Recall that all actual sample data are discrete: we stop measuring the digits at a certain point (e.g., we measure height only to the tenth of an inch in some data-sets). But, in principle, height could be measured infinitely more-precisely with better and better microscopes, so it is a continuous random variable. But, it is rare to really know the PDF of a real-world variable; height happens to be approximately Normal, which is why I picked it as an example, but this is still only an approximation.</p>
-<p><img alt="Simple histogram for height" src="_images/hist_height.png" /></p>
-<p>However, it turns out, quite impressively, that sample means are Normally-distributed across many samples: this is the Central Limit Theorem (CLT). In other words, if you had a population from which you could take an infinite number of samples (with replacement), the histogram of sample means would basically be indistinguishable from a smooth, Normal curve. We’ll learn two useful techniques that use this fact in due time.</p>
-<p>If the population is sufficiently large relative to the the size of the sample, each individual observation can be treated as independent of the others and taken from the same distribution (so long as they are drawn at random): they are “independent, identically-distributed” (IID) random variables.</p>
-<p>It is important to note that each observation of the sample, before they are actually observed, is a random variable: when some researcher plans to sample 500 people and ask them their income, and she has not actually selected any individuals for inclusion, the income of the <em>i</em>th person, <span class="math notranslate nohighlight">\(Y_i\)</span> is still a random variable. So, when we talk abstractly about the variance of a sample mean across many samples, we need to treat these sample means themselves as random variables. This is a major source of confusion early on, so remain <em>en garde</em> here: each actual observation in the sample is the <em>realization</em> of a random variable. It is often helpful to consider the analogy to an experiment in which we flip coins: the concept of “the outcome of the 10th coin I flip” is more-obviously a random variable for the simple reason that it hasn’t yet happened. While the person whose income I ultimately observe in the sample has already <em>obtained</em> that income, there is a point at which I don’t know <em>which</em> person I’ll observe, and thus that “person’s” income is rather like the outcome of the as-yet-unflipped coin.</p>
-<p>So, we are after the variance of a sum of IID random variables (divided by the constant <em>n</em>).  While the extremely useful general formula for the variance of a sum of random variables is slightly complex (see appendix), it is not just extremely useful but extremely simple for independent random variables: it is just the sum of their variances. Let <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represent the sample mean of a random variable comprised of <em>n</em> IID random variables <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_n\)</span>; each variable comes from a population distribution with standard deviation <span class="math notranslate nohighlight">\(\sigma_Y\)</span>, which we’ll simply refer to using <span class="math notranslate nohighlight">\(\sigma\)</span> for simplicity.</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-    \mathbb{V}[\overline{Y}] = \sigma^2_{\overline{Y}} &amp;= \sum_{i=1}^n \mathbb{V}[\frac{Y_i}{n}] \cr
-    &amp;= \sum_{i=1}^n \frac{1}{n^2} \mathbb{V}[Y_i] \cr
-    &amp;= \frac{1}{n^2} (\sigma^2_1 + \sigma^2_2 + ... + \sigma^2_n) \cr
-    &amp;= \frac{1}{n^2} n*\sigma^2 \cr
-    &amp;= \frac{\sigma^2}{n} \cr
-    \sigma_{\overline{Y}} &amp;= \frac{\sigma}{\sqrt{n}}
-    \end{align*}\]</div>
-</section>
-<section id="the-standard-error-sampling-noise-for-a-difference-in-means">
-<h3>The standard error (sampling noise) for a difference in means<a class="headerlink" href="#the-standard-error-sampling-noise-for-a-difference-in-means" title="Permalink to this heading">#</a></h3>
-<p>It turns out that the difference in means, which we tend to conceive naturally as two things combined, can be thought of as simply the mean of a single “difference” variable. This variable turns out to have a slightly different <em>t</em> distribution, and the exact calculation of degrees of freedom becomes somewhat involved (in fact, degrees of freedom no longer have to be integers, which is quite an interesting fact), but these are details that aren’t really essential to an understanding of the basic point: we have a nearly-Normal sampling distribution for this difference in means.</p>
-<p>Fortunately, we have also already learned the key rule for the standard error for a difference in means; if two random variables are independent, the variance of the variables’ sum <em>or</em> difference is just the sum of the variances. So, the sampling variance here is simply <span class="math notranslate nohighlight">\(\sigma^2_{\overline{Y}_F} + \sigma^2_{\overline{Y}_M}\)</span>, and the standard error is the root thereof.</p>
-<p>So, we can simply standardize the difference between two sample means</p>
-</section>
-</section>
-<section id="using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">
-<h2>Using the distribution of sample statistics across many samples: tests and confidence intervals<a class="headerlink" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals" title="Permalink to this heading">#</a></h2>
-<p>As noted above, one of the most important theorems in statistics is the Central Limit Theorem (CLT), which states that the distribution of many important sample statistics, such as the mean or the difference in means (and many more), has an approximately Normal distribution; there are many related theorems that give the distribution for other sample statistics (such as the variance, which has what is called the <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution).</p>
-<p>There are two very useful things that we can do with this information. They basically come to the same thing, but there are settings where one or the other is more natural. These two things are known as <em>confidence intervals</em> and <em>hypothesis tests</em>.</p>
-<p>A confidence interval exploits the fact that we know how many standard deviations we need to go above and below the mean <span class="math notranslate nohighlight">\(\mu\)</span> of a sampling distribution to capture some central area, which you should recall is also a probability (this is tough to calculate by hand, but since people have long recognized how useful it would be, we have standard tables where we can look these things up; it is also available as a function on basically all computer software). If we then simply add and subtract the margin of error—the number of standard deviation we need times the size of the standard deviation for some specific sampling distribution—we can get a range that has a given probability of including the true parameter. We pick the probability (known as the “level of confidence”) based on convention or some exogenously-determined need for precision; there is no mathematically “correct” level. Then, we find the number of standard deviations needed. For the sake of this class, just use the ultra-conventional 95 percent level of confidence.</p>
-<p>For example, a common usage of a confidence interval is as follows:</p>
-<ol class="arabic simple">
-<li><p>We know that 95 percent of sample means fall within about +/- 1.96 standard deviations of the true mean.</p></li>
-<li><p>We know that the standard deviation of a sampling distribution is given by <span class="math notranslate nohighlight">\(\frac{\sigma}{\sqrt{n}}\)</span>.</p></li>
-<li><p>Technically, we almost always have to estimate that standard deviation with <span class="math notranslate nohighlight">\(\frac{s}{\sqrt{n}}\)</span>, causing calculations involving it to be <em>t</em>-distributed. This, in most cases, won’t significantly change the number of standard deviations that we need to use, but it may. In either case, look these up.</p></li>
-<li></li>
-</ol>
-</section>
 <section id="appendix">
 <h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
 <section id="an-extremely-useful-alternative-expression-for-the-variance">
@@ -730,10 +668,6 @@ deviation is (4.5-4.875)^2 = 0.14. The total sum of squares (TSS) is 38.2; the (
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
 <p>Incidentally, the probability of five randomly drawn sample means, each with <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>(CI contains <span class="math notranslate nohighlight">\(\mu_Y\)</span>) = 0.95, all including <span class="math notranslate nohighlight">\(\mu_Y\)</span> is, from the binomial distribution, <span class="math notranslate nohighlight">\(\binom{5}{5}*0.95^5*0.5^{5-5} = 1 * 0.95^5 * 1 = 0.77\)</span>, or about 77 percent.</p>
 </aside>
-<aside class="footnote brackets" id="fn" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
-<p>There is, unfortunately, no single-word term for “possible outcomes”, which is a strange oversight.</p>
-</aside>
 </section>
 </section>
 </section>
@@ -796,7 +730,7 @@ deviation is (4.5-4.875)^2 = 0.14. The total sum of squares (TSS) is 38.2; the (
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">BMSS 1: Advanced arithmetic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">basic math for social sciences I: basic descriptive and inferential statistics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
 </ul>
 </li>
@@ -804,15 +738,6 @@ deviation is (4.5-4.875)^2 = 0.14. The total sum of squares (TSS) is 38.2; the (
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-distributions-probability-density-functions">Continuous distributions: probability density functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-inference">Basics of inference</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem-clt">The Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-and-probability-distributions">Histograms and probability distributions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">Using the distribution of sample statistics across many samples: tests and confidence intervals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extremely-useful-alternative-expression-for-the-variance">An extremely useful alternative expression for the variance.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
