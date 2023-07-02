@@ -1,0 +1,864 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>BMSS 1: Advanced arithmetic &#8212; SOC357</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2023-07-01_SOC357su23_basic_math_ch_1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/SOC357_website_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/SOC357_website_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SOC357
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-06-16_SOC357su23_syllabus.html">Course parameters</a></li>
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2023-07-01_SOC357su23_basic_math_ch_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/2023-07-01_SOC357su23_basic_math_ch_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>BMSS 1: Advanced arithmetic</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">BMSS 1: Advanced arithmetic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-regular-variable-and-sampling">Distributions: regular variable and sampling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-distributions-probability-density-functions">Continuous distributions: probability density functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-inference">Basics of inference</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem-clt">The Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-and-probability-distributions">Histograms and probability distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">Using the distribution of sample statistics across many samples: tests and confidence intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extremely-useful-alternative-expression-for-the-variance">An extremely useful alternative expression for the variance.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="bmss-1-advanced-arithmetic">
+<h1>BMSS 1: Advanced arithmetic<a class="headerlink" href="#bmss-1-advanced-arithmetic" title="Permalink to this heading">#</a></h1>
+<section id="some-basic-operators">
+<h2>Some basic operators<a class="headerlink" href="#some-basic-operators" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>The summation operator, <span class="math notranslate nohighlight">\(\sum\)</span></strong>, tells us to sum from the observation denoted at the bottom of the capital greek letter <span class="math notranslate nohighlight">\(\Sigma\)</span> (“sigma”, which makes the “s” sound, as in <strong>s</strong>um) and go up until the observation denoted on top of the <span class="math notranslate nohighlight">\(\Sigma\)</span>. For us, the bottom item will almost always be individual (denoted <em>i</em>) equal to one, going up until individual equal to <em>n</em>, where <em>n</em> is the sample size. Please note carefully that we’re using small Latin letters here in two different ways: <em>i</em> is an index, which varies across individuals; <em>n</em> is a constant and a property of the data-set as a whole. Examine this simple example data-set:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \begin{array}{|c|c|}
+        \hline
+            \textbf{i} &amp; \textbf{y} \\
+        \hline
+            \text{1} &amp; \text{3} \\
+        \hline
+            \text{2} &amp; \text{10} \\
+        \hline
+            \text{3} &amp; \text{2} \\
+        \hline
+            \text{4} &amp; \text{4.5} \\
+        \hline
+    \end{array}
+    \end{split}\]</div>
+<p>Now, try to carry out the arithmetic operation indicated by the following notation: <span class="math notranslate nohighlight">\(\sum_{i=1}^n 
+ y_i\)</span>.<a class="footnote-reference brackets" href="#answer" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<p>The numbering of individuals is, for our purposes, basically always arbitrary, and summation is
+commutative anyways (the order of the items summed, or the <em>summands</em>, does not matter), so sometimes you
+will see the sub- and superscripts omitted.</p>
+<p>Let’s suppose that we are interested in someone’s highest year of education achieved and we have
+observations on <em>n</em> = 10 individuals. Let their scores on the education variable be represented by the
+vector <span class="math notranslate nohighlight">\(\vec{y} = [10, 12, 16, 12, 18, 10, 20, 18, 9, 10]^T\)</span>. All that the little “T” represents here is
+that this is the transpose of the actual vector, which would be a column in the standard way of
+representing data in matrices (rows are individuals, columns are variables). As you can see above, it
+wastes a lot of space to represent column vectors the correct way in text documents, so you will see
+this convention very often. The idea is that we are making clear that this is a list of different
+individuals and <em>not</em> the scores for one individual on ten different variables (if we wanted to represent
+such a row vector, we’d wouldn’t need a <span class="math notranslate nohighlight">\(^T\)</span>.</p>
+<p>Now, try to sum up these individuals’ scores. The order here is arbitrary, but you might as well
+conceptualize those scores above as being a specific case of the following
+vector: <span class="math notranslate nohighlight">\(\vec{y} = [y_1, y_2, ... y_n]^T\)</span>. The last piece of notation is that we we will represent random
+variables in their most
+abstract form with capital Roman letters; their sample equivalents have lowercase Roman letters. Unlike
+in most statistics books, I will consistently use Greek letters without hats to denote true population
+parameters (most books usually, but not always, do this) and Greek letters with carets or “hats”. Greek
+letters will be used in the conventional way: the sound they make indicates the parameter. Here, <span class="math notranslate nohighlight">\(\tau\)</span>
+(“tau”) stands in for the total. Note that the notation means that to find the sample estimate of the
+total of the random variable <em>Y</em>, we sum up the observed values in the sample, <span class="math notranslate nohighlight">\(y_i\)</span>. Note that to
+estimate the value of the total, we need to multiply by the probability of selection into the sample. If
+each observation has a different probability, we need to put this inside of the summation. In our case,
+we’ll deal only with the equal probability of selection (<em>epsem</em>) method, so this is a constant that can
+be factored out.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+        \widehat{\tau}_Y &amp;= \pi \sum_{i=1}^n y_i
+    \end{align*}\]</div>
+</li>
+<li><p><strong>The mean</strong> is a measure of central tendency—something like the “characteristic value of a distribution”, which the mean, median and mode all get at. We focus most attention on the mean in this class; however, the median is an important measure, especially in the context of quantiles more generally. <strong>“Mean” is simply the formal term for the arithmetic average.</strong> We’ll focus on the simple case where possible outcomes are discrete, meaning that they are finite in number or <strong>countably</strong> infinite (more in a second); simple descriptive statistics for any real world data-set can be calculated using these simpler discrete formulae. Sometimes, we will need to discuss variables with infinite possible values, known as continuous variables.</p>
+<p>For example, if we record someone’s income to the cent, while they could in theory tell us that they have
+any number up to infinity, this is <em>countably</em> infinite; setting aside the formal definition, this means
+basically that if I pick an arbitrary number of functioning cars someone owns (say, five cars), I can tell
+you the next value in the set of possible outcomes with no question (six cars); so, cars owned is a
+discrete variable.</p>
+<p>By contrast, if we ask someone about their
+height and they reply with “74 inches”, I can’t say what height is “next”. I could, for example, say 75
+inches, but since 74 inches is about 188cm, 189cm is nearer than 75 inches. And this, of course, can
+extend even further, to the micron (if we had a microscope). Since height can take on an uncountable
+number of possible values: it is continuous. (It is fun, but not super important, to wonder about why some
+variables are continuous and others are discrete. In the cars case, it is just definitional; while parts
+of cars do exist, if I am only interested in complete, functioning cars, those simply do not come in
+halves; by contrast, there is no similar limit on height).</p>
+<p><strong>The mean is sometimes referred to as the expected value or expectation.</strong> When we write the mean as an
+expected value or expectation, we conceptualize it as a population-level property; it is the weighted sum
+of all possible values of the variable. So, we are summing over the possible outcomes of the variable when
+we write the mean as an expectation—we are <strong>not</strong> summing over any observed individuals.
+Many textbooks and internet sources do not change their notation here, which confuses new students, so I
+will now re-index the sum. Let <em>k</em> index an outcome of the random variable <em>Y</em> (i.e., “<em>k</em>=5” would mean
+the fifth possible outcome, where order again typically does not matter) and let <em>K</em> indicate the number
+of possible outcomes. Then, for a <em>discrete</em> random variable (don’t worry about the continuous formlua
+here):</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathbb{E}[Y] &amp;= \sum_{k=1}^K y_k * \mathbb{P}(Y=y_k)
+    \end{align*}\]</div>
+<p>This says that we look at each possible outcome <em>k</em>, starting with <em>k</em> = 1, and multiple the value of that
+outcome <span class="math notranslate nohighlight">\(y_k\)</span> by its probability of occurring, <span class="math notranslate nohighlight">\(\mathbb{P}(Y=y_k)\)</span>.</p>
+<p>For a given <em>set</em> of data, the formula does not change, even if the variable is itself continuous; this is
+because all actual observed data-sets are discrete: there is a finite number of observed values. If we
+have any repeated values, we effectively use this as a sample estimate of the probability of observing
+that value at  the population level. If the variable itself has many possible outcomes (whether it is
+discrete or continuous) and no values repeat themselves exactly, then the estimated probability of each
+value is just <span class="math notranslate nohighlight">\(\frac{1}{n}\)</span>.</p>
+<p>So, in practice, with equal probability sampling, it is often simpler to write out the mean as the simple
+arithmetic mean, even if we have repeat values.</p>
+<p>Note one exception for our notation rules mentioned above: It would make <em>most</em> sense to use, for the
+sample mean, the notation <span class="math notranslate nohighlight">\(\widehat{\mu}_Y\)</span>. However, most textbooks use the notation <span class="math notranslate nohighlight">\(\bar{Y}\)</span> for the
+random variable and <span class="math notranslate nohighlight">\(\bar{y}\)</span> for some specific sample mean. The problem with this notation is that it
+breaks the general rule about Greek and Roman letters mentioned above and requires you to  memorize a new
+notational rule, but it is extremely common, so we will use it. For any specific sample mean…</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \bar{y} &amp;= \sum_{i=1}^n \frac{1}{n} * y_i \cr
+    \bar{y} &amp;=  \frac{1}{n} \sum_{i=1}^n* y_i  \
+        &amp;&amp;  \text{since $\frac{1}{n}$ is constant, it factors out of the sum} \cr
+    \end{align*}\]</div>
+<p>Note that this means that a <em>simple</em> mean implicitly takes the inclusion of each member of the sample to
+have been equally probable. This is false with a stratified random sample. So, we fix this by multiplying
+by the inverse of the probability of inclusion, the <em>sample weight</em> <span class="math notranslate nohighlight">\(w = \frac{1}{\pi_i}\)</span>, where <span class="math notranslate nohighlight">\(\pi_i\)</span>
+is <em>i</em>’s probability of being included in the sample as <span class="math notranslate nohighlight">\(\pi_i\)</span>. Note that <span class="math notranslate nohighlight">\(\pi_i\)</span> is a parameter, not a
+statistic; every member of our sample has a <em>known</em> probability of inclusion.
+In the case of simple random sampling, every member of the population has an equal probability of
+inclusion of <span class="math notranslate nohighlight">\(\frac{n}{N}\)</span>, where <em>n</em> is the sample size and <em>N</em> is the population size.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+     \bar{y} &amp;= \frac{1}{N} \sum_{i=1}^n \frac{1}{\pi_i} * y_i \cr
+    &amp;= \frac{1}{N} \sum_{i=1}^n \frac{N}{n} * y_i &amp;&amp; \text{note that $\pi_i$ = $\frac{n}{N}$} \cr
+    &amp;= \frac{1}{N} * \frac{N}{n} \sum_{i=1}^n y_i &amp;&amp; \text{constants factor out of sums} \cr
+    &amp;= \frac{1}{n}\sum_{i=1}^n y_i
+    \end{align*}\]</div>
+<p>Note that this formula is helpful because is can be extended to cases where we don’t have equal
+probabilities of inclusion.</p>
+<p>For some practice, try calculating the sample mean for the data-set given above.<a class="footnote-reference brackets" href="#answer3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+</li>
+<li><p><strong>The variance</strong> is a measure of spread or dispersion. You can think about it as the expected difference between a randomly-selected observation and its mean. We define it formally at the population-level as the expectation of the difference between the random variable <em>Y</em> and its mean <span class="math notranslate nohighlight">\(\mu_Y: \mathbb{V}[Y] = \mathbb{E}[(Y - \mu)^2]\)</span>. You may wonder why we square the difference. There is a very good reason for this that leads us to the proof of a useful fact about the mean, which is that it is the value for a given set about which all deviations are not just minimized but also zero!</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    &amp;1. \mathbb{E}[Y - \mu_Y] = \mathbb{E}[Y] - \mathbb{E}[\mu_Y] 
+                &amp;&amp; \text{expectation operator is linear} \cr
+    &amp;2. \mathbb{E}[Y] = \mu_Y &amp;&amp; \text{by definition} \cr
+    &amp;3. \mathbb{E}[\mu_Y] = \mu_Y &amp;&amp; \text{expectation of a constant is just that constant} \cr
+    &amp;4. \mathbb{E}[Y - \mu_Y] = \mu_Y - \mu_Y = 0  &amp;&amp; \text{arithmetic}
+        \end{align*}\]</div>
+<p>It is useful to think about the variance operator, <span class="math notranslate nohighlight">\(\mathbb{V}\)</span> as a function that produces the variance, and the actual variance itself as a fixed quantity for a given population. We will denote this <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Do not let yourself get frustrated by the power of 2. The reason we do this is quite simple: the variance is easier to <em>calculate</em> with, but the interpretation—the expected squared distance of a point from the mean, or the average squared distance of a point from the mean—is more difficult. One solution is to just take the root of the whole thing, which we then call the standard deviation, which is <span class="math notranslate nohighlight">\(\sigma\)</span> for the population and <em>s</em> in the sample (the sample variance is then <em>s</em>^2).</p>
+<p>The sample variance formula is also straightforward, with the exception of the denominator. Don’t worry too much about this; it is called the Bessel correction, and it fixes the bias caused by the fact that we estimate the population mean with the sample mean, which understands the true variance (the spread of the points will generally be closer to the sample mean than the population mean). But, the variance is still fundamentally the mean squared deviation.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+        s^2 = \frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1} \cr
+        s = \sqrt{\frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1}}
+    \end{align*}\]</div>
+<p>Finally, try to calculate the sample variance of our data-set above. <a class="footnote-reference brackets" href="#answer4" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
+</li>
+</ol>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="distributions-regular-variable-and-sampling">
+<h1>Distributions: regular variable and sampling<a class="headerlink" href="#distributions-regular-variable-and-sampling" title="Permalink to this heading">#</a></h1>
+<section id="discrete-distributions-cumulative-distribution-and-probability-mass-functions">
+<h2>Discrete distributions: cumulative distribution and probability mass functions<a class="headerlink" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions" title="Permalink to this heading">#</a></h2>
+<p>We saw above some methods of characterizing distributions by their parameters (their mean and standard deviation), but what if we want to examine the distribution overall? We need to look at this separately for discrete and continuous variables. We’ll start with what I’m calling <em>regular variable</em> distributions, distributions that characterize an actual variable of interest, such as mother’s education or income or age; then, we’ll turn to <em>sampling</em> distributions, distributions that characterize the behavior of a sample statistic over many different samples. This second quantity is of interest to us for <em>inferential reasons</em>; we care about income, but to make inference about income, we need to understand the behavior of sample means of income across many samples. This difference is <em>extremely</em> important, and in many years of teaching this material, I have found that the most common mistake students make is to ignore this distinction or to realize that one does not understand it but to be excessively easygoing about this fact. You <em>must</em> make sure that you understand this difference.</p>
+<p>There are two useful ways to examine an individual distribution for discrete variables. The first is a cumulative distribution function (CDF), which plots on the X-axis the value of the variable and on the Y-axis, the cumulative percent (i.e., probability) of data observed up to that value. A CDF makes sense for both continuous and discrete random variables. The height of this function is the percent of observations less than or equal to some value of the variable; remembering that percent and probabilities usually are the same thing, and letting <span class="math notranslate nohighlight">\(\mathbb{P}\)</span> mean “probability”, the height of this function <span class="math notranslate nohighlight">\(F(X) = \mathbb{P}(X \leq x)\)</span>.</p>
+<p>The second is a probability mass function (PMF), which plots possible values of the variable on the X-axis (again), but this time plots the probability of observations <em>just for that value</em> on the Y-axis. You can see these two approaches belows. Notice that a PMF is basically just a histogram. The height of this function is the percent of observations <em>exactly</em> equal to some value of the variable; the height of this function <span class="math notranslate nohighlight">\(F(X) = \mathbb{P}(X = x)\)</span>.</p>
+<p><img alt="CDF and PMF" src="_images/pmfcdfnumkids.png" /></p>
+</section>
+<section id="continuous-distributions-probability-density-functions">
+<h2>Continuous distributions: probability density functions<a class="headerlink" href="#continuous-distributions-probability-density-functions" title="Permalink to this heading">#</a></h2>
+<p>For continuous variables, we can also generate cumulative distribution functions, but probability mass functions don’t, strictly speaking, make sense. This is because the probability of any exact value of such a variable is zero. This is surprising at first, but if you have trouble buying this, imagine the probability of any specific value of a variable which could possibly be equal to, say, <span class="math notranslate nohighlight">\(\pi\)</span> or <em>e</em> (i.e., irrational numbers)—if it’s not zero, it’s extremely small, right?</p>
+<p>It is important to note that <em>all</em> actual, observed populations are, practically speaking, “discrete” in that the number of outcomes is finite. So, while a variable can have a PDF, any dataset of <em>realizations</em> cannot; we just have an estimate of the PDF, which is actually a PMF. For example, here is the empirical CDF and PMF of height from the 2017-18 NHANES. Height is a continuous variable, but the realization of it in this sample is discrete, even if it is massively less-discrete than the number of children seen above. If you look carefully, you can see the slight “kinks” in the line; these are not problems of pixellation but rather that this is an empirical estimate of continuous function.</p>
+<p><img alt="CDF and PMF for realization of continuous variable" src="_images/height_CDF_P'D'F.png" /></p>
+<p>What do actual density functions look like and represent, then? Cumulative distribution functions look nearly the same, and the function F(X) means the same thing: the probability that the variable takes on value less than or equal to some value X; formally <span class="math notranslate nohighlight">\(\mathbb{P}(X \leq x)\)</span>. <em>Density</em> is a trickier concept; what it means formally is <em>probability per unit</em>. You should think about density as the “speed of probability”; the PDF is just a graph of the <em>speed</em> of the CDF (formally, the PDF is the simple first derivative of the CDF). So, note that the graph of the PDF is <em>tallest</em> where the slope of the CDF is <em>steepest</em>.</p>
+<p>Importantly, this means that the <em>height</em> of the PDF is not of direct interest, both because the height is hard to interpret intuitively, even if the mathematical definition is simple; and, at any rate, . What we care about instead are <em>areas under the curve</em> between two points <em>a</em> and <em>b</em>, which <em>are</em> probabilities (not densities) that the variable will take on a value between <em>a</em> and <em>b</em>.<a class="footnote-reference brackets" href="#fn-auc" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p>
+<p>So, what are PDFs good for? Well, we can use them to model the probability distribution of a random variable. Remarkably, it turns out that the random variable <span class="math notranslate nohighlight">\(\overline{Y}\)</span> is 1) continuous and 2) Normally-distributed, even if the distribution of the random variable <em>Y</em> is far from Normally-distributed—this is the power of the Central Limit Theorem. Here is a simulation we’ve seen before in this class, using a large number of replications (so, this is not the true PDF, but it gives us a clear sense of what that would look like). Further, we happen to know its</p>
+<p><img alt="The power of the central limit theorem" src="_images/CLT_power.png" /></p>
+<p>Here are the Standard Normal CDF and PDF, which characterize the distribution of standardized sample means. All sample means are Normally-distributed, but they have arbitrary means and standard deviations; subtracting the mean and dividing by the standard deviation gives a standard score <span class="math notranslate nohighlight">\(z = \frac{\overline{y} - \mu_{\overline{Y}}}{\sigma_{\overline{Y}}}\)</span>. We typically won’t actually know the mean and standard deviation, but I’ll address that in a little bit.</p>
+<p><img alt="Standard Normal CDF and PDF" src="_images/Normal_CDF_PDF.png" /></p>
+<p>Now, it is worth noting that although it is difficult to take the areas under the curve (AUC) of the Normal by hand with calculus, it is easy to do so with a computer or a table. Further, the AUCs associated with +/- one, two, and three standard deviations are easy to memorize. In particular, the fact that going out exactly 1.96 standard deviations includes almost exactly 95 percent AUC is very easy to remember, and if you’ve heard of a 95 percent confidence interval (which is extremely standard, though technically arbitrary), this is why.</p>
+<p><img alt="Areas under the curve of the NormalPDF" src="_images/Normal_PDF_AUCs.png" /></p>
+<p>If the population is sufficiently large relative to the the size of the sample, each individual observation can be treated as independent of the others and taken from the same distribution (so long as they are drawn at random): they are “independent, identically-distributed” (IID) random variables.</p>
+<p>This concept is often very challenging for novices, so I want you to go back and re-read the preceding paragraph. <em>Each person in our sample, before they are actually selected, is a random variable</em>. For example, if I plan to sample 500 people and ask them their income, but I have not yet done so, those 500 hypothetical-people represent 500 random variables, all taken from the same population distribution of income. It is often helpful to consider the analogy to an experiment in which we flip coins: the concept of “the outcome of the 10th coin I flip” is more-obviously a random variable for the simple reason that it hasn’t yet happened. While the person whose income I ultimately observe in the sample has already <em>obtained</em> that income, there is a point at which I don’t know <em>which</em> person I’ll observe, and thus that “person’s” income is rather like the outcome of the as-yet-unflipped coin.</p>
+<p>Here is the extremely important fact about that. When we do inference about a population, we cannot observe it, and we do not know its distribution; its distribution likely does not fit some exact mathematical function anyways (and it may not be well-approximated by one). So, observing the realization of <em>one</em> random variable—taking one person out of the population and asking, say, their income—is not very informative. When we turn a set of random variables into a total or a mean, however, we know that the shape of the distribution <em>they</em> come from is not the (unknown) “regular variable” distribution but the sampling distribution. <em>This is the primary reason why (pre-super computer) statistics is even possible</em>. It is such a striking fact that Galton claimed that “<a class="reference external" href="https://galton.org/cgi-bin/searchImages/galton/search/books/natural-inheritance/pages/natural-inheritance_0073.htm">[t]he law would have been personified by the Greeks and deified, if they had known of it</a>”.</p>
+</section>
+<section id="basics-of-inference">
+<h2>Basics of inference<a class="headerlink" href="#basics-of-inference" title="Permalink to this heading">#</a></h2>
+<p>So, we can now do inference! All we need to do is find the standard score of a sample mean and then find the associated AUC. Recall before that sample means are unbiased estimators for simple random samples, so our mean of the sampling distribution, <span class="math notranslate nohighlight">\(\mu_{\overline{Y}}\)</span>, is simply the population mean, <span class="math notranslate nohighlight">\(\mu_Y\)</span>.</p>
+<p>Now, we are after the standard deviation of the sample mean, which is referred to as the standard error for the sake of distinguishing it from the “regular variable” standard deviation. It turns out that it is much easier to derive the variance and then simply take the root. Note that we are after the variance of a sum of IID random variables (divided by the constant <em>n</em>).  While the extremely useful general formula for the variance of a sum of random variables is slightly complex (see appendix), it is not just extremely useful but extremely simple for independent random variables: it is just the sum of their variances. Let <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represent the sample mean of a random variable comprised of <em>n</em> IID random variables <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_n\)</span>; each variable comes from a population distribution with standard deviation <span class="math notranslate nohighlight">\(\sigma_Y\)</span>, which we’ll simply refer to using <span class="math notranslate nohighlight">\(\sigma\)</span> for simplicity.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathbb{V}[\overline{Y}] = \sigma^2_{\overline{Y}} &amp;= \sum_{i=1}^n \mathbb{V}[\frac{Y_i}{n}] \cr
+    &amp;= \sum_{i=1}^n \frac{1}{n^2} \mathbb{V}[Y_i] \cr
+    &amp;= \frac{1}{n^2} (\sigma^2_1 + \sigma^2_2 + ... + \sigma^2_n) \cr
+    &amp;= \frac{1}{n^2} n*\sigma^2 \cr
+    &amp;= \frac{\sigma^2}{n} \cr
+    \sigma_{\overline{Y}} &amp;= \frac{\sigma}{\sqrt{n}}
+    \end{align*}\]</div>
+<p>Finally, here comes our last step. Note that we are planning to do inference on the mean, but we do not know it! How can we use our formula? Well, we can do one of two things.</p>
+<p>First, we can simply recognize that, for example, about 68 percent of sample means will fall within +/- two standard deviations of the true population mean. So, we can simply add and subtract one standard error to our sample mean to have a 68 percent chance of having that mean <span class="math notranslate nohighlight">\(\mu_Y\)</span> in there. It’s more conventional to use a higher level of “confidence” and add and subtract 1.96 standard errors to our sample mean to have a 95 percent chance of including <span class="math notranslate nohighlight">\(\mu_Y\)</span>. The general formula for a confidence interval with confidence level <em>C</em> is <span class="math notranslate nohighlight">\(CI_{C} = \overline{y} +/- z_C*\frac{\sigma}{\sqrt{n}}\)</span>, where <span class="math notranslate nohighlight">\(z_C\)</span> is the number of standard deviations within which <em>C</em> percent of the AUC lie. For the sake of our class, just use <span class="math notranslate nohighlight">\(z_{95} = 1.96\)</span>.</p>
+<p>Below is a picture of why this works. Suppose that we have population level data on mother’s education. Below is what the sampling distribution would look like, with five sample means plotted and their “error bars” attached. Notice that, although no sample mean is identical, all five happen<a class="footnote-reference brackets" href="#fn-bin" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> to include the true population mean. In the long run, we should expect this procedure to work 95 percent of the time.</p>
+<p><img alt="The logic of a confidence interval" src="_images/z_CI_demo.png" /></p>
+<p>Our second technique is a statistical <em>test</em>. This works for fundamentally the same reason as a confidence interval, and they are functionally the same for means (for other kinds of statistics, there will be more reason to prefer the CI or the test). We picture the sampling distribution under a null hypothesis (<span class="math notranslate nohighlight">\(H_0\)</span>) that the true mean is equal to some value <span class="math notranslate nohighlight">\(\mu_0\)</span>, and then we calculate the standard score if that were true and finally find the associated probability. If that <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value is small (say, less than 0.05), we reject the null hypothesis. The level at which we reject the null, known as <span class="math notranslate nohighlight">\(\alpha\)</span>, is arbitrary.</p>
+<p>It is conventional to take the <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value not just of the statistic we actually get, but also its additive inverse. This is shown below.</p>
+<p><img alt="The logic of a statistical test" src="_images/ztest_demo.png" /></p>
+<p>Finally, there is just one more complication to be aware of. In practice, we do not know <span class="math notranslate nohighlight">\(\sigma\)</span>, so we estimate it with <em>s</em>. This causes additional uncertainty in our estimate, and it is now taken from a distribution that is close to Normal but is farther from Normal the smaller the sample size. Many statistical textbooks get very excited about this; I think that this is, for the non-mathematician, a boring technical detail. I will simply say that this means that your should look up your test statistic in a <em>t</em>-table, not a <em>z</em>-table, but the basic meaning of a CI or <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value is the same.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bivariate-analysis-tests-for-a-difference-in-means">
+<h1>Bivariate analysis: tests for a difference in means<a class="headerlink" href="#bivariate-analysis-tests-for-a-difference-in-means" title="Permalink to this heading">#</a></h1>
+<p>Suppose that we are interested in determining whether two groups differ on some key outcome variable, such as their level of education or income. Let’s be clear and formalistic about what we are after: we want to know whether or not, say, <span class="math notranslate nohighlight">\(\mu_{income | white}  = \mu_{income | black}\)</span> or <span class="math notranslate nohighlight">\(\mu_{education | male}  = \mu_{education | female}\)</span>, where, to avoid the confusion caused by double subscripts, I’ve used the standard notation of a vertical bar to indicate “given that one is…”.</p>
+<p>An obvious move here is just to replace these with their sample equivalents. So, using the older (if more confusing) notation for a sample mean, we might check whether <span class="math notranslate nohighlight">\(\overline{educ}_{male} = \overline{educ}_{female}\)</span>. And, in fact, this is exactly the right idea. The question now, however, is whether or not this difference is liable to have arisen by chance.</p>
+<p>You should stop and really consider this for a moment because this is the entire idea behind <em>inferential</em> statistics, as opposed to simply descriptive statistics (recall: descriptive statistics are just ways of summarizing the data we have, whether these are population-level or sample-level, without reference to whether these represent some other group). Why can’t I trust, say, an observed difference of a year between a group of men and women?</p>
+<p>One intuitive reason not to trust this, and this is what you’ll almost always hear in internet arguments about this sort of thing from people who are a little learnèd (if not too learnèd), is that the sample size might be too small. It turns out that this is a little too conservative: we need to <em>adjust</em> for small sample sizes, but if we have a truly random sample, any data are better than no data, and we can just adjust for the small sample size.</p>
+<p>Another reason not to trust this is that we don’t have access to the whole population. This is really just the same objection as above: the sample size is too small. But, there’s a subtle difference here: in this case, the gripe cuts to the heart of the matter. We don’t just have a “small” sample size, whatever that might mean. We have a <em>sample</em>, period: some group of people smaller than the population we care about. And samples are noisy processes; that’s what makes them great, in fact—they differ from the population only by random error (“noise”). But, we do need to take account of the error. So, how do we do that?</p>
+<p>Let’s actually start with an easier, if slightly less-interesting, question: how would we do this for just one group’s mean? It turns out that to calculate the sampling noise, we need a little bit of theory.</p>
+<section id="the-central-limit-theorem-clt">
+<h2>The Central Limit Theorem (CLT)<a class="headerlink" href="#the-central-limit-theorem-clt" title="Permalink to this heading">#</a></h2>
+<p>To make a judgment call about whether or not a sample mean <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represents a population mean <span class="math notranslate nohighlight">\(\mu_Y\)</span>, we need to have some sense for how the sample mean behaves across many samples. In other words, we need to know the probability distribution (technically: the probability density function, or PDF) of sample means.</p>
+<section id="histograms-and-probability-distributions">
+<h3>Histograms and probability distributions<a class="headerlink" href="#histograms-and-probability-distributions" title="Permalink to this heading">#</a></h3>
+<p>I will presume here that you are at least loosely familiar generally with histograms, from which we’ll build an intuition for the Normal PDF; in the class for which these notes are being prepared, I’ll have slides that walk you through how those work. Histograms are basically sample approximations of PDFs. On the X-axis, we have the possible-outcomes<a class="footnote-reference brackets" href="#fn" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> for a variable; on the Y-axis, we have some kind of indication of the frequency of observations. So, any individual bar tells us the frequency of observations taking on a certain possible-value. For example, in the histogram for education below, about five percent of observations took on the value 11, meaning that five percent of the sample had 11 years of education.</p>
+<p><img alt="Simple histogram for education" src="_images/hist_educ.png" /></p>
+<p>PDFs are just the equivalent of a histogram when 1) we know about the true population distribution and 2) we have a continuous random variable. Recall that all actual sample data are discrete: we stop measuring the digits at a certain point (e.g., we measure height only to the tenth of an inch in some data-sets). But, in principle, height could be measured infinitely more-precisely with better and better microscopes, so it is a continuous random variable. But, it is rare to really know the PDF of a real-world variable; height happens to be approximately Normal, which is why I picked it as an example, but this is still only an approximation.</p>
+<p><img alt="Simple histogram for height" src="_images/hist_height.png" /></p>
+<p>However, it turns out, quite impressively, that sample means are Normally-distributed across many samples: this is the Central Limit Theorem (CLT). In other words, if you had a population from which you could take an infinite number of samples (with replacement), the histogram of sample means would basically be indistinguishable from a smooth, Normal curve. We’ll learn two useful techniques that use this fact in due time.</p>
+<p>If the population is sufficiently large relative to the the size of the sample, each individual observation can be treated as independent of the others and taken from the same distribution (so long as they are drawn at random): they are “independent, identically-distributed” (IID) random variables.</p>
+<p>It is important to note that each observation of the sample, before they are actually observed, is a random variable: when some researcher plans to sample 500 people and ask them their income, and she has not actually selected any individuals for inclusion, the income of the <em>i</em>th person, <span class="math notranslate nohighlight">\(Y_i\)</span> is still a random variable. So, when we talk abstractly about the variance of a sample mean across many samples, we need to treat these sample means themselves as random variables. This is a major source of confusion early on, so remain <em>en garde</em> here: each actual observation in the sample is the <em>realization</em> of a random variable. It is often helpful to consider the analogy to an experiment in which we flip coins: the concept of “the outcome of the 10th coin I flip” is more-obviously a random variable for the simple reason that it hasn’t yet happened. While the person whose income I ultimately observe in the sample has already <em>obtained</em> that income, there is a point at which I don’t know <em>which</em> person I’ll observe, and thus that “person’s” income is rather like the outcome of the as-yet-unflipped coin.</p>
+<p>So, we are after the variance of a sum of IID random variables (divided by the constant <em>n</em>).  While the extremely useful general formula for the variance of a sum of random variables is slightly complex (see appendix), it is not just extremely useful but extremely simple for independent random variables: it is just the sum of their variances. Let <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represent the sample mean of a random variable comprised of <em>n</em> IID random variables <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_n\)</span>; each variable comes from a population distribution with standard deviation <span class="math notranslate nohighlight">\(\sigma_Y\)</span>, which we’ll simply refer to using <span class="math notranslate nohighlight">\(\sigma\)</span> for simplicity.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \mathbb{V}[\overline{Y}] = \sigma^2_{\overline{Y}} &amp;= \sum_{i=1}^n \mathbb{V}[\frac{Y_i}{n}] \cr
+    &amp;= \sum_{i=1}^n \frac{1}{n^2} \mathbb{V}[Y_i] \cr
+    &amp;= \frac{1}{n^2} (\sigma^2_1 + \sigma^2_2 + ... + \sigma^2_n) \cr
+    &amp;= \frac{1}{n^2} n*\sigma^2 \cr
+    &amp;= \frac{\sigma^2}{n} \cr
+    \sigma_{\overline{Y}} &amp;= \frac{\sigma}{\sqrt{n}}
+    \end{align*}\]</div>
+</section>
+<section id="the-standard-error-sampling-noise-for-a-difference-in-means">
+<h3>The standard error (sampling noise) for a difference in means<a class="headerlink" href="#the-standard-error-sampling-noise-for-a-difference-in-means" title="Permalink to this heading">#</a></h3>
+<p>It turns out that the difference in means, which we tend to conceive naturally as two things combined, can be thought of as simply the mean of a single “difference” variable. This variable turns out to have a slightly different <em>t</em> distribution, and the exact calculation of degrees of freedom becomes somewhat involved (in fact, degrees of freedom no longer have to be integers, which is quite an interesting fact), but these are details that aren’t really essential to an understanding of the basic point: we have a nearly-Normal sampling distribution for this difference in means.</p>
+<p>Fortunately, we have also already learned the key rule for the standard error for a difference in means; if two random variables are independent, the variance of the variables’ sum <em>or</em> difference is just the sum of the variances. So, the sampling variance here is simply <span class="math notranslate nohighlight">\(\sigma^2_{\overline{Y}_F} + \sigma^2_{\overline{Y}_M}\)</span>, and the standard error is the root thereof.</p>
+<p>So, we can simply standardize the difference between two sample means</p>
+</section>
+</section>
+<section id="using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">
+<h2>Using the distribution of sample statistics across many samples: tests and confidence intervals<a class="headerlink" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals" title="Permalink to this heading">#</a></h2>
+<p>As noted above, one of the most important theorems in statistics is the Central Limit Theorem (CLT), which states that the distribution of many important sample statistics, such as the mean or the difference in means (and many more), has an approximately Normal distribution; there are many related theorems that give the distribution for other sample statistics (such as the variance, which has what is called the <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution).</p>
+<p>There are two very useful things that we can do with this information. They basically come to the same thing, but there are settings where one or the other is more natural. These two things are known as <em>confidence intervals</em> and <em>hypothesis tests</em>.</p>
+<p>A confidence interval exploits the fact that we know how many standard deviations we need to go above and below the mean <span class="math notranslate nohighlight">\(\mu\)</span> of a sampling distribution to capture some central area, which you should recall is also a probability (this is tough to calculate by hand, but since people have long recognized how useful it would be, we have standard tables where we can look these things up; it is also available as a function on basically all computer software). If we then simply add and subtract the margin of error—the number of standard deviation we need times the size of the standard deviation for some specific sampling distribution—we can get a range that has a given probability of including the true parameter. We pick the probability (known as the “level of confidence”) based on convention or some exogenously-determined need for precision; there is no mathematically “correct” level. Then, we find the number of standard deviations needed. For the sake of this class, just use the ultra-conventional 95 percent level of confidence.</p>
+<p>For example, a common usage of a confidence interval is as follows:</p>
+<ol class="arabic simple">
+<li><p>We know that 95 percent of sample means fall within about +/- 1.96 standard deviations of the true mean.</p></li>
+<li><p>We know that the standard deviation of a sampling distribution is given by <span class="math notranslate nohighlight">\(\frac{\sigma}{\sqrt{n}}\)</span>.</p></li>
+<li><p>Technically, we almost always have to estimate that standard deviation with <span class="math notranslate nohighlight">\(\frac{s}{\sqrt{n}}\)</span>, causing calculations involving it to be <em>t</em>-distributed. This, in most cases, won’t significantly change the number of standard deviations that we need to use, but it may. In either case, look these up.</p></li>
+<li></li>
+</ol>
+</section>
+<section id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
+<section id="an-extremely-useful-alternative-expression-for-the-variance">
+<h3>An extremely useful alternative expression for the variance.<a class="headerlink" href="#an-extremely-useful-alternative-expression-for-the-variance" title="Permalink to this heading">#</a></h3>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+            &amp;1. \mathbb{V}[Y] = \mathbb{E}[(Y - \mu_Y)^2] &amp;&amp; \text{definition} \cr
+            &amp;2. = \mathbb{E}[Y^2 - 2*\mu_Y*Y + \mu_Y^2] &amp;&amp; \text{binomial expansion AKA &quot;FOILing&quot;} \cr
+            &amp;3. = \mathbb{E}[Y^2] - \mathbb{E}[2*\mu_Y*Y] + \mathbb{E}[\mu_Y^2] 
+                &amp;&amp; \text{expectation operator is linear} \cr
+            &amp;4. = \mathbb{E}[Y^2] - 2*\mu_Y*\mathbb{E}[Y] + \mathbb{E}[\mu_Y^2]
+                &amp;&amp; \text{constants can be factored out} \cr
+            &amp;5. = \mathbb{E}[Y^2] - 2*\mu_Y*\mu_Y + \mathbb{E}[\mu_Y^2]
+                &amp;&amp; \text{definition of expectation} \cr
+            &amp;6. = \mathbb{E}[Y^2] - 2*\mu_Y^2 + \mu_Y^2
+                &amp;&amp; \text{expectation of a constant is just that constant, definition of square} \cr
+            &amp;7. = \mathbb{E}[Y^2] - \mu_Y^2
+                &amp;&amp; \text{arithmetic} \cr
+            &amp;8. \mathbb{V}[Y] = \mathbb{E}[Y^2] - \mathbb{E}[Y]^2
+                &amp;&amp; \text{definition of expectation} \cr
+\end{align*}\]</div>
+<p>In the sample, this becomes…</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+            &amp;1. s^2 = \frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1} &amp;&amp; \text{definition} \cr  
+            &amp;2. = \frac{\sum_{i=1}^n (y_i^2 - 2y_i\bar{y} + \bar{y}^2)}{n-1} \
+                &amp;&amp; \text{binomial expansion AKA &quot;FOILing&quot;} \cr
+            &amp;3. = \frac{\sum_{i=1}^n y_i^2 - \sum_{i=1}^n 2y_i\bar{y} + \sum_{i=1}^n \bar{y}^2}{n-1} 
+                &amp;&amp; \text{summation operator is linear} \cr
+            &amp;4. = \frac{\sum_{i=1}^n y_i^2 - 2\bar{y}\sum_{i=1}^n y_i + n\bar{y}^2}{n-1} 
+                &amp;&amp; \text{constants can be factored out} \cr
+            &amp;5. = \frac{\sum_{i=1}^n y_i^2 - 2\bar{y}n\bar{y} + n\bar{y}^2}{n-1} 
+                &amp;&amp; \text{definition of summation} \cr
+            &amp;6. = \frac{\sum_{i=1}^n y_i^2 - n\bar{y}^2}{n-1} 
+                &amp;&amp; \text{arithmetic} \cr
+            &amp;7. = \frac{n}{n-1} (\overline{y^2} - \bar{y})^2
+                &amp;&amp; \text{arithmetic} \cr
+\end{align*}\]</div>
+</section>
+<section id="the-general-formula-for-the-variance-of-a-sum-of-random-variables">
+<h3>The general formula for the variance of a sum of random variables.<a class="headerlink" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables" title="Permalink to this heading">#</a></h3>
+<p>Let <em>Y</em> be the sum of random variables <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_k\)</span>. Assume centered variables for the sake of step 5, where we will want to replace each variable’s deviation from its mean with a single symbol to make the multinomial expansion easier. This can be, in principle, any symbol; it seems most natural to just use the variable itself, and we often assume centered variables anyways. Note that there is absolutely no difference if I had used, say, <span class="math notranslate nohighlight">\(\Delta_{Y_j}\)</span> to represent the deviation of the <em>j</em>th variable from its mean.</p>
+<p>To get an intuition for the correct algorithm for multinomial expansion, draw a picture of rectangle with both unique side lengths partitioned into <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_k\)</span>. Then, find the area of the rectangle, which is logically equal, of course, to finding <span class="math notranslate nohighlight">\((Y_1 + Y_2 + ... Y_k)^2\)</span>. The rectangle is now comprised of smaller rectangles with areas <span class="math notranslate nohighlight">\((Y_1*Y_1), (Y_2*Y_1) ... (Y_k*Y_1)\)</span> going down the first column, <span class="math notranslate nohighlight">\((Y_1*Y_2), (Y_2*Y_2) ... (Y_k*Y_2)\)</span> going down the second, etc. We can thus visualize this as operation as follows: write out <span class="math notranslate nohighlight">\((Y_1 + Y_2 + ... Y_k)^2\)</span> as <span class="math notranslate nohighlight">\((Y_1 + Y_2 + ... Y_k)*(Y_1 + Y_2 + ... Y_k)\)</span>. Starting with the first (or second; it doesn’t matter) set of parentheses, take each term, multiply it by every term in the second set of parentheses, then add them up, and then do this for each term in the first set. Then, add up all the summed terms. This corresponds to summing up all of the items in the variance-covariance matrix. It was too time-consuming for me to draw a picture of all of this in Markdown, but DeVellis (2003) is a good, unintimidating visual representation of this sort of proof (which is really useful in general in the context of statistics).</p>
+<p>By the way, it may be useful to note that to sum all entries in a matrix, we can write it as a quadratic form. If we have centered variables, our covariance matrix <span class="math notranslate nohighlight">\(\boldsymbol{\Sigma}\)</span> is simply <span class="math notranslate nohighlight">\(\frac{1}{n-1}\textbf{X}^t\textbf{X}\)</span>, where <span class="math notranslate nohighlight">\(\textbf{X}\)</span> is the data matrix. Then, to sum all elements in that matrix, we write. <span class="math notranslate nohighlight">\(\vec{1}^t\boldsymbol{\Sigma}\vec{1}\)</span>. This proof won’t use matrix properties, though.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+            &amp;1. \mathbb{V}[Y] = \mathbb{E}[(Y - \mu_Y)^2] &amp;&amp; \text{definition of variance} \cr
+            &amp;2. = \mathbb{E}[([Y_1 + Y_2 + ... Y_k] - \mu_Y)^2] &amp;&amp; \text{definition of variable Y} \cr
+            &amp;3. = \mathbb{E}[([Y_1 + Y_2 + ... Y_k] - [\mu_{Y_1} + \mu_{Y_2} + ... \mu_{Y_k}])^2] \
+                &amp;&amp; \text{expectation operator is linear} \cr
+            &amp;4. = \mathbb{E}[(Y_1 - \mu_{Y_1} + Y_2 - \mu_{Y_2} + ... Y_k - \mu_{Y_k})^2]
+                &amp;&amp; \text{commutativity of addition} \cr
+            &amp;5. = \mathbb{E}[(Y_1 + Y_2 + ... Y_k)^2]
+                &amp;&amp; \text{definition of centered variables} \cr
+            &amp;6. = \mathbb{E}[Y_1^2 + (Y_2 * Y_1) + ... (Y_k * Y_1) + (Y_1 * Y_2) + Y_2^2 + (Y_3 * Y_2) ... ]
+                &amp;&amp; \text{picture the rectangle as mentioned above} \cr
+            &amp;7. = \mathbb{E}[\sum_{j=1}^k\sum_{i=1}^k Y_i * Y_j]
+                &amp;&amp; \text{generalizing the pattern} \cr
+            &amp;8. = \sum_{j=1}^k\sum_{i=1}^k \sigma^2_{Y_i, Y_j}
+                &amp;&amp; \text{definition of(co)variances} \cr
+            &amp;9. = \sum_{j=1}^k \sigma^2_{Y_j} + 2\sum_{i&gt;j}^k\sum_{j=1}^k \sigma^2_{Y_i, Y_j}
+                &amp;&amp; \text{covariance matrix is symmetric}
+        \end{align*}\]</div>
+<p>Of course, we often work with variables—such as the sample means of women’s education and that of men, <span class="math notranslate nohighlight">\(\overline{Y}_F\)</span> and <span class="math notranslate nohighlight">\(\overline{Y}_{M}\)</span>—whose population covariance <span class="math notranslate nohighlight">\(\sigma_{\overline{Y}_F, \overline{Y}_M}\)</span> is equal to zero. Then, only the first term of line 9 above is relevant to the calculation of the variance of a random variable which is itself the summation or addition of other random variables.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="answer" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>3 + 10 + 2 + 4.5 = 19.5</p>
+</aside>
+<aside class="footnote brackets" id="answer3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>(3 + 10 + 2 + 4.5)/4 = 4.875</p>
+</aside>
+<aside class="footnote brackets" id="answer4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Individual 1’s squared deviation is (3-4.875)^2 = 3.52. Individual 2’s squared deviation is
+(10-4.875)^2 = 26.27. Individual 3’s squared deviation is (2-4.875)^2 = 8.27. Individual 4’s squared
+deviation is (4.5-4.875)^2 = 0.14. The total sum of squares (TSS) is 38.2; the (near) mean is 38.2/3 =
+12.73 and the root thereof is 3.57.</p>
+</aside>
+<aside class="footnote brackets" id="fn-auc" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Formally, where <span class="math notranslate nohighlight">\(f(X)\)</span> is the generic notation for a PDF, <span class="math notranslate nohighlight">\(\int_a^b f(X) = \mathbb{P}(a \leq X \leq b)\)</span>.</p>
+</aside>
+<aside class="footnote brackets" id="fn-bin" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Incidentally, the probability of five randomly drawn sample means, each with <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>(CI contains <span class="math notranslate nohighlight">\(\mu_Y\)</span>) = 0.95, all including <span class="math notranslate nohighlight">\(\mu_Y\)</span> is, from the binomial distribution, <span class="math notranslate nohighlight">\(\binom{5}{5}*0.95^5*0.5^{5-5} = 1 * 0.95^5 * 1 = 0.77\)</span>, or about 77 percent.</p>
+</aside>
+<aside class="footnote brackets" id="fn" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>There is, unfortunately, no single-word term for “possible outcomes”, which is a strange oversight.</p>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">BMSS 1: Advanced arithmetic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-regular-variable-and-sampling">Distributions: regular variable and sampling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-distributions-probability-density-functions">Continuous distributions: probability density functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-inference">Basics of inference</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-central-limit-theorem-clt">The Central Limit Theorem (CLT)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms-and-probability-distributions">Histograms and probability distributions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-standard-error-sampling-noise-for-a-difference-in-means">The standard error (sampling noise) for a difference in means</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-distribution-of-sample-statistics-across-many-samples-tests-and-confidence-intervals">Using the distribution of sample statistics across many samples: tests and confidence intervals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extremely-useful-alternative-expression-for-the-variance">An extremely useful alternative expression for the variance.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By gjmb
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
