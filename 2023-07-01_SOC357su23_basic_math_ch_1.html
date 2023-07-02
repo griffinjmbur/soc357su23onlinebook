@@ -430,11 +430,8 @@ such a row vector, we’d wouldn’t need a <span class="math notranslate nohigh
 conceptualize those scores above as being a specific case of the following
 vector: <span class="math notranslate nohighlight">\(\vec{y} = [y_1, y_2, ... y_n]^T\)</span>. The last piece of notation is that we we will represent random
 variables in their most
-abstract form with capital Roman letters; their sample equivalents have lowercase Roman letters. Unlike
-in most statistics books, I will consistently use Greek letters without hats to denote true population
-parameters (most books usually, but not always, do this) and Greek letters with carets or “hats”. Greek
-letters will be used in the conventional way: the sound they make indicates the parameter. Here, <span class="math notranslate nohighlight">\(\tau\)</span>
-(“tau”) stands in for the total. Note that the notation means that to find the sample estimate of the
+abstract form with capital Roman letters; their sample equivalents have lowercase Roman letters. Here,
+the <span class="math notranslate nohighlight">\(\tau\)</span> (“tau”) stands for “total”. The notation means that to find the sample estimate of the
 total of the random variable <em>Y</em>, we sum up the observed values in the sample, <span class="math notranslate nohighlight">\(y_i\)</span>. Note that to
 estimate the value of the total, we need to multiply by the probability of selection into the sample. If
 each observation has a different probability, we need to put this inside of the summation. In our case,
@@ -520,7 +517,7 @@ probabilities of inclusion.</p>
     &amp;3. \mathbb{E}[\mu_Y] = \mu_Y &amp;&amp; \text{expectation of a constant is just that constant} \cr
     &amp;4. \mathbb{E}[Y - \mu_Y] = \mu_Y - \mu_Y = 0  &amp;&amp; \text{arithmetic}
         \end{align*}\]</div>
-<p>It is useful to think about the variance operator, <span class="math notranslate nohighlight">\(\mathbb{V}\)</span> as a function that produces the variance, and the actual variance itself as a fixed quantity for a given population. We will denote this <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Do not let yourself get frustrated by the power of 2. The reason we do this is quite simple: the variance is easier to <em>calculate</em> with, but the interpretation—the expected squared distance of a point from the mean, or the average squared distance of a point from the mean—is more difficult. One solution is to just take the root of the whole thing, which we then call the standard deviation, which is <span class="math notranslate nohighlight">\(\sigma\)</span> for the population and <em>s</em> in the sample (the sample variance is then <em>s</em>^2).</p>
+<p>It is useful to think about the variance operator, <span class="math notranslate nohighlight">\(\mathbb{V}\)</span>, as a function that produces the variance, and the actual variance itself as a fixed quantity for a given population. We will denote this <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Do not let yourself get frustrated by the power of 2. The reason we do this is quite simple: the variance is easier to <em>calculate</em> with, but the interpretation—the expected squared distance of a point from the mean, or the average squared distance of a point from the mean—is more difficult. One solution is to just take the root of the whole thing, which we then call the standard deviation, which is <span class="math notranslate nohighlight">\(\sigma\)</span> for the population and <em>s</em> in the sample (the sample variance is then <em>s</em>^2).</p>
 <p>The sample variance formula is also straightforward, with the exception of the denominator. Don’t worry too much about this; it is called the Bessel correction, and it fixes the bias caused by the fact that we estimate the population mean with the sample mean, which understands the true variance (the spread of the points will generally be closer to the sample mean than the population mean). But, the variance is still fundamentally the mean squared deviation.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
