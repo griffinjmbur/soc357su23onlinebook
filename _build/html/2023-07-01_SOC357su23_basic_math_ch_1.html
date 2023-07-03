@@ -168,8 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">basic math for social sciences I: basic descriptive and inferential statistics</a></li>
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">basic math chapter 1</a></li>
 </ul>
 
     </div>
@@ -363,23 +362,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">basic math for social sciences I: basic descriptive and inferential statistics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-regular-variable-and-sampling">Distributions: regular variable and sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-distributions-probability-density-functions">Continuous distributions: probability density functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-inference">Basics of inference</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-regular-variable-and-sampling">Distributions: regular variable and sampling</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-distributions-probability-density-functions">Continuous distributions: probability density functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-inference">Basics of inference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extremely-useful-alternative-expression-for-the-variance">An extremely useful alternative expression for the variance.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -507,8 +502,18 @@ inclusion of <span class="math notranslate nohighlight">\(\frac{n}{N}\)</span>, 
 <p>Note that this formula is helpful because is can be extended to cases where we don’t have equal
 probabilities of inclusion.</p>
 <p>For some practice, try calculating the sample mean for the data-set given above.<a class="footnote-reference brackets" href="#answer3" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>By the way, note also one important fact: means do <em>not</em> make sense for nominal variables (such as race) and should be taken with a large grain of salt for ordinal variables.</p>
+<p>What should we do we such variables in order to calculate meaningful descriptive statistics? We have two alternatives. First, you can simply calculate the estimated probability mass function for the variables, which is a fancy way of saying “list the percent of people in the sample who take on each value”, e.g. the (weighted) GSS 2018 has about 72 percent white respondents, 15 percent black respondents, and 13 percent “other” respondents (forgive the use of this crude category).</p>
+<p>Note also that, if we considered these three separate binary variables, where we mark people as 1s if they are members of that group and zeros if not, we could also consider each of these percentages the mean of each variable. E.g.,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    \overline{white} &amp;= \sum_{i=1}^n \frac{1}{n} * white_i \cr
+    &amp;= \frac{1}{n} * \underbrace{1 + 1 + ... + 1}_{n_{\text{whites}}} \
+    + \underbrace{0 + 0 + ... 0}_{n_{\text{non-whites}}} \cr
+    &amp;= \frac{n_{\text{whites}}}{n} &amp;&amp; \text{Note that this is the proportion of whites in the sample}
+    \end{align*}\]</div>
 </li>
-<li><p><strong>The variance</strong> is a measure of spread or dispersion. You can think about it as the expected difference between a randomly-selected observation and its mean. We define it formally at the population-level as the expectation of the difference between the random variable <em>Y</em> and its mean <span class="math notranslate nohighlight">\(\mu_Y: \mathbb{V}[Y] = \mathbb{E}[(Y - \mu)^2]\)</span>. You may wonder why we square the difference. There is a very good reason for this that leads us to the proof of a useful fact about the mean, which is that it is the value for a given set about which all deviations are not just minimized but also zero!</p>
+<li><p><strong>The variance</strong> is a measure of spread or dispersion. You can think about it as the expected difference between a randomly-selected observation and its mean. We define it formally at the population-level as the expectation of the squared difference between the random variable <em>Y</em> and its mean <span class="math notranslate nohighlight">\(\mu_Y: \mathbb{V}[Y] = \mathbb{E}[(Y - \mu)^2]\)</span>. You may wonder why we square the difference. There is a very good reason for this that leads us to the proof of a useful fact about the mean, which is that it is the value for a given set about which all deviations are not just minimized but also zero!</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     &amp;1. \mathbb{E}[Y - \mu_Y] = \mathbb{E}[Y] - \mathbb{E}[\mu_Y] 
@@ -528,18 +533,18 @@ probabilities of inclusion.</p>
 </li>
 </ol>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="distributions-regular-variable-and-sampling">
-<h1>Distributions: regular variable and sampling<a class="headerlink" href="#distributions-regular-variable-and-sampling" title="Permalink to this heading">#</a></h1>
+<section id="distributions-regular-variable-and-sampling">
+<h2>Distributions: regular variable and sampling<a class="headerlink" href="#distributions-regular-variable-and-sampling" title="Permalink to this heading">#</a></h2>
 <section id="discrete-distributions-cumulative-distribution-and-probability-mass-functions">
-<h2>Discrete distributions: cumulative distribution and probability mass functions<a class="headerlink" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions" title="Permalink to this heading">#</a></h2>
+<h3>Discrete distributions: cumulative distribution and probability mass functions<a class="headerlink" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions" title="Permalink to this heading">#</a></h3>
 <p>We saw above some methods of characterizing distributions by their parameters (their mean and standard deviation), but what if we want to examine the distribution overall? We need to look at this separately for discrete and continuous variables. We’ll start with what I’m calling <em>regular variable</em> distributions, distributions that characterize an actual variable of interest, such as mother’s education or income or age; then, we’ll turn to <em>sampling</em> distributions, distributions that characterize the behavior of a sample statistic over many different samples. This second quantity is of interest to us for <em>inferential reasons</em>; we care about income, but to make inference about income, we need to understand the behavior of sample means of income across many samples. This difference is <em>extremely</em> important, and in many years of teaching this material, I have found that the most common mistake students make is to ignore this distinction or to realize that one does not understand it but to be excessively easygoing about this fact. You <em>must</em> make sure that you understand this difference.</p>
+<p>Let’s start with regular variable distributions. These are the distributions that we typically <em>directly</em> care about: they give us information about different levels of our variable in the population of interest or a sample thereof, whereas sampling distributions are primarily useful for <em>analytical</em> reasons.</p>
 <p>There are two useful ways to examine an individual distribution for discrete variables. The first is a cumulative distribution function (CDF), which plots on the X-axis the value of the variable and on the Y-axis, the cumulative percent (i.e., probability) of data observed up to that value. A CDF makes sense for both continuous and discrete random variables. The height of this function is the percent of observations less than or equal to some value of the variable; remembering that percent and probabilities usually are the same thing, and letting <span class="math notranslate nohighlight">\(\mathbb{P}\)</span> mean “probability”, the height of this function <span class="math notranslate nohighlight">\(F(X) = \mathbb{P}(X \leq x)\)</span>.</p>
 <p>The second is a probability mass function (PMF), which plots possible values of the variable on the X-axis (again), but this time plots the probability of observations <em>just for that value</em> on the Y-axis. You can see these two approaches belows. Notice that a PMF is basically just a histogram. The height of this function is the percent of observations <em>exactly</em> equal to some value of the variable; the height of this function <span class="math notranslate nohighlight">\(F(X) = \mathbb{P}(X = x)\)</span>.</p>
 <p><img alt="CDF and PMF" src="_images/pmfcdfnumkids.png" /></p>
 </section>
 <section id="continuous-distributions-probability-density-functions">
-<h2>Continuous distributions: probability density functions<a class="headerlink" href="#continuous-distributions-probability-density-functions" title="Permalink to this heading">#</a></h2>
+<h3>Continuous distributions: probability density functions<a class="headerlink" href="#continuous-distributions-probability-density-functions" title="Permalink to this heading">#</a></h3>
 <p>For continuous variables, we can also generate cumulative distribution functions, but probability mass functions don’t, strictly speaking, make sense. This is because the probability of any exact value of such a variable is zero. This is surprising at first, but if you have trouble buying this, imagine the probability of any specific value of a variable which could possibly be equal to, say, <span class="math notranslate nohighlight">\(\pi\)</span> or <em>e</em> (i.e., irrational numbers)—if it’s not zero, it’s extremely small, right?</p>
 <p>It is important to note that <em>all</em> actual, observed populations are, practically speaking, “discrete” in that the number of outcomes is finite. So, while a variable can have a PDF, any dataset of <em>realizations</em> cannot; we just have an estimate of the PDF, which is actually a PMF. For example, here is the empirical CDF and PMF of height from the 2017-18 NHANES. Height is a continuous variable, but the realization of it in this sample is discrete, even if it is massively less-discrete than the number of children seen above. If you look carefully, you can see the slight “kinks” in the line; these are not problems of pixellation but rather that this is an empirical estimate of continuous function.</p>
 <p><img alt="CDF and PMF for realization of continuous variable" src="_images/height_CDF_P'D'F.png" /></p>
@@ -556,7 +561,7 @@ probabilities of inclusion.</p>
 <p>Here is the extremely important fact about that. When we do inference about a population, we cannot observe it, and we do not know its distribution; its distribution likely does not fit some exact mathematical function anyways (and it may not be well-approximated by one). So, observing the realization of <em>one</em> random variable—taking one person out of the population and asking, say, their income—is not very informative. When we turn a set of random variables into a total or a mean, however, we know that the shape of the distribution <em>they</em> come from is not the (unknown) “regular variable” distribution but the sampling distribution. <em>This is the primary reason why (pre-super computer) statistics is even possible</em>. It is such a striking fact that Galton claimed that “<a class="reference external" href="https://galton.org/cgi-bin/searchImages/galton/search/books/natural-inheritance/pages/natural-inheritance_0073.htm">[t]he law would have been personified by the Greeks and deified, if they had known of it</a>”.</p>
 </section>
 <section id="basics-of-inference">
-<h2>Basics of inference<a class="headerlink" href="#basics-of-inference" title="Permalink to this heading">#</a></h2>
+<h3>Basics of inference<a class="headerlink" href="#basics-of-inference" title="Permalink to this heading">#</a></h3>
 <p>So, we can now do inference! All we need to do is find the standard score of a sample mean and then find the associated AUC. Recall before that sample means are unbiased estimators for simple random samples, so our mean of the sampling distribution, <span class="math notranslate nohighlight">\(\mu_{\overline{Y}}\)</span>, is simply the population mean, <span class="math notranslate nohighlight">\(\mu_Y\)</span>.</p>
 <p>Now, we are after the standard deviation of the sample mean, which is referred to as the standard error for the sake of distinguishing it from the “regular variable” standard deviation. It turns out that it is much easier to derive the variance and then simply take the root. Note that we are after the variance of a sum of IID random variables (divided by the constant <em>n</em>).  While the extremely useful general formula for the variance of a sum of random variables is slightly complex (see appendix), it is not just extremely useful but extremely simple for independent random variables: it is just the sum of their variances. Let <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represent the sample mean of a random variable comprised of <em>n</em> IID random variables <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_n\)</span>; each variable comes from a population distribution with standard deviation <span class="math notranslate nohighlight">\(\sigma_Y\)</span>, which we’ll simply refer to using <span class="math notranslate nohighlight">\(\sigma\)</span> for simplicity.</p>
 <div class="amsmath math notranslate nohighlight">
@@ -573,18 +578,22 @@ probabilities of inclusion.</p>
 \[\begin{align*}
     \textit{mean squared error} &amp;= \
     \underbrace{\mathbb{E}[(\overline{Y} - \mu_{\overline{Y}})^2]}_{\text{sampling 
-    variance}} + \underbrace{(\mu_{\overline{Y}} - \mu_Y)^2}_{bias}
+    variance}} + \underbrace{(\mu_{\overline{Y}} - \mu_Y)^2}_{\text{bias}}
 \end{align*}\]</div>
 <p>Note that if we have no bias, and thus <span class="math notranslate nohighlight">\(\mu_{\overline{Y}} = \mu_Y\)</span> (the mean of all the samples is the mean of the population), our sampling variance is the only source of variation. We’ve now derived the sampling variance in more detail.</p>
 <p>Finally, here comes our last step. Note that we are planning to do inference on the mean, but we do not know it! How can we use our formula? Well, we can do one of two things.</p>
-<p>First, we can simply recognize that, for example, about 68 percent of sample means will fall within +/- two standard deviations of the true population mean. So, we can simply add and subtract one standard error to our sample mean to have a 68 percent chance of having that mean <span class="math notranslate nohighlight">\(\mu_Y\)</span> in there. It’s more conventional to use a higher level of “confidence” and add and subtract 1.96 standard errors to our sample mean to have a 95 percent chance of including <span class="math notranslate nohighlight">\(\mu_Y\)</span>. The general formula for a confidence interval with confidence level <em>C</em> is <span class="math notranslate nohighlight">\(CI_{C} = \overline{y} +/- z_C*\frac{\sigma}{\sqrt{n}}\)</span>, where <span class="math notranslate nohighlight">\(z_C\)</span> is the number of standard deviations within which <em>C</em> percent of the AUC lie. For the sake of our class, just use <span class="math notranslate nohighlight">\(z_{95} = 1.96\)</span>.</p>
-<p>Below is a picture of why this works. Suppose that we have population level data on mother’s education. Below is what the sampling distribution would look like, with five sample means plotted and their “error bars” attached. Notice that, although no sample mean is identical, all five happen<a class="footnote-reference brackets" href="#fn-bin" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> to include the true population mean. In the long run, we should expect this procedure to work 95 percent of the time.</p>
+<p>First, we can simply recognize that, for example, about 68 percent of sample means will fall within +/- two standard deviations of the true population mean. So, we can simply add and subtract one standard error to our sample mean to have a 68 percent chance of having that mean <span class="math notranslate nohighlight">\(\mu_Y\)</span> in there. It’s more conventional to use a higher level of “confidence” and add and subtract 1.96 standard errors to our sample mean to have a 95 percent chance of including <span class="math notranslate nohighlight">\(\mu_Y\)</span>. The general formula for a confidence interval with confidence level <em>C</em> is <span class="math notranslate nohighlight">\(CI_{C} = \overline{y} +/- z_C*\frac{\sigma}{\sqrt{n}}\)</span>, where <span class="math notranslate nohighlight">\(z_C\)</span> is the number of standard deviations within which <em>C</em> percent of the AUC lie. For the sake of our class, just use <span class="math notranslate nohighlight">\(z_{95} = +/- 1.96\)</span> or <span class="math notranslate nohighlight">\(z_{99} = +/- 2.56\)</span>.</p>
+<p>Below is a picture of why this works. Suppose that we have population level data on mother’s education. Below is what the sampling distribution would look like, with five sample means plotted and their “error bars” attached. Notice that, although no sample mean is identical, all five sample means with their CIs happen<a class="footnote-reference brackets" href="#fn-bin" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> to include the true population mean. We wouldn’t be able to say, if we just had these samples, where exactly the true population mean was, but we would have captured it in our boundaries (and we could say that this should work, in the long run). In fact, in the long run, we should expect this procedure to work exactly 95 percent of the time.</p>
 <p><img alt="The logic of a confidence interval" src="_images/z_CI_demo.png" /></p>
-<p>Let’s do a little bit of practice. {TODO: example problem}</p>
+<p>Let’s do a little bit of practice.</p>
+<p>Suppose that I have a sample in which the mean of the respondents’ ages is 35, and I want to come up with a plausible range of values for the population mean age. Suppose that <em>n</em> is 900 and I happen to know that the population standard deviation is three (3). What are the boundaries of a 95 percent confidence interval? <a class="footnote-reference brackets" href="#ci" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a></p>
 <p>Our second technique is a statistical <em>test</em>. This works for fundamentally the same reason as a confidence interval, and they are functionally the same for means (for other kinds of statistics, there will be more reason to prefer the CI or the test). We picture the sampling distribution under a null hypothesis (<span class="math notranslate nohighlight">\(H_0\)</span>) that the true mean is equal to some value <span class="math notranslate nohighlight">\(\mu_0\)</span>, and then we calculate the standard score if that were true and finally find the associated probability. If that <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value is small (say, less than 0.05), we reject the null hypothesis. The level at which we reject the null, known as <span class="math notranslate nohighlight">\(\alpha\)</span>, is arbitrary, but a conventional cutoff is 0.05.</p>
 <p>It is conventional to take the <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value not just of the statistic we actually get, but also its additive inverse. This is shown below. In the example below, we happen to <em>know</em> the true population parameter; this is meant to show you what happens when the null hypothesis is true (sample means are quite rarely more than <span class="math notranslate nohighlight">\(+/- 2*\frac{\sigma}{\sqrt{n}}\)</span> away from the mean.</p>
 <p><img alt="The logic of a statistical test" src="_images/ztest_demo.png" /></p>
-<p>Finally, there is just one more complication to be aware of. In practice, we do not know <span class="math notranslate nohighlight">\(\sigma\)</span>, so we estimate it with <em>s</em>. This causes additional uncertainty in our estimate, and it is now taken from a distribution that is close to Normal but is farther from Normal the smaller the sample size. Many statistical textbooks get very excited about this; I think that this is, for the non-mathematician, a boring technical detail. I will simply say that this means that your should look up your test statistic in a <em>t</em>-table, not a <em>z</em>-table, but the basic meaning of a CI or <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value is the same. If you’re in my SOC357 class, I’ll show how to do this in Google Sheets during our lab.</p>
+<p>Let’s again do a little bit of practice.</p>
+<p>Go back to the example before in which I have a sample in which the mean of the respondents’ ages is 35, and I want to test the claim that <span class="math notranslate nohighlight">\(\mu_{age} = 35.5\)</span>. How should I do this? First, I calculate my raw difference between the observed mean (35) and the hypothetical mean, <span class="math notranslate nohighlight">\(\mu_0\)</span> = 35, which is -0.5. Then, I calculate the standard error, <span class="math notranslate nohighlight">\(\frac{3}{\sqrt{900}}\)</span> = 0.1. Then, I find the test statistic by dividing -0.5 by 0.1 = -5. Finally, I look up the <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value for this statistic <em>and</em> the additive inverse (5); I’ll show how to do this with code in class. This is so small that it would not be visible on a picture of the sampling distribution: $\mathbb{P}(|Z| &gt; |z|) = 0.0000005733. Since this sample would be extremely improbable under the null hypothesis, we reject it.</p>
+<p>Finally, there is just one more complication to be aware of. In practice, we do not know <span class="math notranslate nohighlight">\(\sigma\)</span>, so we estimate it with <em>s</em>. This causes additional uncertainty in our estimate, and it is now taken from a distribution that is close to Normal but is farther from Normal the smaller the sample size. Many statistical textbooks get very excited about this; I think that this is, for the non-mathematician, a boring technical detail. I will simply say that this means that your should look up your values for the test and the CI in a <em>t</em>-table, not a <em>z</em>-table, but the basic meaning of a CI or <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value is the same. If you’re in my SOC357 class, I’ll show how to do this in Google Sheets during our lab.</p>
+</section>
 </section>
 <section id="appendix">
 <h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
@@ -668,11 +677,15 @@ deviation is (4.5-4.875)^2 = 0.14. The total sum of squares (TSS) is 38.2; the (
 </aside>
 <aside class="footnote brackets" id="fn-auc" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
-<p>Formally, where <span class="math notranslate nohighlight">\(f(X)\)</span> is the generic notation for a PDF, <span class="math notranslate nohighlight">\(\int_a^b f(X) = \mathbb{P}(a \leq X \leq b)\)</span>.</p>
+<p>Formally, where <span class="math notranslate nohighlight">\(f(X)\)</span> is the generic notation for a PDF, <span class="math notranslate nohighlight">\(\int_a^b f(X) = \mathbb{P}(a \leq X \leq b)\)</span>, i.e. the PDF <span class="math notranslate nohighlight">\(f(x)\)</span> is the derivative of the CDF <span class="math notranslate nohighlight">\(F(X)\)</span>, so integrating <span class="math notranslate nohighlight">\(f(x)\)</span> from <em>a</em> to <em>b</em> gives the change in height on the CDF from <em>a</em> to <em>b</em> (which is, more obviously, the the probability that a variable takes a value between <em>a</em> and <em>b</em>).</p>
 </aside>
 <aside class="footnote brackets" id="fn-bin" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
 <p>Incidentally, the probability of five randomly drawn sample means, each with <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>(CI contains <span class="math notranslate nohighlight">\(\mu_Y\)</span>) = 0.95, all including <span class="math notranslate nohighlight">\(\mu_Y\)</span> is, from the binomial distribution, <span class="math notranslate nohighlight">\(\binom{5}{5}*0.95^5*0.5^{5-5} = 1 * 0.95^5 * 1 = 0.77\)</span>, or about 77 percent.</p>
+</aside>
+<aside class="footnote brackets" id="ci" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>95 CI = $\overline{y} +/- z_{95}<em>SE = 35 +/- 1.96</em>\frac{3}{\sqrt{900} = 35 +/- 0.196 = (35.80, 35.19)</p>
 </aside>
 </section>
 </section>
@@ -736,23 +749,19 @@ deviation is (4.5-4.875)^2 = 0.14. The total sum of squares (TSS) is 38.2; the (
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">basic math for social sciences I: basic descriptive and inferential statistics</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operators">Some basic operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-regular-variable-and-sampling">Distributions: regular variable and sampling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-distributions-probability-density-functions">Continuous distributions: probability density functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-inference">Basics of inference</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-regular-variable-and-sampling">Distributions: regular variable and sampling</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-distributions-probability-density-functions">Continuous distributions: probability density functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basics-of-inference">Basics of inference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extremely-useful-alternative-expression-for-the-variance">An extremely useful alternative expression for the variance.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
