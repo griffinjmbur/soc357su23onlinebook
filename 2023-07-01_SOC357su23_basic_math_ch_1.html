@@ -412,31 +412,25 @@ document.write(`
 <p>The numbering of individuals is, for our purposes, basically always arbitrary, and summation is
 commutative anyways (the order of the items summed, or the <em>summands</em>, does not matter), so sometimes you
 will see the sub- and superscripts omitted.</p>
-<p>Let’s suppose that we are interested in someone’s highest year of education achieved and we have
-observations on <em>n</em> = 10 individuals. Let their scores on the education variable be represented by the
-vector <span class="math notranslate nohighlight">\(\vec{y} = [10, 12, 16, 12, 18, 10, 20, 18, 9, 10]^T\)</span>. All that the little “T” represents here is
-that this is the transpose of the actual vector, which would be a column in the standard way of
-representing data in matrices (rows are individuals, columns are variables). As you can see above, it
-wastes a lot of space to represent column vectors the correct way in text documents, so you will see
-this convention very often. The idea is that we are making clear that this is a list of different
-individuals and <em>not</em> the scores for one individual on ten different variables (if we wanted to represent
-such a row vector, we’d wouldn’t need a <span class="math notranslate nohighlight">\(^T\)</span>.</p>
-<p>Now, try to sum up these individuals’ scores. The order here is arbitrary, but you might as well
-conceptualize those scores above as being a specific case of the following
-vector: <span class="math notranslate nohighlight">\(\vec{y} = [y_1, y_2, ... y_n]^T\)</span>. The last piece of notation is that we we will represent random
-variables in their most
-abstract form with capital Roman letters; their sample equivalents have lowercase Roman letters. Here,
-the <span class="math notranslate nohighlight">\(\tau\)</span> (“tau”) stands for “total”. The notation means that to find the sample estimate of the
+<p>Note that we can also write the total with the use of sample weights, which are not a key feature of this
+class, but they are something that you should know the basics of. The last piece of notation that we will
+need is that we we will represent random variables in their most
+abstract form with capital Roman letters; their sample equivalents have lowercase Roman letters. Greek
+letters are reserved for <em>parameters</em>, facts about the population that we want to know (but can’t directly
+observe). Here,
+the <span class="math notranslate nohighlight">\(\tau\)</span> (“tau”, which makes a “t” sound) stands for “population total”. The notation means that to find
+the sample estimate of the
 total of the random variable <em>Y</em>, we sum up the observed values in the sample, <span class="math notranslate nohighlight">\(y_i\)</span>. Note that to
 estimate the value of the total, we need to multiply by the inverse probability of selection into the
-sample. This is because the total of the population—a quantity that we won’t often need, but I
-include it since it is simple—is effectively  If each observation has a different probability, we need to put this inside of the summation.
+sample. This is because the total of the population is (unlike the mean, with which we’ll work more often)
+a function of the size of the population, of which the sample is an arbitrarily-sized fragment.
+Note that if each observation has a different probability, we need to put this inside of the summation.
 In our case,
 we’ll deal only with the equal probability of selection (<em>epsem</em>) method, so this is a constant that can
 be factored out.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-        \widehat{\tau}_Y &amp;= \pi \sum_{i=1}^n y_i
+        \widehat{\tau}_Y &amp;= \frac{1}{\pi} \sum_{i=1}^n y_i
     \end{align*}\]</div>
 </li>
 <li><p><strong>The mean</strong> is a measure of central tendency—something like the “characteristic value of a distribution”, which the mean, median and mode all get at. We focus most attention on the mean in this class; however, the median is an important measure, especially in the context of quantiles more generally. <strong>“Mean” is simply the formal term for the arithmetic average.</strong> We’ll focus on the simple case where possible outcomes are discrete, meaning that they are finite in number or <strong>countably</strong> infinite (more in a second); simple descriptive statistics for any real world data-set can be calculated using these simpler discrete formulae. Sometimes, we will need to discuss variables with infinite possible values, known as continuous variables.</p>
@@ -460,7 +454,7 @@ we write the mean as an expectation—we are <strong>not</strong> summing over a
 Many textbooks and internet sources do not change their notation here, which confuses new students, so I
 will now re-index the sum. Let <em>k</em> index an outcome of the random variable <em>Y</em> (i.e., “<em>k</em>=5” would mean
 the fifth possible outcome, where order again typically does not matter) and let <em>K</em> indicate the number
-of possible outcomes. Then, for a <em>discrete</em> random variable (don’t worry about the continuous formlua
+of possible outcomes. Then, for a <em>discrete</em> random variable (don’t worry about the continuous formula
 here):</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
