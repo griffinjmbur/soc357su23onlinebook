@@ -428,8 +428,10 @@ variables in their most
 abstract form with capital Roman letters; their sample equivalents have lowercase Roman letters. Here,
 the <span class="math notranslate nohighlight">\(\tau\)</span> (“tau”) stands for “total”. The notation means that to find the sample estimate of the
 total of the random variable <em>Y</em>, we sum up the observed values in the sample, <span class="math notranslate nohighlight">\(y_i\)</span>. Note that to
-estimate the value of the total, we need to multiply by the probability of selection into the sample. If
-each observation has a different probability, we need to put this inside of the summation. In our case,
+estimate the value of the total, we need to multiply by the inverse probability of selection into the
+sample. This is because the total of the population—a quantity that we won’t often need, but I
+include it since it is simple—is effectively  If each observation has a different probability, we need to put this inside of the summation.
+In our case,
 we’ll deal only with the equal probability of selection (<em>epsem</em>) method, so this is a constant that can
 be factored out.</p>
 <div class="amsmath math notranslate nohighlight">
