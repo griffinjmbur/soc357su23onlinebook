@@ -569,7 +569,8 @@ probabilities of inclusion.</p>
     \mathbb{V}[\overline{Y}] = \sigma^2_{\overline{Y}} &amp;= \mathbb{V}[\sum_{i=1}^n \frac{Y_i}{n}] \cr
     &amp;= \frac{1}{n^2} \mathbb{V}[\sum_{i=1}^n  Y_i] \
         &amp;&amp; \text{constants factor out of variances as squares} \cr
-    &amp;= \frac{1}{n^2} (\sigma^2_1 + \sigma^2_2 + ... + \sigma^2_n) \cr
+    &amp;= \frac{1}{n^2} (\sigma^2_1 + \sigma^2_2 + ... + \sigma^2_n) \
+        &amp;&amp; \text{variance of a sum of IID random variables is sum of their variance} \cr
     &amp;= \frac{1}{n^2} n*\sigma^2 \cr
     &amp;= \frac{\sigma^2}{n} \cr
     \sigma_{\overline{Y}} &amp;= \frac{\sigma}{\sqrt{n}}
