@@ -566,8 +566,9 @@ probabilities of inclusion.</p>
 <p>Now, we are after the standard deviation of the sample mean, which is referred to as the standard error for the sake of distinguishing it from the “regular variable” standard deviation. It turns out that it is much easier to derive the variance and then simply take the root. Note that we are after the variance of a sum of IID random variables (divided by the constant <em>n</em>).  While the extremely useful general formula for the variance of a sum of random variables is slightly complex (see appendix), it is not just extremely useful but extremely simple for independent random variables: it is just the sum of their variances. Let <span class="math notranslate nohighlight">\(\overline{Y}\)</span> represent the sample mean of a random variable comprised of <em>n</em> IID random variables <span class="math notranslate nohighlight">\(Y_1, Y_2, ... Y_n\)</span>; each variable comes from a population distribution with standard deviation <span class="math notranslate nohighlight">\(\sigma_Y\)</span>, which we’ll simply refer to using <span class="math notranslate nohighlight">\(\sigma\)</span> for simplicity.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-    \mathbb{V}[\overline{Y}] = \sigma^2_{\overline{Y}} &amp;= \sum_{i=1}^n \mathbb{V}[\frac{Y_i}{n}] \cr
-    &amp;= \sum_{i=1}^n \frac{1}{n^2} \mathbb{V}[Y_i] \cr
+    \mathbb{V}[\overline{Y}] = \sigma^2_{\overline{Y}} &amp;= \mathbb{V}[\sum_{i=1}^n \frac{Y_i}{n}] \cr
+    &amp;= \frac{1}{n^2} \mathbb{V}[\sum_{i=1}^n  Y_i] \
+        &amp;&amp; \text{constants factor out of variances as squares} \cr
     &amp;= \frac{1}{n^2} (\sigma^2_1 + \sigma^2_2 + ... + \sigma^2_n) \cr
     &amp;= \frac{1}{n^2} n*\sigma^2 \cr
     &amp;= \frac{\sigma^2}{n} \cr
