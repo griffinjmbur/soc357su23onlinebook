@@ -463,7 +463,9 @@ here):</p>
     \mathbb{E}[Y] &amp;= \sum_{k=1}^K y_k * \mathbb{P}(Y=y_k)
     \end{align*}\]</div>
 <p>This says that we look at each possible outcome <em>k</em>, starting with <em>k</em> = 1, and multiple the value of that
-outcome <span class="math notranslate nohighlight">\(y_k\)</span> by its probability of occurring, <span class="math notranslate nohighlight">\(\mathbb{P}(Y=y_k)\)</span>.</p>
+outcome <span class="math notranslate nohighlight">\(y_k\)</span> by its probability of occurring, <span class="math notranslate nohighlight">\(\mathbb{P}(Y=y_k)\)</span>. Note, also, that <span class="math notranslate nohighlight">\(\mu_Y\)</span> is another
+way to denote the population mean; the difference between this and <span class="math notranslate nohighlight">\(\mathbb{E}[Y}\)</span> is like the difference
+between writing “the average” and “total over sample size”, respectively.</p>
 <p>For a given <em>set</em> of data, the formula does not change, even if the variable is itself continuous; this is
 because all actual observed data-sets are discrete: there is a finite number of observed values. If we
 have any repeated values, we effectively use this as a sample estimate of the probability of observing
@@ -480,7 +482,7 @@ notational rule, but it is extremely common, so we will use it. For any specific
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     \bar{y} &amp;= \sum_{i=1}^n \frac{1}{n} * y_i \cr
-    \bar{y} &amp;=  \frac{1}{n} \sum_{i=1}^n* y_i  \
+    \bar{y} &amp;=  \frac{1}{n} \sum_{i=1}^n y_i  \
         &amp;&amp;  \text{since $\frac{1}{n}$ is constant, it factors out of the sum} \cr
     \end{align*}\]</div>
 <p>Note that this means that a <em>simple</em> mean implicitly takes the inclusion of each member of the sample to
