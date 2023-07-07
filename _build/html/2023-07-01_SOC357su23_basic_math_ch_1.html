@@ -372,6 +372,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extremely-useful-alternative-expression-for-the-variance">An extremely useful alternative expression for the variance.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-surprising-demonstration-of-any-element-s-probability-of-inclusion-when-sampling-from-a-finite-population-without-replacement">The surprising demonstration of any element’s probability of inclusion when sampling from a finite population without replacement</a></li>
 </ul>
 </li>
 </ul>
@@ -661,6 +662,32 @@ probabilities of inclusion.</p>
                 &amp;&amp; \text{covariance matrix is symmetric}
         \end{align*}\]</div>
 <p>Of course, we often work with variables—such as the sample means of women’s education and that of men, <span class="math notranslate nohighlight">\(\overline{Y}_F\)</span> and <span class="math notranslate nohighlight">\(\overline{Y}_{M}\)</span>—whose population covariance <span class="math notranslate nohighlight">\(\sigma_{\overline{Y}_F, \overline{Y}_M}\)</span> is equal to zero. Then, only the first term of line 9 above is relevant to the calculation of the variance of a random variable which is itself the summation or addition of other random variables.</p>
+</section>
+<section id="the-surprising-demonstration-of-any-element-s-probability-of-inclusion-when-sampling-from-a-finite-population-without-replacement">
+<h3>The surprising demonstration of any element’s probability of inclusion when sampling from a finite population without replacement<a class="headerlink" href="#the-surprising-demonstration-of-any-element-s-probability-of-inclusion-when-sampling-from-a-finite-population-without-replacement" title="Permalink to this heading">#</a></h3>
+<p>It turns out that any element has probability <span class="math notranslate nohighlight">\(\frac{n}{N}\)</span> of being selected into the sample from a finite population. This is obvious when sampling with replacement. We have <em>n</em> mutually exclusive or disjoint events, the selection of <em>n</em> elements into our sample. Each time, we have probability <span class="math notranslate nohighlight">\(\frac{1}{N}\)</span>, so we simply add up the probabilities <em>n</em> times.</p>
+<p>This is also the correct answer for a sample <em>without</em> replacement, but this is, in some respects a coincidence since the probability of inclusion <em>appears</em> to change each time since the population does (it loses a member). Here is the proof (this is the developed form a proof telegraphed in the classic Kish [1965]).</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;1. \text{number of ways to pick any given sample}) = {N \choose n} \
+    &amp;&amp; \text{definition of binomial coefficient} \cr
+&amp;2. \text{num. ways to select sample which definitely has element} j = {N-1 \choose n-1} \
+    &amp;&amp; \text{if we must include $j$, population and sample decline by one} \cr
+&amp;3. \mathbb{P}(\text{select element} j) = \frac{\text{step 2}}{\text{step 1}} \
+    &amp;&amp; \text{probability =} \frac{n_{\text{ways to succed}}}{n_{\text{outcomes}}} \cr
+&amp;4. \mathbb{P}(\text{select element} j) = \frac{{N-1 \choose n-1}}{{N \choose n}} \
+    &amp;&amp; \text{substitution} \cr
+&amp;5. = \frac{\frac{(N-1)!}{(n-1)!(N-1 - n-1)!}}{\frac{N!}{n! (N-n)!}} \
+    &amp;&amp; \text{definition} \cr
+&amp;6. = \frac{\frac{(N-1)!}{(n-1)! (N-n)!}}{\frac{N!}{n!(N-n)!}} \
+    &amp;&amp; \text{simplification} \cr
+&amp;7. = \frac{\frac{(N-1)!}{(n-1)!}}{\frac{N!}{n!}} \
+    &amp;&amp; \text{more simplification} \cr
+&amp;8. = \frac{(N-1)!n!}{N!(n-1)!} \
+    &amp;&amp; \text{more simplification} \cr
+&amp;8. = \frac{n}{N} \
+    &amp;&amp; \text{definition of factorials} \cr
+\end{align*}\]</div>
 <hr class="footnotes docutils" />
 <aside class="footnote brackets" id="answer" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
@@ -761,6 +788,7 @@ deviation is (4.5-4.875)^2 = 0.14. The total sum of squares (TSS) is 38.2; the (
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-extremely-useful-alternative-expression-for-the-variance">An extremely useful alternative expression for the variance.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-general-formula-for-the-variance-of-a-sum-of-random-variables">The general formula for the variance of a sum of random variables.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-surprising-demonstration-of-any-element-s-probability-of-inclusion-when-sampling-from-a-finite-population-without-replacement">The surprising demonstration of any element’s probability of inclusion when sampling from a finite population without replacement</a></li>
 </ul>
 </li>
 </ul>
