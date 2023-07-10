@@ -432,8 +432,8 @@ document.write(`
 <p>Let’s now examine a “population” (actually, the 2018 GSS) that we happen to have data on. In this population, we know that the true difference in educational attainment by sex is small but perceptible: 0.07 years in favor of women.</p>
 <p>If we pull five samples (<span class="math notranslate nohighlight">\(n = 50\)</span> for each group) from this population and calculate confidence intervals, we should expect all of them to include the true mean difference somewhere inside, and indeed, they do (in this particular simulation, though it would not be “wrong” if they didn’t since probability refers to long-run percentages).</p>
 <p><img alt="male-female education differences" src="_images/t_diff_demo.png" /></p>
-<p>Now, let’s examine some actual data. Suppose that you are interested in coming up with a plausible range of values for the difference in mean hourly wages among young men and women (say, under 40) with bachelor’s degrees with 95 percent confidence. The mean for men is 34.25 and the sample variance is 277.19 (<span class="math notranslate nohighlight">\(n = 10,438\)</span>); the mean for women is 29.67 and the sample variance is 252.17 (<span class="math notranslate nohighlight">\(n = 11,772\)</span>). The smaller of the two subsamples is very large, so our 95 percent CI <em>t</em>-statistic happens to just be 1.96 (as it is with a perfectly Normal distribution). Using our formula from above, we find that our 95 CI is <span class="math notranslate nohighlight">\((34.25 - 29.67) +/- 1.96*\sqrt{\frac{252.17}{10,437} + \frac{252.17}{11,772}} =\)</span> \<span class="math notranslate nohighlight">\(4.16/hr, \\\)</span>5.00/hr.</p>
-<p>What if you wanted to test the claim that the difference is equal to \<span class="math notranslate nohighlight">\(4.00/hr in favor of men? We previously calculated the standard error for the difference as 0.213495. So, now we simply take the observed difference less the proposed difference and divide by the SE: \)</span>\frac{(34.25-29.67) - (4)}{0.213495} = 2.72<span class="math notranslate nohighlight">\(. We can then look up the two-sided \)</span>\mathbb{P}<span class="math notranslate nohighlight">\(-value of this test statistic; it happens to be 0.007. Since our conventional \)</span>\alpha<span class="math notranslate nohighlight">\( is 0.05, we reject the null hypothesis at this level. We could also have simply observed that our 95 CI does not include 4. Below is an illustration of our \)</span>\mathbb{P}$-value, using the unstandardized sampling distribution (the probability would be the same, just with a different mean and standard deviation of the curve, if we used the standardized difference).</p>
+<p>Now, let’s examine some actual data. Suppose that you are interested in coming up with a plausible range of values for the difference in mean hourly wages among young men and women (say, under 40) with bachelor’s degrees with 95 percent confidence. The mean for men is 34.25 and the sample variance is 277.19 (<span class="math notranslate nohighlight">\(n = 10,438\)</span>); the mean for women is 29.67 and the sample variance is 252.17 (<span class="math notranslate nohighlight">\(n = 11,772\)</span>). The smaller of the two subsamples is very large, so our 95 percent CI <em>t</em>-statistic happens to just be 1.96 (as it is with a perfectly Normal distribution). Using our formula from above, we find that our 95 CI is <span class="math notranslate nohighlight">\((34.25 - 29.67) +/- 1.96*\sqrt{\frac{252.17}{10,437} + \frac{252.17}{11,772}} =\)</span> 4.16/hr, 5.00/hr.</p>
+<p>What if you wanted to test the claim that the difference is equal to 4.00/hr in favor of men? We previously calculated the standard error for the difference as 0.213495. So, now we simply take the observed difference less the proposed difference and divide by the SE: <span class="math notranslate nohighlight">\(\frac{(34.25-29.67) - (4)}{0.213495} = 2.72\)</span>. We can then look up the two-sided <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value of this test statistic; it happens to be 0.007. Since our conventional <span class="math notranslate nohighlight">\(\alpha\)</span> is 0.05, we reject the null hypothesis at this level. We could also have simply observed that our 95 CI does not include 4. Below is an illustration of our <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value, using the unstandardized sampling distribution (the probability would be the same, just with a different mean and standard deviation of the curve, if we used the standardized difference).</p>
 <p><img alt="P-value illustrated" src="_images/pvalue_t.png" /></p>
 </section>
 <section id="introduction-to-modeling-analysis-of-variance-anova">
@@ -518,19 +518,22 @@ document.write(`
 <p>How well does a passenger’s class (on the ship) explain the fare that they paid?</p>
 <p>Let’s begin by finding the means for each group, which will also let us calculate the sums of squares within each group. Doing ANOVA totally by hand is somewhat tedious, but I also want to give some sense of how it might be done by hand without just asking a computer program. One compromise is simply telling a computer to calculate the variance within each group, then multiplying by <span class="math notranslate nohighlight">\(n_j - 1\)</span>; this is relatively easy in most software.</p>
 <p>In this data-set, I find the following:</p>
-<p>\begin{array}{|c|c|c|c|}
-\hline
-\textbf{group} &amp; \textbf{mean} &amp; \textbf{SS} &amp; \textbf{n} \
-\hline
-\text{1} &amp; \text{84.15} &amp; \text{1320848.9} &amp; \text{216} \
-\hline
-\text{2} &amp; \text{20.66} &amp;\text{32944.87} &amp;\text{184} \
-\hline
-\text{3} &amp; \text{13.71} &amp;\text{67869.31} &amp;\text{487} \
-\hline
-\text{total} &amp; \text{32.31} &amp;\text{2195730.9} &amp;\text{887} \
-\hline
-\end{array}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{|c|c|c|c|}
+        \hline
+            \textbf{group} &amp; \textbf{mean} &amp; \textbf{SS} &amp; \textbf{n} \\
+        \hline
+            \text{1} &amp; \text{84.15} &amp; \text{1320848.9} &amp; \text{216} \\
+        \hline
+            \text{2} &amp; \text{20.66} &amp;\text{32944.87} &amp;\text{184} \\
+        \hline
+            \text{3} &amp; \text{13.71} &amp;\text{67869.31} &amp;\text{487} \\
+        \hline
+            \text{total} &amp; \text{32.31} &amp;\text{2195730.9} &amp;\text{887} \\
+        \hline
+\end{array}
+\end{split}\]</div>
 <p>Summing up the first three columns, I find that <span class="math notranslate nohighlight">\(1320848.9+32944.87+67869.31=1421663.08\)</span>. Now, since the residuals from this model are orthogonal to the sum of squares for the model, I could just immediately calculate that <span class="math notranslate nohighlight">\(MSS = TSS - RSS = 2195730.9 - 1421663.08 = 774067.82\)</span>, but I will show how to do this by hand as well.</p>
 <p>First, we need to simply find the squared deviation of each mean from the total; these are, respectively, <span class="math notranslate nohighlight">\((84.15-32.31)^2 = 2687.39; (20.66-32.31)^2 = 135.72; (13.71-31.31)^2 = 309.76\)</span>. However, this is only the sum of squares over the <em>j</em> dimension; we need to also remember that this is a sum of squares over the individuals in the group. Another way to think about it is this: we have found the squared deviation of the prediction from the grand mean for each group, but we want the sum of squares for <em>all</em> actual predictions, i.e. for all observations, not just for groups. So, we multiply by our squared group deviations by the subsample sizes. With some (fairly large) rounding error, we obtain <span class="math notranslate nohighlight">\(756301.35\)</span>, which is close enough to our above answer.</p>
 <p>Now, we can calculate our two key quantities of interest. First, we calculate the share of variance explained, which is <span class="math notranslate nohighlight">\(\frac{MSS}{TSS} = \frac{774067.82}{2195730.9} = 0.353\)</span>, or about 35.3 percent of the variance in the outcome. This tells us that that the class of a passenger was a pretty good predictor of their fare, although maybe less than we would have suspected; there were probably some other influences on their fare, given the ~65 percent of the variance that was unexplained. By the way, you can think of these two sums of squares, MSS and TSS, as being the lengths of two vectors which are the adjacent and hypotenuse of a right triangle. This is hard to draw a graph of since they are vectors in very many dimensions, but the metaphor is quite helpful.</p>
