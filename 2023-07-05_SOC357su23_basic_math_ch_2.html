@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>basic math for social sciences II: proportions, differences in means and ANOVA &#8212; SOC357</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2023-07-05_SOC357su23_basic_math_ch_2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="basic math for social sciences I: basic descriptive and inferential statistics" href="2023-07-01_SOC357su23_basic_math_ch_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/SOC357_website_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/SOC357_website_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to SOC357
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2023-06-16_SOC357su23_syllabus.html">Course parameters</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="2023-07-01_SOC357su23_basic_math_ch_1.html">basic math chapter 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">basic math for social sciences II: proportions, differences in means and ANOVA</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2023-07-05_SOC357su23_basic_math_ch_2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/2023-07-05_SOC357su23_basic_math_ch_2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>basic math for social sciences II: proportions, differences in means and ANOVA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-on-proportions">Inference on proportions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-modeling-analysis-of-variance-anova">Introduction to modeling: analysis of variance (ANOVA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-summation">Double summation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-anova-decomposition">The ANOVA decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-variance-of-a-binary-variable">Proof of the variance of a binary variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-way-anova">Two-way ANOVA</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-math-for-social-sciences-ii-proportions-differences-in-means-and-anova">
+<h1>basic math for social sciences II: proportions, differences in means and ANOVA<a class="headerlink" href="#basic-math-for-social-sciences-ii-proportions-differences-in-means-and-anova" title="Permalink to this heading">#</a></h1>
+<section id="inference-on-proportions">
+<h2>Inference on proportions<a class="headerlink" href="#inference-on-proportions" title="Permalink to this heading">#</a></h2>
+<p>In the last chapter, we learned about two ways to make inferences about population means from the means in our sample. We saw how this worked for a simple quantitative outcome. What if we happen to have a binary variable, or a set of binary variables that represent all outcomes for some polytomous variable?</p>
+<p>This turns out to be very easy to calculate. All we need to do is recall that the population variance of a binary variable is specifically <span class="math notranslate nohighlight">\({\pi}(1-{\pi})\)</span>, and its estimate in the sample is <span class="math notranslate nohighlight">\({\widehat{\pi}}(1-{\widehat{\pi}})\)</span>.</p>
+<p>Then, we simply replace, in the sampling variance formula <span class="math notranslate nohighlight">\(\frac{\sigma^2}{n}\)</span>, <span class="math notranslate nohighlight">\(\sigma^2\)</span> with <span class="math notranslate nohighlight">\({\pi}(1-{\pi})\)</span>. Then, the sampling variance is <span class="math notranslate nohighlight">\(\frac{{\pi}(1-{\pi})}{n}\)</span>, and the standard error is  <span class="math notranslate nohighlight">\(\sqrt{\frac{{\pi}(1-{\pi})}{n}}\)</span>. The last question is how to estimate this in the sample. Here, there is a slightly funny set-up. If we assume the null is true, <span class="math notranslate nohighlight">\(\pi = \pi_0\)</span>, so we plug in the null hypothesis value when doing a hypothesis test:  <span class="math notranslate nohighlight">\(\sqrt{\frac{{\pi_0}(1-{\pi_0})}{n}}\)</span>. If we make no particular assumption about any null, as when we do a confidence interval, we simply use the observed proportion,  <span class="math notranslate nohighlight">\(\sqrt{\frac{{\widehat{\pi}}(1-{\widehat{\pi}})}{n}}\)</span>. Generally, software will do this for you correctly.</p>
+<p>There are two caveats here. First, proportions are <em>z</em>-distributed, not <em>t</em>-distributed because we don’t have to separately estimate the mean and standard error since the latter is a function of the mean for proportions (but not quantitative variables generally). So, our original, simpler approach from last time works. Second, we should avoid inference on observed or hypothetical proportions very near to 0 or 1 unless the sample size is large since otherwise the tails of the sampling distribution will be truncated. Usually</p>
+<p>Let’s do a bit of practice. Suppose that you have 80 observations of the binary outcome “prays daily”, and you wish to test the hypothesis that <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> of your population prays so often: <span class="math notranslate nohighlight">\(H_0: \pi_{\text{prays daily}} = 0.5\)</span> and your alternative is two-sided (as all of ours are in this class for simplicity). You observe <span class="math notranslate nohighlight">\(\widehat{\pi} = \frac{3}{8}\)</span>. The generic formula for a standardized test statistic is always this:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\text{sample statistic} - \text{hypothetical population parameter}}{\text{standard error}}
+\end{align*}\]</div>
+<p>Here, we have…</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\frac{\widehat{\pi} - \pi_0}{\sqrt{\frac{{\pi_0}(1-{\pi_0})}{n}}}
+&amp;= \frac{0.375 - 0.5}{\sqrt{\frac{0.5(0.5)}{80}}} = \frac{-0.125}{0.0559} = -2.24 \cr
+&amp; \mathbb{P}(|Z| \geq 2.24) =  0.0253 \cr
+&amp; \text{conclude: reject} \hspace{0.1cm} H_0 \hspace{0.1cm}  \text{at} \hspace{0.1cm}  \alpha = 0.05
+\end{align*}\]</div>
+<p>We could also calculate a 95 confidence interval for this observed datum. We simply use our new standard error. The generic formula for a CI is always this, where “critical value” is the jargon for “the number of standard deviations on some sampling distribution which include the middle <em>C</em> percent of the area under the curve”.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\text{sample statistic} +/- \text{critical value} \cdot \text{standard error} 
+\end{align*}\]</div>
+<p>Here, we have…</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\widehat{\pi} +/- z_95 \cdot \sqrt{\frac{{\widehat{\pi}}(1-{\widehat{\pi}})}{n}} \cr
+= 0.375 +/- 1.96 \cdot \sqrt{\frac{0.375 \cdot 0.625}{80}} = [0.2689, 0.4811] \cr
+\end{align*}\]</div>
+<p>Conclude: with 95 percent confidence we think that the true population proportion of people who daily pray is within about 27 and 48 percent.</p>
+</section>
+<section id="bivariate-analysis-tests-for-a-difference-in-means">
+<h2>Bivariate analysis: tests for a difference in means<a class="headerlink" href="#bivariate-analysis-tests-for-a-difference-in-means" title="Permalink to this heading">#</a></h2>
+<p>Suppose, now, that we are interested in determining whether two groups differ on some key quantitative outcome variable, such as their level of education or income. Let’s be clear and formalistic about what we are after: we want to know whether or not, say, <span class="math notranslate nohighlight">\(\mu_{income | white}  = \mu_{income | black}\)</span> or <span class="math notranslate nohighlight">\(\mu_{education | male}  = \mu_{education | female}\)</span>, where, to avoid the confusion caused by double subscripts, I’ve used the standard notation of a vertical bar to indicate “given that one is…”.</p>
+<p>An obvious move here is just to replace these with their sample equivalents. So we might check whether <span class="math notranslate nohighlight">\(\overline{educ}_{male} = \overline{educ}_{female}\)</span>. And, in fact, this is exactly the right idea. The question now, however, is whether or not this difference is liable to have arisen by chance.</p>
+<p>Now, we when went over inference before, this might have seemed somewhat trivial. The sample mean for education is, say, 13.5. We can test whether it’s likely equal to some hypothesized value, say <span class="math notranslate nohighlight">\(\mu_0 = 14\)</span> or not, or we can calculate a confidence interval and give a range of plausible values for the population mean, <span class="math notranslate nohighlight">\(\mu_{educ}\)</span>, but these are, I admit, relatively anodyne questions.</p>
+<p>What’s perhaps more interesting is testing whether an observed difference in the sample means of two groups indicates an actual difference in the population means of those groups—these questions are, perhaps intrinsically, more contentious and often more interesting for that reason.</p>
+<p>It’s actually quite straightforward to extend our previous testing methods to cover this case!</p>
+<p>The sampling distribution of a difference in means is approximately Normal. It is centered at the true population difference in means, <span class="math notranslate nohighlight">\(\mu_1 - \mu_2\)</span>, and it has a standard error that is also very intuitive. Our confidence intervals and <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-values have the same interpretive meaning: the confidence interval with confidence <em>C</em> is a band of values that, prior to the selection of the sample, had a <em>C</em> percent chance of including the true population mean difference. The <span class="math notranslate nohighlight">\(\mathbb{P}\)</span>-value is the probability of observing sample data such as these conditional on the null hypothesis being true: <span class="math notranslate nohighlight">\(\mathbb{P}(\text{sample difference} | H_0)\)</span>.</p>
+<p>Since the sample means <span class="math notranslate nohighlight">\(\overline{Y}_1\)</span> and <span class="math notranslate nohighlight">\(\overline{Y}_2\)</span> are independent random variables, the variance of their difference is just the sum of their variances (see previous appendix for a proof), and the variance of each is the formula we learned before: <span class="math notranslate nohighlight">\(\frac{\sigma^2_Y}{n}\)</span>; so, the variance of the difference is <span class="math notranslate nohighlight">\(\frac{\sigma^2_{Y1}}{n} + \frac{\sigma^2_{Y2}}{n}\)</span>, and the standard error is simply <span class="math notranslate nohighlight">\(\sqrt{\frac{\sigma^2_{Y1}}{n} + \frac{\sigma^2_{Y2}}{n}}\)</span>.</p>
+<p>Our confidence interval is the following: <span class="math notranslate nohighlight">\(\overline{y}_1 -\overline{y}_2 +/- t_C*\sqrt{\frac{\sigma^2_{Y1}}{n} + \frac{\sigma^2_{Y2}}{n}}\)</span>. Recall that <span class="math notranslate nohighlight">\(t_C\)</span> is the number of standard deviations on the <em>t</em>-shaped sampling distribution that include the middle <em>C</em> percent of the area under the curve. This depends on the degrees of freedom, which are hard to calculate for a difference in means by hand, so we just use the smaller of the subsamples <span class="math notranslate nohighlight">\(n_{smaller} - 1\)</span>. You’ll need to look these up with software.</p>
+<p>Our test statistic is the following: <span class="math notranslate nohighlight">\(\frac{(\overline{Y}_1 - \overline{Y}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma^2_{Y1}}{n} + \frac{\sigma^2_{Y2}}{n}}}\)</span>. Note that we typically, though not always, test the claim that the mean difference is zero, so the test statistic, in that case, simplifies to <span class="math notranslate nohighlight">\(\frac{\overline{Y}_1 - \overline{Y}_2}{\sqrt{\frac{\sigma^2_{Y1}}{n} + \frac{\sigma^2_{Y2}}{n}}}\)</span>.</p>
+<p>Let’s now examine a “population” (actually, the 2018 GSS) that we happen to have data on. In this population, we know that the true difference in educational attainment by sex is small but perceptible: 0.07 years in favor of women.</p>
+<p>If we pull five samples (<span class="math notranslate nohighlight">\(n = 50\)</span> for each group) from this population and calculate confidence intervals, we should expect all of them to include the true mean difference somewhere inside, and indeed, they do (in this particular simulation, though it would not be “wrong” if they didn’t since probability refers to long-run percentages).</p>
+<p><img alt="male-female education differences" src="_images/t_diff_demo.png" /></p>
+<p>Now, let’s examine some actual data. Suppose that you are interested in coming up with a plausible range of values for the difference in mean hourly wages among young men and women (say, under 40) with bachelor’s degrees with 95 percent confidence. The mean for men is 34.25 and the sample variance is 277.19 (<span class="math notranslate nohighlight">\(n = 10,438\)</span>); the mean for women is 29.67 and the sample variance is 252.17 (<span class="math notranslate nohighlight">\(n = 11,772\)</span>). The smaller of the two subsamples is very large, so our 95 percent CI <em>t</em>-statistic happens to just be 1.96 (as it is with a perfectly Normal distribution). Using our formula from above, we find that our 95 CI is <span class="math notranslate nohighlight">\((34.25 - 29.67) +/- 1.96*\sqrt{\frac{252.17}{10,437} + \frac{252.17}{11,772}} =\)</span> \<span class="math notranslate nohighlight">\(4.16/hr, \\\)</span>5.00/hr.</p>
+<p>What if you wanted to test the claim that the difference is equal to \<span class="math notranslate nohighlight">\(4.00/hr in favor of men? We previously calculated the standard error for the difference as 0.213495. So, now we simply take the observed difference less the proposed difference and divide by the SE: \)</span>\frac{(34.25-29.67) - (4)}{0.213495} = 2.72<span class="math notranslate nohighlight">\(. We can then look up the two-sided \)</span>\mathbb{P}<span class="math notranslate nohighlight">\(-value of this test statistic; it happens to be 0.007. Since our conventional \)</span>\alpha<span class="math notranslate nohighlight">\( is 0.05, we reject the null hypothesis at this level. We could also have simply observed that our 95 CI does not include 4. Below is an illustration of our \)</span>\mathbb{P}$-value, using the unstandardized sampling distribution (the probability would be the same, just with a different mean and standard deviation of the curve, if we used the standardized difference).</p>
+<p><img alt="P-value illustrated" src="_images/pvalue_t.png" /></p>
+</section>
+<section id="introduction-to-modeling-analysis-of-variance-anova">
+<h2>Introduction to modeling: analysis of variance (ANOVA)<a class="headerlink" href="#introduction-to-modeling-analysis-of-variance-anova" title="Permalink to this heading">#</a></h2>
+<p>Above, we discussed one horn of inferential statistics, that of checking whether an observed difference between two groups is statistically significant. But we can also ask other interesting questions that will be useful to us later, such as how well group-identification with more than two groups <em>explains</em> outcomes: how good is a model that says that <span class="math notranslate nohighlight">\(\text{education} = f(\text{gender}) + e\)</span>.</p>
+<p>Let’s begin by learning a simple form of what is called <em>regression</em>; the name is somewhat unappealing, but the idea is that regression is fundamentally a form of modeling one outcome as a function of one or more <em>predictors</em><a class="footnote-reference brackets" href="#galton" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>If we have a simple situation where we think that outcomes in a variable are different as a function of group membership, we can write a model for that and test out our model on data. Now, in reality, unless we have an experimental setting (where assignment to treatment/control should be the only thing that matters), probably something more than group membership matters, but seeing how group membership matters is a good way to begin learning this material.</p>
+<p>Let’s consider the total variance of the outcome, <span class="math notranslate nohighlight">\( \frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1}\)</span>. If we think our model is a good fit, it should be able, in some sense, to <em>explain</em> this variance; incidentally, we can also just omit the denominator <span class="math notranslate nohighlight">\(\frac{1}{n-1}\)</span> here because we’ll just be splitting the variance into different component parts—this is known as the total sum of squares (TSS). In other words, once we calculate our model, the variation of observations around our predicted values (the “model sum of squares”) should generally be large relative to the total sum of squares.<a class="footnote-reference brackets" href="#direction" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>It turns out, unsurprisingly, that if our model is something like this …</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\text{vocabulary} &amp;= f(\text{education}) + e \cr
+&amp;= \beta_0 + \beta_1\text{(less than high school)} + \beta_2\text{(high school)} + \
+    \beta_3\text{(some college)} + \beta_4\text{(bachelor's)} + \beta_5\text{(grad school)} + e
+\end{align*}\]</div>
+<p>…then the best predictions are simply the group means for each variable.</p>
+</section>
+<section id="double-summation">
+<h2>Double summation<a class="headerlink" href="#double-summation" title="Permalink to this heading">#</a></h2>
+<p>We can calculate the fit of our model in this simple case by observing that the total sum of squares can be broken down in the following way. Let <span class="math notranslate nohighlight">\(n_j\)</span> represent the number of subjects in the <span class="math notranslate nohighlight">\(j^{\text{th}}\)</span> group, <em>a</em> represent the number of groups, and <em>j</em> index the group number.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp; \text{TSS} = \sum_{j=1}^a \sum_{i=1}^{n_j} (y_{ij} - \bar{y})^2 \cr
+\end{align*}\]</div>
+<p>Double summations can be understood in a couple of different ways. Consider a simple example such as the following:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;= \sum_{j=1}^5 \sum_{i=1}^5 i + j
+\end{align*}\]</div>
+<p>The second summation can be thought of in two ways. First, we have an extra “dimension” to the sum. This is true even if there is no second variable! For example, although <span class="math notranslate nohighlight">\(\sum_{i=1}^5 i = 15\)</span> (as we would hopefully expect), <span class="math notranslate nohighlight">\(\sum_{j=1}^5 \sum_{i=1}^5 i\)</span> happens to be 75, even though there is no <em>j</em> term at all. We can picture this as a three-dimensional function, where <em>i</em> and <em>j</em> define a two-dimensional plane, with the outcome of the function being the third dimension. In this specific case, the place we are along the <span class="math notranslate nohighlight">\(j^{\text{th}}\)</span> dimension simply happens not to affect the value of the sum.</p>
+<p>Second, we have another variable in the sum. This is true even if there is no second dimension! For example,
+<span class="math notranslate nohighlight">\(\sum_{i=1}^5 i + j = 15 + 5j\)</span>. Here, <em>j</em> is a pure variable; we don’t have a <span class="math notranslate nohighlight">\(j^{\text{th}}\)</span> dimension to the sum, so we don’t know how many times to sum over it, but it’s “along for the ride” as we sum over i. This doesn’t really add anything <em>definite</em> to the sum (because <em>j</em> remains a variable: no constant, numerical amount is added); the sum remains definite in only one dimension.</p>
+<p>That said, double summations often (typically) involve a dependence on <em>both</em> the extra dimension and the extra variable, however. That is, we can think about a simple one-dimensional sum as becoming essentially a function of two variables <span class="math notranslate nohighlight">\(f: \mathbb{R}^2 \rightarrow \mathbb{R}\)</span>, and our new variable <em>j</em> is one of them; we also need to sweep the function along the <em>j</em> dimension, however.</p>
+<p>You can think about this in one of two ways. First, without adding any particular shortcuts, you can imagine fixing a value of one of the indices, summing over the other index, and then iterating over the first index. So, with an expression such as <span class="math notranslate nohighlight">\(\sum_{j=1}^5 \sum_{i=1}^5 i + j\)</span>, you can imagine letting <span class="math notranslate nohighlight">\(j = 1\)</span>, summing over <span class="math notranslate nohighlight">\(\sum_{i=1}^5 i + 1\)</span>, setting this sum aside, then letting <span class="math notranslate nohighlight">\(j = 2\)</span>, summing over <span class="math notranslate nohighlight">\(\sum_{i=1}^5 i + 2\)</span>, and so on, until you exhaust the levels of <em>j</em>. Then, add up all of your stowed-away sums.</p>
+<p>An alternative, which leads to some simplifications for simple double summations, is to consider this more abstractly. For each value of <em>j</em>, the summation <em>i</em> does not depend on <em>j</em>. It is just “along for the ride”, so as long as we keep track of how many times we add up <em>j</em> for a “run through” of <em>i</em>, we can pull it out.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sum_{j=1}^5 \sum_{i=1}^5 i + j = \cr
+\sum_{j=1}^5 (5j + \sum_{i=1}^5 i) \cr
+\end{align*}\]</div>
+<p>Then, we can do the sum over <em>i</em>…</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sum_{j=1}^5 (5j + 15) \cr
+\end{align*}\]</div>
+<p>And finally, we can now apply the same logic to <em>i</em>, with respect to <em>j</em>: it doesn’t vary with <em>j</em>, but is merely “along for the ride”, so it can be pulled out, as long as we remember that it’s “going on five rides” with <em>j</em> (the 5 on <em>j</em> can also be pulled out because of the distributive property) …</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\sum_{j=1}^5 (5j + 15) = \cr
+75 + \sum_{j=1}^5 5j = \cr
+75 + 5(\sum_{j=1}^5 j) = \cr
+75 + 5(15) = 150
+\end{align*}\]</div>
+</section>
+<section id="the-anova-decomposition">
+<h2>The ANOVA decomposition<a class="headerlink" href="#the-anova-decomposition" title="Permalink to this heading">#</a></h2>
+<p>Let’s resume the ANOVA decomposition. I show the main proof in the text because it’s not very hard to follow.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*} 
+&amp; \text{TSS} = \sum_{j=1}^a \sum_{i=1}^{n_j} (y_{ij} - \bar{y})^2 \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^{n_j} (y_{ij} - (\mathbf{\overline{y}_j} - \mathbf{\bar{y}_j}) - \bar{y})^2 \
+    &amp;&amp; \text{we just add and subtract the same value} \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^{n_j} (y_{ij} - \mathbf{\bar{y}_j} + \mathbf{\bar{y}_j} - \bar{y})^2 \
+    &amp;&amp; \text{rearrangement} \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^{n_j} (\text{within-group deviation} + \text{between-group deviation})^2 &amp;&amp;
+    \text{definition of terms} \cr
+&amp;= \sum_{j=1}^a \sum_{i=1}^{n_j} (\text{within deviation})^2 + 
+    \sum_{j=1}^a \sum_{i=1}^{n_j} (\text{between deviation})^2 + &amp;&amp;  \text{binomial expansion} \cr
+    &amp; 2\sum_{j=1}^a \sum_{i=1}^{n_j} (\text{between deviation} * \text{within deviation})
+\end{align*}\]</div>
+<p>The rightmost term disappears because, while we sum within a group (within deviation), the group deviation is constant. So, we treat it as a constant, and the within-deviations from the group-level mean sum to zero for any group as proved earlier. Then…</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+&amp;= \sum_{j=1}^a \sum_{i=1}^n (y_{ij} - \bar{y}_j)^2 + (\bar{y}_j - \bar{y})^2 \cr
+&amp;= \underbrace{\sum_{j=1}^a \sum_{i=1}^n (y_{ij} - \bar{y}_j)^2}_\text{within-groups variation}  + 
+    \underbrace{\sum_{j=1}^a \sum_{i=1}^n  (\bar{y}_j - \bar{y})^2 }_\text{between-groups variation} \cr
+\end{align*}\]</div>
+<p>The terms on the right are the squared deviations of the predictions from the sample mean, which can be interpreted as the improvement of our model on the crudest model, the overall mean. It is probably even more useful to recognize that the mean of predictions is also the mean of the observations.<a class="footnote-reference brackets" href="#meansproof" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> Letting <span class="math notranslate nohighlight">\(\widehat{y}\)</span> generically indicate a prediction (which here happen to be the group means <span class="math notranslate nohighlight">\(\overline{y}_j\)</span>) and <span class="math notranslate nohighlight">\(\widetilde{y}\)</span> indicate the predictions for a centered variable, we have that <span class="math notranslate nohighlight">\(MSS = \sum_{i=1}^n (\widehat{y}_i - \overline{y})^2 = \sum_{i=1}^n (\widetilde{y} + \overline{y} - \overline{y})^2 = \sum_{i=1}^n \widetilde{y}^2\)</span>. So, our model sum of squares is just the variance of our predictions; it is metaphorically the “length” of our prediction vector (if we also assume that our outcome is centered, the TSS is also a length of a vector).</p>
+<p>Finally, what do we do with the information that we obtain? It is conventional to calculate the goodness-of-fit, which is the ratio <span class="math notranslate nohighlight">\(\frac{\text{model sum of squares}}{\text{total sum of squares}}\)</span>, which is the ratio of the variance of our predictions (this is also the length of the prediction vector to the outcome vector). A related ratio of variances is the ratio of the variance of our predictions to the residual (unexplained) variance, or the within-group variance, once we adjust for the degrees of freedom for each group <span class="math notranslate nohighlight">\(\frac{\text{mean model sum of squares}}{\text{mean residual sum of squares}}\)</span>. This second term has a sampling distribution called the <span class="math notranslate nohighlight">\(F-\)</span>distribution (as in <strong>F</strong>isher).</p>
+<p>Let’s now walk through an example of ANOVA which will help you see how the summations above should properly be done.</p>
+<p>For this analysis, we’ll use the (currently-topical) <em>Titanic</em> survivorship dataset (the original crash, not the 2023 crash). We’ll do something a bit more anodyne than looking at survival rates; instead, we’ll look at fares by passenger class. Technically, it’s a little strange to regard the <em>Titanic</em> data as a “sample” (from what population?), but we can perhaps consider the data to be a random sample from a population of luxury ships at the time. You can pull the data <a class="reference external" href="https://web.stanford.edu/class/archive/cs/cs109/cs109.1166/problem12.html">here</a>.</p>
+<p>How well does a passenger’s class (on the ship) explain the fare that they paid?</p>
+<p>Let’s begin by finding the means for each group, which will also let us calculate the sums of squares within each group. Doing ANOVA totally by hand is somewhat tedious, but I also want to give some sense of how it might be done by hand without just asking a computer program. One compromise is simply telling a computer to calculate the variance within each group, then multiplying by <span class="math notranslate nohighlight">\(n_j - 1\)</span>; this is relatively easy in most software.</p>
+<p>In this data-set, I find the following:</p>
+<p>\begin{array}{|c|c|c|c|}
+\hline
+\textbf{group} &amp; \textbf{mean} &amp; \textbf{SS} &amp; \textbf{n} \
+\hline
+\text{1} &amp; \text{84.15} &amp; \text{1320848.9} &amp; \text{216} \
+\hline
+\text{2} &amp; \text{20.66} &amp;\text{32944.87} &amp;\text{184} \
+\hline
+\text{3} &amp; \text{13.71} &amp;\text{67869.31} &amp;\text{487} \
+\hline
+\text{total} &amp; \text{32.31} &amp;\text{2195730.9} &amp;\text{887} \
+\hline
+\end{array}</p>
+<p>Summing up the first three columns, I find that <span class="math notranslate nohighlight">\(1320848.9+32944.87+67869.31=1421663.08\)</span>. Now, since the residuals from this model are orthogonal to the sum of squares for the model, I could just immediately calculate that <span class="math notranslate nohighlight">\(MSS = TSS - RSS = 2195730.9 - 1421663.08 = 774067.82\)</span>, but I will show how to do this by hand as well.</p>
+<p>First, we need to simply find the squared deviation of each mean from the total; these are, respectively, <span class="math notranslate nohighlight">\((84.15-32.31)^2 = 2687.39; (20.66-32.31)^2 = 135.72; (13.71-31.31)^2 = 309.76\)</span>. However, this is only the sum of squares over the <em>j</em> dimension; we need to also remember that this is a sum of squares over the individuals in the group. Another way to think about it is this: we have found the squared deviation of the prediction from the grand mean for each group, but we want the sum of squares for <em>all</em> actual predictions, i.e. for all observations, not just for groups. So, we multiply by our squared group deviations by the subsample sizes. With some (fairly large) rounding error, we obtain <span class="math notranslate nohighlight">\(756301.35\)</span>, which is close enough to our above answer.</p>
+<p>Now, we can calculate our two key quantities of interest. First, we calculate the share of variance explained, which is <span class="math notranslate nohighlight">\(\frac{MSS}{TSS} = \frac{774067.82}{2195730.9} = 0.353\)</span>, or about 35.3 percent of the variance in the outcome. This tells us that that the class of a passenger was a pretty good predictor of their fare, although maybe less than we would have suspected; there were probably some other influences on their fare, given the ~65 percent of the variance that was unexplained. By the way, you can think of these two sums of squares, MSS and TSS, as being the lengths of two vectors which are the adjacent and hypotenuse of a right triangle. This is hard to draw a graph of since they are vectors in very many dimensions, but the metaphor is quite helpful.</p>
+<p>Next, we can calculate the <em>F</em>-ratio. The so-called “global <em>F</em>-test” is a test of the very general null hypothesis <span class="math notranslate nohighlight">\(H_0: \mu_1 = \mu_2 = ... \mu_a\)</span>. This is useful only if this null hypothesis is of interest; otherwise, perform tests for a difference in means as appropriate. If it is, it turns out that ratio of two variances has the <em>F</em>-distribution. To adjust for the fact that the space in which the predictors lie is formed by our regressors (the groups) minus one, while the residual term lies in the space orthogonal to it, we need to divide each SS by its <em>df</em>. So, here, <span class="math notranslate nohighlight">\(df_{\text{regression space}} = 3-1, df_{\text{residual space}} = n - df_{\text{regression space}} = 886 - 2 = 884\)</span>. So, our <em>F</em>-ratio is <span class="math notranslate nohighlight">\(\frac{\frac{774067.82}{2}}{\frac{1421663.08}{884}} = 240.66\)</span>. The associated <span class="math notranslate nohighlight">\(\mathbb{P}-value\)</span> is effectively zero, so I could plot this on a sampling distribution, but it would not be informative since the area under the curve would effectively be zero. You can just know that your <em>F</em>-statistic has its own sampling distribution.</p>
+</section>
+<section id="appendix">
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
+<section id="proof-of-the-variance-of-a-binary-variable">
+<h3>Proof of the variance of a binary variable<a class="headerlink" href="#proof-of-the-variance-of-a-binary-variable" title="Permalink to this heading">#</a></h3>
+<p>In the following proof, let <em>B</em> indicate a binary variable. Recall from the previous appendix that <span class="math notranslate nohighlight">\(\mathbb{E}[(X-\mu_X)^2] = \mathbb{E}[X^2] - mathbb{E}[X]^2\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathbb{E}[B^2] - \mathbb{E}[B]^2 &amp;= \cr
+&amp;= \mathbb{E}[B] - \mathbb{E}[B]^2 &amp;&amp; \text{both possible outcomes, 0 and 1, are the same if squared} \cr
+&amp;= \pi_B - (\pi_B)^2 &amp;&amp; \text{definition of an expectation for binary variable} \cr
+&amp;= \pi_B(1 - \pi_B) &amp;&amp; \text{algebra}
+\end{align*}\]</div>
+</section>
+<section id="two-way-anova">
+<h3>Two-way ANOVA<a class="headerlink" href="#two-way-anova" title="Permalink to this heading">#</a></h3>
+<p>We can generalize our decomposition above to so-called two-way ANOVA, although in this case we should note that equal sub-sample sizes now become more important. The idea is straightforward: we decompose the variance into the individual variance, the variance of groups defined by variable A, the variance of groups defined by variable B, and the “interaction effect”. This last term basically represents a special kind of sum of squares: the squared  difference between the actual factorial means and {the difference between the sum of the two variable-level means, which represents a kind of counterfactual where the effects of A and B are only additive, and the actual overall mean}. The reason that equal sample sizes become more computationally important here is that we would only expect <span class="math notranslate nohighlight">\(\overline{y}\)</span> to be the sum of <span class="math notranslate nohighlight">\(\overline{y}_A\)</span> and <span class="math notranslate nohighlight">\(\overline{y}_B\)</span> if the sample sizes were the same for each group. We perform basically the same trick as above:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+1. &amp; \text{TSS} = \sum_{k=1}^b \sum_{j=1}^a \sum_{i=1}^n (y_{ijk} - \bar{y})^2 \cr
+2.    &amp;= \sum_{k=1}^b \sum_{j=1}^a \sum_{i=1}^n (y_{ijk} + (\mathbf{\bar{y}_j} - \mathbf{\bar{y}_j}
+    + \mathbf{\bar{y}_k} - \mathbf{\bar{y}_k} + \mathbf{\bar{y}_{jk}} - \mathbf{\bar{y}_{jk}}
+    + \mathbf{\bar{y}} - \mathbf{\bar{y}}) 
+    - \bar{y})^2 \cr
+3. &amp;= \sum_{k=1}^b \sum_{j=1}^a \sum_{i=1}^n ([y_{ijk} - \mathbf{\bar{y}_{jk}]} 
+    + [\mathbf{\bar{y}_j} - \mathbf{\bar{y}}] + [\mathbf{\bar{y}_k} - \mathbf{\bar{y}}]
+    + [\mathbf{\bar{y}_{jk}} - (\mathbf{\bar{y}_k} + \mathbf{\bar{y}_j} - \mathbf{\bar{y}})])^2 \cr
+4. &amp;= \text{SS}_\text{individual deviation from factor mean}
+    + \text{SS}_\text{between-group deviation for variable A} + \text{SS}_\text{between-group deviation for 
+     variable B} + \text{SS}_\text{deviation of factor mean from difference between additive means of A and B 
+     and actual total mean}+ \text{a bunch of crossed terms}
+\end{align*}\]</div>
+<p>Note that the crossed terms will all cancel, but only if sample sizes are equal. In our first decomposition, the only cross term was, algebraically, <span class="math notranslate nohighlight">\((\overline{y}_{ij} - \overline{y}_{j})(\overline{y}_j - \overline{y})\)</span>, and when summing over <em>i</em>, the second term is constant, while the first is zero by definition. However, it <em>could</em> be the case that the second term is non-zero if <span class="math notranslate nohighlight">\(\overline{y} =/= \frac{1}{a}\sum_{j=1}^a \overline{y}_j\)</span>; this is generally going to be the case if the <span class="math notranslate nohighlight">\(n_j\)</span> are not equal. The problem is that in the two-way ANOVA case, many of the crossed terms, for example <span class="math notranslate nohighlight">\(\sum_{k=1}^b \sum_{j=1}^a \sum_{i=1}^n  [\mathbf{\bar{y}_j} - \mathbf{\bar{y}}][\mathbf{\bar{y}_k} - \mathbf{\bar{y}}]\)</span>, are the product of two terms, neither of which is guaranteed to sum to zero since the deviations of the group means from the grand mean are only guaranteed to be zero if the “mean of means” is the true sample mean. This will often be false when the group sizes are not equal.</p>
+<p>There is also a geometric interpretation. With just one set of group means, however they are coded (whether we have dummy coding, effects coding, or some set of contrasts), as long we have a set of predictor vectors which are linear combination of simply dummy vectors, they span the same regression space. So, the group A effects partition our regression space, even if they are not, themselves, orthogonal to one another (of course, it would be nice if they did, which can be most naturally achieved with equal sample sizes). But, if we have multiple sets of predictors representing the groups formed by levels of variables <em>A</em> and <em>B</em>, these are not necessarily mutually orthogonal (</p>
+<hr class="footnotes docutils" />
+<aside class="footnote brackets" id="galton" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The origin of the name is as follows. Galton noticed that the fact that tall parents tend to have tall children, but the parents tended to be <em>taller relative to their cohort</em> than did the children. This is because the regression slope for bivariate regression is simply <span class="math notranslate nohighlight">\(r * \frac{s_y}{s_x}\)</span>. If <span class="math notranslate nohighlight">\(|r| &lt; 1\)</span>, as it almost always is (i.e. there are other influences on a child’s height than her parents’ height), then a one unit increase in <span class="math notranslate nohighlight">\(s_y\)</span> leads to an increase, all else equal, of less than <span class="math notranslate nohighlight">\(s_y\)</span> in the child’s height. Thus, children’s height <em>regressed</em> towards the mean. It’s still unclear to me how this later spawned <em>regression</em>, but this is the basic idea (and the origin of the phrase “regression to the mean”).</p>
+</aside>
+<aside class="footnote brackets" id="direction" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>You might wonder about the fact that this sum of squares is just a sum, a quantity or scalar. What if the model sum of squares just happens to be close in number to the TSS? In the “subject space” picture, it becomes clearer that the model sum of squares, <span class="math notranslate nohighlight">\(\sum_{i=1}^n (y_i - \widehat{y})^2\)</span>, must be a linear combination of the predictors, <span class="math notranslate nohighlight">\(\mathbf{X\beta} = \beta_0\mathbf{1} + \beta_1\mathbf{x}_1 + ... \beta_k\mathbf{x}_k\)</span>. Once we “accept” our set of predictors “as they are”, there’s no way around our predictions having something to do with our predictors (we could obviously get a model sum of squares that perfectly matches our total sum of squares but with predictors which have nothing to do with ours; this is just a triviality).</p>
+</aside>
+<aside class="footnote brackets" id="meansproof" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Letting <span class="math notranslate nohighlight">\(\widehat{y}\)</span> generically indicate a prediction, by definition, <span class="math notranslate nohighlight">\(\mathbf{\widehat{y}} + \mathbf{\widehat{e}} = \mathbf{y}\)</span>, and if our model has an intercept (i.e., a column of 1s), it is orthogonal to the residuals of from least squares regression (for a model with one set of categorical predictors, the OLS estimates are the group means), so its dot product with a vector of ones is zero, meaning that the sum of the vector of residuals is zero, and so is its mean. So, the sum of predictions must be the sum of outcomes, and the means therefore are the same as well.</p>
+</aside>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2023-07-01_SOC357su23_basic_math_ch_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">basic math for social sciences I: basic descriptive and inferential statistics</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inference-on-proportions">Inference on proportions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-analysis-tests-for-a-difference-in-means">Bivariate analysis: tests for a difference in means</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-modeling-analysis-of-variance-anova">Introduction to modeling: analysis of variance (ANOVA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-summation">Double summation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-anova-decomposition">The ANOVA decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-variance-of-a-binary-variable">Proof of the variance of a binary variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#two-way-anova">Two-way ANOVA</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By gjmb
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
