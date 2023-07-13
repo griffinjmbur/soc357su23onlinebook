@@ -375,15 +375,22 @@ document.write(`
         \hline
         \textbf{purpose} &amp; \textbf{name of statistic} &amp; \textbf{formula} \\
         \hline
-            \text{estimate central tendency of quantitative variable} &amp; \text{mean,  } \bar{y} &amp; \
+            \text{estimate central tendency of quantitative variable} &amp; \text{sample mean,  } \bar{y} &amp; \
                 \frac{1}{n}\sum_{i=1}^n y_i \\
+        \hline
+            \text{true central tendency of quantitative variable}, y &amp; \text{population mean,  } \mu_y &amp; \
+                \mathbb{E}(X) \hspace{0.1cm} \text{(don't sweat details)} \\
         \hline
             \text{estimate central tendency of binary variable} &amp; \text{mean of binary variable,   } \bar{b} \
             &amp; \frac{1}{n}\sum_{i=1}^n b_i \\
         \hline
-            \text{estimate spread of quant. var.} &amp; \text{variance and standard deviation:   } s^2; s  \
+            \text{estimate spread of quant. var.} &amp; \text{sample variance and sample standard deviation:   } 
+            \ s^2; s  \
             &amp; s^2 = \frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1}; \
-            s = \sqrt{\frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1}}\\
+            s = \sqrt{\frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1}} \\
+        \hline
+            \text{true spread of quant. var.} &amp; \text{variance and standard deviation:   } \sigma^2; \sigma  \
+            &amp; \text{don't sweat details, but   } \sigma_X^2 = \mathbb{E}[(X-\mu_X)^2] \\ 
         \hline
             \text{estimate spread of sampling distribution for sample mean} &amp; \text{standard error, SE} \
             &amp; \frac{s}{\sqrt{n}} \\
@@ -392,7 +399,8 @@ document.write(`
             \text{step 1: test statistic, } t &amp; t = \frac{\bar{y} - \mu_0}{\frac{s}{\sqrt{n}}} \\ 
          \hline
             \text{calculate &quot;how weird&quot; our sample mean is given null,   } H_0 &amp; \
-            \text{step 2:  } \mathbb{P}(|T| &gt; |t|) &amp; \text{software needed, any can do it} \\ 
+            \text{step 2: probability of a test statistic weirder than ours,   } \mathbb{P}(|T| &gt; |t|) \
+            &amp; \text{software needed, any can do it} \\ 
          \hline
             \text{calculate plausible band of values for the true mean,  } \mu_0 &amp; \
             \text{step 1: find number of SEs enclosing } C \text{ AUC} \
