@@ -593,8 +593,8 @@ probabilities of inclusion.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     \textit{mean squared error} &amp;= \
-    \underbrace{\mathbb{E}[(\overline{Y} - \mu_{\overline{Y}})^2]}_{\text{sampling 
-    variance}} + \underbrace{(\mu_{\overline{Y}} - \mu_Y)^2}_{\text{bias}}
+    \underbrace{\mathbb{E}[(\overline{Y} - \mu_{\overline{Y}})^2]}_{\text{sampling variance}} \
+    + \underbrace{(\mu_{\overline{Y}} - \mu_Y)^2}_{\text{bias}}
 \end{align*}\]</div>
 <p>Note that if we have no bias, and thus <span class="math notranslate nohighlight">\(\mu_{\overline{Y}} = \mu_Y\)</span> (the mean of all the samples is the mean of the population), our sampling variance is the only source of variation. We’ve now derived the sampling variance in more detail.</p>
 <p>Finally, here comes our last step. Note that we are planning to do inference on the mean, but we do not know it! How can we use our formula? Well, we can do one of two things.</p>
