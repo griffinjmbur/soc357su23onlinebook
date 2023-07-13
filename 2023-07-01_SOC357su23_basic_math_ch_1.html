@@ -365,6 +365,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operations">Some basic operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-regular-variable-and-sampling">Distributions: regular variable and sampling</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
@@ -391,6 +392,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="basic-math-for-social-sciences-i-basic-descriptive-and-inferential-statistics">
 <h1>basic math for social sciences I: basic descriptive and inferential statistics<a class="headerlink" href="#basic-math-for-social-sciences-i-basic-descriptive-and-inferential-statistics" title="Permalink to this heading">#</a></h1>
+<section id="motivation">
+<h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
+<p>In the social sciences,</p>
+</section>
 <section id="some-basic-operations">
 <h2>Some basic operations<a class="headerlink" href="#some-basic-operations" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
@@ -554,7 +559,7 @@ probabilities of inclusion.</p>
 <p><img alt="CDF and PMF for realization of continuous variable" src="_images/height_CDF_P'D'F.png" /></p>
 <p>What do actual density functions look like and represent, then? Cumulative distribution functions look nearly the same, and the function <span class="math notranslate nohighlight">\(F(X)\)</span> means the same thing: the probability that the variable takes on value less than or equal to some value X; formally <span class="math notranslate nohighlight">\(\mathbb{P}(X \leq x)\)</span> (recall that uppercase Roman letters mean random variables and lowercase Roman letters mean realizations or trials of that random variable). <em>Density</em> is a trickier concept; what it means formally is <em>probability per unit</em>. You should think about density as the “speed of probability”; the PDF is just a graph of the <em>speed</em> of the CDF (formally, the PDF is the simple first derivative of the CDF). So, note that the graph of the PDF is <em>tallest</em> where the slope of the CDF is <em>steepest</em>.</p>
 <p>Importantly, this means that the <em>height</em> of the PDF is not of direct interest, both because the height is hard to interpret intuitively, even if the mathematical definition is simple; and, at any rate, . What we care about instead are <em>areas under the curve</em> between two points <em>a</em> and <em>b</em>, which <em>are</em> probabilities (not densities) that the variable will take on a value between <em>a</em> and <em>b</em>.<a class="footnote-reference brackets" href="#fn-auc" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p>
-<p>So, what are PDFs good for? Well, we can use them to model the probability distribution of a random variable. Remarkably, it turns out that the random variable <span class="math notranslate nohighlight">\(\overline{Y}\)</span> is 1) continuous and 2) Normally-distributed, even if the distribution of the random variable <em>Y</em> is far from Normally-distributed—this is the power of the Central Limit Theorem. Here is a simulation we’ve seen before in this class, using a large number of replications (so, this is not the true PDF, but it gives us a clear sense of what that would look like). Further, we happen to know its</p>
+<p>So, what are PDFs good for? Well, we can use them to model the probability distribution of a random variable in the abstract in certain special situations, even if no sample distribution will look exactly like a true PDF. Remarkably, it turns out that the random variable <span class="math notranslate nohighlight">\(\overline{Y}\)</span> is 1) continuous and 2) Normally-distributed, even if the distribution of the random variable <em>Y</em> is far from Normally-distributed—this is the power of the Central Limit Theorem. Here is a simulation we’ve seen before in this class, using a large number of replications (so, this is not the true PDF, but it gives us a clear sense of what that would look like). Further, we happen to know its</p>
 <p><img alt="The power of the central limit theorem" src="_images/CLT_power.png" /></p>
 <p>Here are the Standard Normal CDF and PDF, which characterize the distribution of standardized sample means. All sample means are Normally-distributed, but they have arbitrary means and standard deviations; subtracting the mean and dividing by the standard deviation gives a standard score <span class="math notranslate nohighlight">\(z = \frac{\overline{y} - \mu_{\overline{Y}}}{\sigma_{\overline{Y}}}\)</span>. We typically won’t actually know the mean and standard deviation, but I’ll address that in a little bit.</p>
 <p><img alt="Standard Normal CDF and PDF" src="_images/Normal_CDF_PDF.png" /></p>
@@ -790,6 +795,7 @@ deviation is (4.5-4.875)^2 = 0.14. The total sum of squares (TSS) is 38.2; the (
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-basic-operations">Some basic operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distributions-regular-variable-and-sampling">Distributions: regular variable and sampling</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-distributions-cumulative-distribution-and-probability-mass-functions">Discrete distributions: cumulative distribution and probability mass functions</a></li>
