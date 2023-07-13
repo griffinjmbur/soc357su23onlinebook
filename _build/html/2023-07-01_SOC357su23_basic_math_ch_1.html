@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>basic math for social sciences I: basic descriptive and inferential statistics &#8212; SOC357</title>
+    <title>basic math for social sciences I: important descriptive and inferential statistics &#8212; SOC357</title>
   
   
   
@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">basic math for social sciences I: basic descriptive and inferential statistics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">basic math for social sciences I: important descriptive and inferential statistics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-07-05_SOC357su23_basic_math_ch_2.html">basic math for social sciences II: proportions, differences in means and ANOVA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2023-07-11_SOC357su23_basic_math_cheat_sheet.html">Cheat sheet with formulae</a></li>
 </ul>
@@ -355,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>basic math for social sciences I: basic descriptive and inferential statistics</h1>
+    <h1>basic math for social sciences I: important descriptive and inferential statistics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -390,11 +390,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="basic-math-for-social-sciences-i-basic-descriptive-and-inferential-statistics">
-<h1>basic math for social sciences I: basic descriptive and inferential statistics<a class="headerlink" href="#basic-math-for-social-sciences-i-basic-descriptive-and-inferential-statistics" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-math-for-social-sciences-i-important-descriptive-and-inferential-statistics">
+<h1>basic math for social sciences I: important descriptive and inferential statistics<a class="headerlink" href="#basic-math-for-social-sciences-i-important-descriptive-and-inferential-statistics" title="Permalink to this heading">#</a></h1>
 <section id="motivation">
 <h2>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
-<p>In the social sciences,</p>
+<p>In the social sciences, we often need to make use of some important statistical techniques. In what follows, I introduce some of these key ideas. If these ideas are new to you, don’t worry! For a class such as SOC357 at UW-Madison, you can focus on the key ideas and calculate most of these with software such as Excel.</p>
 </section>
 <section id="some-basic-operations">
 <h2>Some basic operations<a class="headerlink" href="#some-basic-operations" title="Permalink to this heading">#</a></h2>
@@ -430,11 +430,15 @@ Note that if each observation has a different probability, we need to put this i
 In our case,
 we’ll deal only with the equal probability of selection (<em>epsem</em>) method, so this is a constant that can
 be factored out.</p>
-<p>The last piece of notational throat-clearing that we need at the momen is that
+<p><strong>The last piece of notational throat-clearing that we need at the moment is that
 we will need is that we we will represent random variables in their most
 abstract form with capital Roman letters; their sample equivalents have lowercase Roman letters. Greek
 letters are reserved for <em>parameters</em>, facts about the population that we want to know (but can’t directly
-observe). Here, the <span class="math notranslate nohighlight">\(\tau\)</span> (“tau”, which makes a “t” sound) stands for “population total”. The notation
+observe).</strong> So, for example, here, the <span class="math notranslate nohighlight">\(\tau\)</span> (“tau”, which makes a “t” sound) could stand for “population
+total”, as in the total number of cars in the population, while Y could stand for the abstract concept
+“number of cars a person owns” and <span class="math notranslate nohighlight">\(y_i\)</span> could stand for the number of cars person <em>i</em> owns (note that
+because we’re talking about these as concepts, we’re not actually referring to any specific numbers just
+yet; an <em>actual</em> observation, such as 10 cars, just shows up as “10”). The notation
 means that to find the sample estimate of the
 total of the random variable <em>Y</em>, we sum up the observed values in the sample, <span class="math notranslate nohighlight">\(y_i\)</span>. Note that this also
 means that <span class="math notranslate nohighlight">\(\pi\)</span> will typically mean, in our context, the <em>probability</em> of something (here, selection into
@@ -472,7 +476,8 @@ here):</p>
     \mathbb{E}[Y] &amp;= \sum_{k=1}^K y_k * \mathbb{P}(Y=y_k)
     \end{align*}\]</div>
 <p>This says that we look at each possible outcome <em>k</em>, starting with <em>k</em> = 1, and multiple the value of that
-outcome <span class="math notranslate nohighlight">\(y_k\)</span> by its probability of occurring, <span class="math notranslate nohighlight">\(\mathbb{P}(Y=y_k)\)</span>. Note, also, that <span class="math notranslate nohighlight">\(\mu_Y\)</span> is another
+outcome <span class="math notranslate nohighlight">\(y_k\)</span> by its probability of occurring, or the probability that the value of the random variable Y
+is equal to <em>k</em>, <span class="math notranslate nohighlight">\(\mathbb{P}(Y=y_k)\)</span>. Note, also, that <span class="math notranslate nohighlight">\(\mu_Y\)</span> is another
 way to denote the population mean; the difference between this and <span class="math notranslate nohighlight">\(\mathbb{E}[Y]\)</span> is like the difference
 between writing “the average” and “total over sample size”, respectively.</p>
 <p>For a given <em>set</em> of data, the formula does not change, even if the variable is itself continuous; this is
